@@ -1,0 +1,301 @@
+@charset "utf-8";
+
+/* 重设浏览器默认样式 */
+@import 'base.min.css';
+
+/*
+ * @name: common
+ * @overview: 常用样式
+ * @require: base
+ */
+html, body {
+    font-size: 13px;
+    color: #BFBFBF;
+    border: 0;
+    background-color: #000;
+    /* scrollbar style for IE */
+    /* 滑块箭头 */
+    scrollbar-arrow-color: #FFFFFF;
+
+    /* 滑块背景 */
+    scrollbar-face-color: #4B4B4B;
+
+    /* 滑块右下外边框 */
+    scrollbar-darkshadow-color: #5D5D5D;
+
+    /* 滑块上左内边框 */
+    scrollbar-highlight-color: #4B4B4B;
+
+    /* 滑块上左外边框 */
+    scrollbar-3dlight-color: #4B4B4B;
+
+    /* 滑块右下内边框 */
+    scrollbar-shadow-color: #4B4B4B;
+
+    /* 滚动条背景 */
+    scrollbar-track-color: #24262B;
+}
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color: #BFBFBF;
+}
+a:hover {
+    text-decoration: underline;
+    color: #F00;
+}
+.ui-title-cnt {
+    font-weight: 700;
+    font-size: 18px;
+    color: #FFF;
+}
+/*
+ * @name: news-list
+ * @overview: 新闻列表
+ * @require: base
+ */
+.news-list {
+    overflow: auto;
+    width: 100%;
+}
+.news-list .ui-list {
+    padding: 10px;
+    list-style: disc inside none;
+}
+.news-list .ui-list-item {
+    overflow: hidden;
+    position: relative;
+    height: 25px;
+    font-size: 14px;
+    line-height: 25px;
+}
+.news-list .ui-list-item .titl {
+    width: 100%;
+}
+.news-list .ui-list-item .link {
+    padding-right: 80px;
+}
+.news-list .ui-list-item .date {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    float: right;
+    width: 100px;
+    text-align: right;
+    background-color: #000\9;
+}
+/*
+ * @name: prof-list
+ * @overview: 人物简介
+ * @require: base
+ */
+.prof-list {
+    overflow: auto;
+}
+.prof-list-item {
+    float: left;
+    width: 45%;
+    padding: 10px 2%;
+}
+.prof-list-info {
+    overflow: hidden;
+    float: left;
+    width: 100%;
+}
+.prof-list .avat {
+    float: left;
+    margin-right: 10px;
+}
+.prof-list .avat-img {
+    width: 50px;
+    height: 50px;
+}
+.prof-list .cont {
+    line-height: 1.8;
+}
+.prof-list .name {
+    margin-right: 10px;
+}
+.prof-list .name-lnk {
+    text-decoration: underline;
+    color: #FF0;
+}
+.prof-list .ui-list {
+    clear: both;
+    padding-top: 10px;
+}
+.prof-list .ui-list-item {
+    overflow: hidden;
+    height: 25px;
+    font-size: 14px;
+    line-height: 25px;
+}
+.prof-list .ui-list-item .link {
+    color: #FF0;
+}
+/*
+ * @name: live-list
+ * @overview: 直播话题
+ * @require: base
+ */
+.live-list {
+    padding: 10px;
+}
+.live-list-item {
+    clear: both;
+    padding: 5px 0;
+    border-bottom: 1px dashed #808080;
+}
+.live-list .avat {
+    float: left;
+    margin: 5px 10px 0 5px;
+}
+.live-list .avat-img {
+    width: 50px;
+    height: 50px;
+}
+.live-list .cont {
+    min-height: 60px;
+    _height: 60px;
+    font-size: 14px;
+}
+.live-list .name-lnk {
+    color: #FF0;
+}
+.live-list .live-list-help {
+    overflow: auto;
+    _zoom: 1;
+    padding-left: 65px;
+    color: #F90;
+}
+.live-list .date {
+    float: left;
+}
+.live-list .from {
+    float: left;
+    margin-left: 10px;
+}
+.live-list .from-lnk {
+    color: #F90;
+}
+.live-list .oper {
+    display: inline;
+    float: right;
+    +white-space: nowrap;
+    color: #FF0;
+}
+.live-list .oper-btn {
+    margin: 0 8px 0 5px;
+    color: #FF0;
+}
+/*
+ * @name: img-text
+ * @overview: 图文新闻
+ * @require: base
+ */
+.img-text .img {
+    float: left;
+    margin-right: 10px;
+}
+.img-text .img-img {
+    width: 120px;
+    height: 90px;
+}
+.img-text .ui-list {
+    clear: both;
+}
+.img-text .tit {
+    font-size: 14px;
+    line-height: 1.8;
+    text-indent: 2em;
+}
+.img-text .tit-lnk {
+    color: #FF0;
+}
+.img-text .txt {
+    text-indent: 2em;
+}
+.img-text .txt-lnk {
+    color: #FF0;
+}
+
+/*
+ * @name: send-msg
+ * @overview: 发送私信
+ * @require: base, JZLogin_wrapper
+ */
+.send-msg {
+    *+width: 350px;
+    _background-color: #FFF;
+}
+.send-msg .JZLogin_content .close_btn {
+    *+font-size: 18px;
+    _font-size: 14px;
+}
+.send-msg .JZLogin_content .JZLogin_text {
+	padding: 20px 30px 20px 10px;
+}
+.send-msg .JZLogin_text .ui-label {
+	margin-left: -110px;
+    *+margin-left: -130px;
+}
+.send-msg .msg-cont {
+	width: 300px;
+	height: 80px;
+	margin-bottom: 15px;
+	padding: 3px 5px;
+}
+.send-msg .ui-form-btn {
+	text-align: center;
+}
+.send-msg .ui-form-btn .ui-button {
+	margin-left: 20px;
+    color: #222;
+}
+
+/*
+ * @name: tzgw-text
+ * @overview: 投顾军团
+ * @require: base, img-text
+ */
+.tzgw-list .let-btn {
+    padding-left: 20px;
+    font-size: 13px;
+    background: url(http://static.n8n8.cn/Public/Images/ucenter/ico-letter.png) no-repeat 0 50%;
+}
+/*
+ * @name: ggyb
+ * @overview: 个股研报
+ * @require: base
+ */
+.ggyb {
+    padding: 10px;
+    font-size: 12px;
+}
+.ggyb .ui-box-head {
+    overflow: hidden;
+    height: 30px;
+    line-height: 30px;
+    color: #FF0;
+}
+.ggyb .ui-box-head .sort {
+    float: left;
+    width: 10%;
+}
+.ggyb .ui-box-head-title {
+    float: left;
+}
+.ggyb .ui-box-head .link {
+    text-decoration: underline;
+    color: #FF0;
+}
+.ggyb .ui-box-head .date {
+    float: right;
+}
+.ggyb .ui-box-container {
+    clear: both;
+}
+.ggyb .ui-box-content {
+    text-indent: 2em;
+}

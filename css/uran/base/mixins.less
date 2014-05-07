@@ -1,0 +1,48 @@
+.background(@start:#fff, @end:#000) {
+  background:@end;
+  background-image:-webkit-gradient(linear, left top, left bottom, from(@start), to(@end)); /* Saf4+, Chrome */
+  background-image:-webkit-linear-gradient(@start, @end); /* Chrome 10+, Saf5.1+ */
+  background-image:-ms-linear-gradient(@start, @end); /* IE10 */
+  background-image:linear-gradient(@start, @end);
+}
+
+.box-shadow(@value) {
+  box-shadow:@value;
+  -webkit-box-shadow:@value;
+  -ms-box-shadow:@value;
+}
+.box-shadow(@value1, @value2) {
+  box-shadow:@value1, @value2;
+  -webkit-box-shadow:@value1, @value2;
+  -ms-box-shadow:@value1, @value2;
+}
+
+.border-radius(@radius:0) {
+  border-radius:@radius;
+  -webkit-border-radius:@radius;
+  -ms-border-radius:@radius;
+}
+
+.display-box() {
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:box;
+}
+
+.box-orient(@direction) {
+  -webkit-box-orient:@direction;
+  -ms-box-orient:@direction;
+  box-orient:@direction;
+}
+
+.box-flex(@scale) {
+  -webkit-box-flex:@scale;
+  -ms-flex:@scale;
+  box-flex:@scale;
+}
+
+.transform(@value) {
+  -webkit-transform:@value;
+  -ms-transform:@value;
+  transform:@value;
+}

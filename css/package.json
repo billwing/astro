@@ -1,0 +1,22 @@
+{
+	"servers":{
+        "local":{
+            "name":"local",
+            "port":8099,
+            "root":"E:\\MyHub\\astro\\images\\astro\\",
+            "tmp":"./tmp",
+            "baseURI":"../../images/astro/"
+        }
+    },
+
+    // 云端模式
+    "cloud": "http://cloud.peaches.io/api/",
+    
+    "retina": true,
+
+    "output": {
+        "./astro/index.css": [
+            "./astro/index.css"
+        ]
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "name": "switchable",
+    "version": "1.0.0",
+    "root": "handy",
+    "description": "an extremely simple switchable",
+    "homepage": "http://handyjs.github.com/switchable",
+    "author": "fool2fish",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/handyjs/switchable"
+    },
+    "bugs": {
+        "url": "https://github.com/handyjs/switchable/issues"
+    },
+    "license": "MIT",
+    "dependencies": {
+        "$": "$",
+        "widget": "arale/widget/1.0.2/widget"
+    },
+    "tests": ["switchable"],
+    "output": {
+        "switchable.js": "."
+    },
+    "tag":"mobile"
+}

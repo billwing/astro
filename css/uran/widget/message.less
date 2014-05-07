@@ -1,0 +1,81 @@
+.ui-message {
+  position:relative;
+  margin:8px 0;
+  padding:8px 8px 8px 45px;
+  color:#333;
+
+}
+
+.ui-message-icon,
+.ui-message-icon:after{
+  position:absolute;
+  width:32px;
+  height:32px;
+}
+
+.ui-message-icon{
+  top:50%;
+  left:8px;
+  z-index:1;
+  margin-top:-16px;
+  .border-radius(16px);
+}
+
+.ui-message-icon:after{
+  top:0;
+  left:0;
+  z-index:999;
+  content:"\0020";
+  background-repeat:no-repeat;
+}
+
+.ui-sd .ui-message-icon:after,
+.ui-hd .ui-message-icon:after{
+  background-image:url(https://i.alipayobjects.com/e/201306/Ss1aIdyvt.png);
+}
+
+.ui-message-info .ui-message-icon{
+  background-color:#2277bb;
+}
+
+.ui-message-info .ui-message-icon:after{
+  background-position:0 -96px;
+}
+
+.ui-message-warn .ui-message-icon{
+  background-color:#ff8634;
+}
+
+.ui-message-warn .ui-message-icon:after{
+  background-position:0 -64px;
+}
+
+.ui-message-success .ui-message-icon{
+  background-color:#3bb000;
+}
+
+.ui-message-success .ui-message-icon:after{
+  background-position:0 -32px;
+}
+
+.ui-message-error .ui-message-icon{
+  background-color:#ff3a0c;
+}
+
+.ui-message-error .ui-message-icon:after{
+  background-position:0 0;
+}
+
+.ui-message-form {
+  border:1px solid #bfbfbf;
+  background-color:#ffffe1;
+  .border-radius(8px);
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 1.5) {
+  .ui-hd .ui-message-icon:after{
+    background-image:url(https://i.alipayobjects.com/e/201306/Ss1WYBVZV.png);
+    background-size:130px auto;
+  }
+}

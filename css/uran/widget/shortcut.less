@@ -1,0 +1,147 @@
+#shortcut {
+  position:fixed;
+  left:8px;
+  bottom:8px;
+  z-index:12;
+  width:46px;
+  height:46px;
+  background-repeat:no-repeat;
+  background-color:transparent;
+  -webkit-transition-duration:0.2s;
+  -ms-transition-duration:0.2s;
+  transition-duration:0.2s;
+}
+
+.ui-sd #shortcut,
+.ui-hd #shortcut,
+.ui-sd #shortcut-panel li span,
+.ui-hd #shortcut-panel li span {
+  background-image:url(https://i.alipayobjects.com/e/201305/QCUyInkiL.png);
+}
+
+#shortcut.active {
+  background-position:0 -60px;
+}
+
+#shortcut.shame{
+  -webkit-transform:translateX(-42px);
+  -ms-transform:translateX(-42px);
+  -transform:translateX(-42px);
+}
+
+#shortcut.shine{
+  -webkit-transform:translateX(0);
+  -ms-transform:translateX(0);
+  transform:translateX(0);
+} 
+
+#shortcut-panel {
+  display:none;
+  position:fixed;
+  left:50%;
+  top:50%;
+  z-index:10;
+  padding:16px;
+  width:260px;
+  height:260px;
+  margin-left:-130px;
+  margin-top:-130px;
+  background-color:rgba(0, 0, 0, .8);
+  color:#fff;
+  .border-radius(10px);
+  -webkit-transition:-webkit-transform 250ms;
+  transition:transform 250ms;
+  -webkit-transform:scale(0);
+/*WP8 IE10 从0开始会出现闪烁*/
+  transform:scale(0.001);
+}
+
+#shortcut-panel li {
+  display:block;
+  width:74px;
+  height:74px;
+  text-align:center;
+  color:#808080;
+}
+
+#shortcut-panel li a {
+  display:block;
+  color:#fff;
+}
+
+#shortcut-panel li.ui-disabled a {
+  color:#808080;
+}
+
+#shortcut-panel li span {
+  display:block;
+  margin:0 auto;
+  width:44px;
+  height:44px;
+  background-repeat:no-repeat;
+}
+
+#shortcut-panel li.ui-disabled span {
+  opacity:.5;
+}
+
+#shortcut-panel .passback {
+  margin:4px auto;
+  clear:both;
+}
+
+#shortcut-panel .passback span {
+  background-position:4px -150px;
+}
+
+#shortcut-panel .payfor {
+  float:left;
+  margin-left:4px;
+}
+
+#shortcut-panel .payfor span {
+  background-position:0 -204px;
+}
+
+#shortcut-panel .refresh {
+  float:right;
+  margin-right:4px;
+}
+
+#shortcut-panel .refresh span {
+  background-position:3px -246px;
+}
+
+#shortcut-panel .clear {
+  float:right;
+  margin-right:4px;
+}
+
+#shortcut-panel .clear span {
+  background-position:4px -348px;
+}
+
+#shortcut-panel .about {
+  margin:4px auto;
+  clear:both;
+}
+
+#shortcut-panel .about span {
+  background-position:4px -286px;
+}
+
+#shortcut-panel.scale {
+  -webkit-transform:scale(1);
+  transform:scale(1);
+}
+
+#shortcut-modal {
+  display:none;
+  position:absolute;
+  left:0;
+  top:0;
+  width:100%;
+  z-index:8;
+  background-color:#fff;
+  opacity:.3;
+}

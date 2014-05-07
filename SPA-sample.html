@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>单页应用 — 经传前端开发模板</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="http://static.n8n8.cn/Public/Images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="http://s.n8n8.cn/Css/ui/base/1.0.2/base.css">
+    <style>
+        body {
+            text-align: center;
+        }
+        .ui-nav {
+            clear: both;
+        }
+        .ui-nav-item {
+            display: inline;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- 以下为HTML的一个常用简单结构，如无需要，可删掉 -->
+<div class="header">
+    <div class="wrapper">
+        <h1 class="logo">
+            <a class="logo-lnk" href="/"><img height="70" src="http://s.n8n8.cn/Images/common/astroboy.png"></a>
+        </h1>
+    </div>
+</div>
+
+<div class="nav">
+    <div class="wrapper">
+        <ul class="ui-nav">
+            <li class="ui-nav-item ui-nav-item-current"><a href="#">主导航</a></li>
+            <li class="ui-nav-item"><a href="#">主导航</a></li>
+            <li class="ui-nav-item"><a href="#">主导航</a></li>
+            <li class="ui-nav-item"><a href="#">主导航</a></li>
+            <li class="ui-nav-item"><a href="#">主导航</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="main wrapper">
+    <div class="content"></div>
+    <div class="sidebar"></div>
+</div>
+
+<div class="model">
+    <div class="wrapper"></div>
+</div>
+
+<div class="footer wrapper">
+    <ul class="ui-nav">
+        <li class="ui-nav-item"><a href="#">底部导航</a></li>
+        <li class="ui-nav-item"><a href="#">底部导航</a></li>
+        <li class="ui-nav-item"><a href="#">底部导航</a></li>
+        <li class="ui-nav-item"><a href="#">底部导航</a></li>
+        <li class="ui-nav-item"><a href="#">底部导航</a></li>
+    </ul>
+    <div class="copyright">
+        <p>深圳市智多盈投资顾问有限公司是经中国证监会核准的合法投资咨询机构 [ 核准号：ZX0172 ]。</p>
+        <p>所载文章、数据仅供参考，使用前请核实，风险自负。</p>
+        <p>Copyright &copy; 经传多盈 深圳市智多盈投资顾问有限公司 All Rights Reserved 版权所有 复制必究</p>
+        <p>Powered by <a href="http://www.n8n8.cn" target="_blank" title="经传多盈财经网">www.n8n8.cn</a> &copy; 2008-2014  <a href="http://www.miibeian.gov.cn" rel="nofollow" target="_blank">粤ICP备13001589号-2</a></p>
+    </div>
+</div>
+
+<script id="seajsnode" src="http://s.n8n8.cn/Js/??seajs/2.1.1/sea.js,seajs/2.1.1/seajs-text.js,seajs/2.1.1/seajs-style.js,seajs/2.1.1/seajs-combo.js"></script>
+<script src="http://s.n8n8.cn/Js/common/config/3.0.0/config.js"></script>
+<script>
+    /*seajs.config({
+        base: 'http://s.n8n8.cn/Js/',
+        alias: {
+            '$': 'core/jquery/1.8.3/jquery'
+        },
+        preload: [
+            //'js/core/jquery/1.8.3/jquery.js'
+        ]
+    });*/
+    seajs.use(['$', 'confirmbox'], function($, ConfirmBox){
+        ConfirmBox.alert('提示内容~', function() {}, {
+            afterHide: function() {
+                alert('提示已关闭~');
+            },
+            title: '提示信息',
+            closeTpl: '×',
+            hideOnClick: true
+        });
+    });
+</script>
+</body>
+</html>

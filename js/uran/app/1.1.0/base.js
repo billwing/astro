@@ -1,0 +1,1 @@
+define("uran/app/1.1.0/base",["$","lib/base/1.1.1/base","lib/class/1.1.0/class","lib/events/1.1.0/events"],function(a){"use strict";var b=a("$"),c=a("lib/base/1.1.1/base"),d=c.extend({attrs:{touchend:b.support.touch?"touchend":"click"},initialize:function(a,b,c){d.superclass.initialize.call(this,a),this.parent=b,this.root=c||b&&b.root||b,this.setup&&this.setup()}});return d});

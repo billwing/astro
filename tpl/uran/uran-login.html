@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, minimal-ui">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>登录 — 移动前端H5开发模板</title>
+    <link rel="stylesheet" href="http://s.n8n8.cn/Css/??uran/base-ui/2.0.2/base-ui.min.css">
+    <style type="text/css">
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+        body {
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            font-family: "Microsoft Yahei", tahoma, arial, "Hiragino Sans GB", \5b8b\4f53;
+            font-size: 1rem;          
+            -webkit-user-select: none;
+            -ms-touch-select: none;
+            -ms-touch-action: none;
+            -webkit-box-orient: vertical;
+            -moz-box-orient: vertical;
+            -ms-flex-direction: column;
+        }
+        header {
+            -moz-box-flex: 0;
+            font-size: 1.125rem;
+            line-height: 41px;
+            text-align: center;
+            color: #fff;
+            background: #000;
+            background-image: -webkit-gradient(linear,left top,left bottom,from(#525252),to(#424242));
+            background-image: -webkit-linear-gradient(#525252,#424242);
+            background-image: -ms-linear-gradient(#525252,#424242);
+            background-image: linear-gradient(#525252,#424242);
+        }
+        footer {
+            -moz-box-flex: 0;
+            font-size: .875rem;
+            line-height: 41px;
+            text-align: center;
+            color: #fff;
+            border-top: 1px solid #444;
+            background: #121212;
+            background-image: -webkit-gradient(linear,left top,left bottom,from(#505050),to(#121212));
+            background-image: -webkit-linear-gradient(#505050, #121212);
+            background-image: -ms-linear-gradient(#505050, #121212);
+            background-image: linear-gradient(#505050,#121212);
+        }
+
+        .content {
+            -webkit-box-flex: 1;
+            -ms-flex: 1;
+            -moz-box-flex: 1;
+            overflow: hidden;
+            padding: 35px 10px;
+            background: #f6f6f6;
+        }
+
+        .login .ui-field-label {
+            float: left;
+            width: 70px;
+            height: 38px;
+            line-height: 38px;
+            text-align: right;
+            color: #333;
+        }
+        .login .ui-field-input label,
+        .ui-field-input input {
+            height: 38px;
+            padding: 5px 32px 4px 8px;
+        }
+        .login .ui-field-message {
+            display: block;
+            height: 15px;
+        }
+        .login .ui-button-submit {
+            color: #fff;
+            border: 1px solid #d54e1e;
+            background-image: -webkit-gradient(linear,left top,left bottom,from(#fa8d2b),to(#f37300));
+            background-image: -webkit-linear-gradient(#fa8d2b, #f37300);
+            background-image: -ms-linear-gradient(#fa8d2b, #f37300);
+            background-image: linear-gradient(#fa8d2b,#f37300);
+        }
+        .login .ui-button-normal {
+            margin-top: 10px;
+            color: #505050;
+            border-color: #c1c1c1;
+            background: #fff;
+        }
+
+    </style>
+</head>
+
+<body>
+<header>
+    <h1>用户登录</h1>
+</header>
+
+<section class="content">
+    <div class="login">
+        <form id="logForm" action="#" method="POST" name="logForm">
+            <div class="ui-field">
+                <div class="ui-field-label">
+                    <label for="userAcc" class="ui-label">用户名：</label>
+                </div>
+                <div class="ui-field-input">
+                    <input id="userAcc" type="text" placeholder="手机号/邮箱/昵称" value="" />
+                </div>
+                <div class="ui-field-message"></div>
+            </div>
+
+            <div class="ui-field">
+                <div class="ui-field-label">
+                    <label for="userPwd" class="ui-label">密&nbsp;&nbsp;&nbsp;&nbsp;码：</label>
+                </div>
+                <div class="ui-field-input">
+                    <input id="userPwd" type="password" placeholder="密码" value="" />
+                </div>
+                <div class="ui-field-message"></div>
+            </div>
+
+            <div class="ui-field">
+                <input id="logSub" type="submit" class="ui-button ui-button-submit" value="绑&nbsp;&nbsp;&nbsp;定" />
+            </div>
+
+            <div class="ui-field">
+                <a href="#" class="ui-button ui-button-normal">免费注册</a>
+            </div>
+        </form>
+    </div>
+</section>
+
+<script id="seajsnode" src="http://s.n6n6.cn/Js/??seajs/2.1.1/sea.js"></script>
+<script>
+    seajs.config({
+        //base: '/js/',
+        alias: {
+            //'$': 'uran/jquto/1.0.0/jquto',
+            '$': 'core/zepto/1.0.0/zepto',
+            'picomodal': 'gallery/picomodal/1.0.0/picomodal'
+        }
+    });
+
+    seajs.use(['$', 'picomodal'], function($, picoModal) {
+        var pid = getUrlParam('wxopenid');
+
+        $('#regBtn').attr('href', 'http://m.yidejia.com/index.html?from=weixin&wxopenid=' + pid + '#register');
+
+        $('#logForm').on('submit', function(e) {
+            var e = e || window.event;
+            e.preventDefault();
+            var acc = $('#userAcc').val();
+            var pwd = $('#userPwd').val();
+            var did = getUrlParam('did');
+            $.ajax({
+                type: 'GET',
+                url: 'http://www.yidejia.com/index.php?m=index&c=user&a=mBindingWx',
+                data: 'account=' + acc + '&password=' + pwd + '&wxopenid=' + pid + '&did=' + did,
+                dataType: 'jsonp',
+                beforeSend: function() {
+                    $('#loading').show();
+                },
+                success: function(r) {
+                    var code = r.code;
+                    var msg = r.msg;
+                    var res = r.response;
+
+                    $('#loading').hide();
+
+                    if(code == 1) {
+                        $.get('http://wx.atido.com/index.php?m=index&c=chaxun&a=sendKeFuNews', {wxopenid: pid}, function(r) {}, 'jsonp');
+
+                        var sucAlert = picoModal(msg);
+                        if(res) {
+                            sucAlert.onClose(function() {
+                                location.href = res;
+                            });
+                        }
+                    } else {
+                        picoModal(msg);
+                    }
+                }
+            });
+        });
+
+        // 获取URL参数值
+        function getUrlParam(name) {
+            var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]); return null;
+        }
+    });
+
+</script>
+
+</body>
+</html>

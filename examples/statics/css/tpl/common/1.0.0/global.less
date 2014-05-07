@@ -1,0 +1,34 @@
+@charset "utf-8";
+
+/*
+ * @name: global
+ * @overview: global less
+ * @author: tbrweb@gmail.com
+ * @create: 2014-01-09
+ * @revise: 2014-05-06
+ */
+
+// Base url
+@cssUrl: "http://s.n8n8.cn/Css";
+@imgUrl: "../../images/astro/";
+
+// Core variables and mixins
+@import "@{cssUrl}/less/variables.less"; // Modify this for custom colors, font-sizes, etc
+@import "@{cssUrl}/less/mixins.less"; // A basic mixin is essentially an include or a partial for a snippet of CSS
+
+// Font
+@fontSizeMedium: 13px;
+
+// Color
+@red: #9d261d;
+@green: #46a546;
+@blue: #049cdb;
+@orange: #f89406;
+@gray: #666666;
+@borderColor: #f1f1f1;
+@bgColor: #f0f0f0;
+
+// Function
+.bg(@img, @left: 0, @top: 0) {
+	background: url("@{imgUrl}@{img}") no-repeat @left @top;
+}

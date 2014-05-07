@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, minimal-ui">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>移动前端H5开发模板</title>
+    <link rel="stylesheet" href="http://s.n8n8.cn/Css/uran/base-ui/2.0.2/base-ui.min.css">
+    <style type="text/css">
+        /* reset */
+        @-ms-viewport{width:320px;}*,*:before,*:after{-webkit-box-sizing:border-box;box-sizing:border-box;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;text-size-adjust:none;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);}
+        body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}
+        table{border-collapse:collapse;border-spacing:0;}
+        fieldset,img{border:0;}
+        address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}
+        li{list-style:none;}
+        caption,th{text-align:left;}
+        h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+        q:before,q:after{content:"";}
+        abbr,acronym{border:0;font-variant:normal;}
+        sup{vertical-align:text-top;}
+        sub{vertical-align:text-bottom;}
+        input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}
+        input:password{ime-mode:disabled;}
+        *:focus{outline:none;}
+        /* global */
+        body,input,textarea,select,button{font-size:1rem;line-height:1.5;color:#333;}
+        html,body{height:100%;font-family:microsoft yahei;-webkit-touch-callout:none;}
+        .ui-content{min-height:200px;}
+        body,.ui-page{background-color:#f6f6f6;}
+        .ui-page{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+        input{line-height:1;}
+        a,a:visited{color:#2277bb;text-decoration:none;}
+        form{padding:5px;color:#808080;}
+        h2{color:#333;}
+        h3{color:#808080;}
+        .center{text-align:center;}
+        .text-right{text-align:right;}
+        .larger{font-size:1.125em;}
+        .smaller{font-size:.875em;}
+        .black{color:#333;}
+        .gray{color:#808080;}
+        .orange{color:#f60;}
+        .ime-disabled{ime-mode:disabled;}
+        .fn-clear:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0;}
+        body .fn-hide{display:none;}
+        .fn-left,.fn-right{display:inline;}
+        .fn-left{float:left;}
+        .fn-right{float:right;}
+        .ui-fixed{position:fixed;}
+        .ui-fixed-bottom{left:5px;right:5px;bottom:0;}
+        .ui-icon{display:block;}
+        .icon-arrow,.icon-arrow-horizontal{background:none;width:16px;height:16px;border-bottom:solid 4px #a6a6a6;border-right:solid 4px #a6a6a6;}
+        .product{position:relative;padding:8px 5px 4px;}
+        .product .price{font-size:1.2em;color:#f60;}
+        #J-refresh{position:absolute;left:-9999px;top:-9999px;}
+        /* widget */
+        .ui-header{position:relative;z-index:1;padding:3px 0;box-shadow:inset 0 1px 0 rgba(0,0,0,0.15),0 1px 8px rgba(0,0,0,0.5);-webkit-box-shadow:inset 0 1px 0 rgba(0,0,0,0.15),0 1px 8px rgba(0,0,0,0.5);-ms-box-shadow:inset 0 1px 0 rgba(0,0,0,0.15),0 1px 8px rgba(0,0,0,0.5);background:#000;background-image:-webkit-gradient(linear,left top,left bottom,from(#323d43),to(#000));background-image:-webkit-linear-gradient(#323d43,#000);background-image:-ms-linear-gradient(#323d43,#000);background-image:linear-gradient(#323d43,#000)}
+        .ui-header h1{margin:6px auto 5px;line-height:1em;text-align:center;width:90px;height:30px;color:#fff;text-indent:-9999em;overflow:hidden}
+        .ui-header h1,.ui-header .icon-reverse{background-repeat:no-repeat}
+        .ui-header .icon-normal{position:absolute;top:5px;right:5px;width:60px;height:36px;line-height:36px;text-align:center;color:#fff!important;border:1px solid #000;border-radius:3px;-webkit-border-radius:3px;-ms-border-radius:3px;box-shadow:inset 0 -1px 1px 1px rgba(255,255,255,0.2);-webkit-box-shadow:inset 0 -1px 1px 1px rgba(255,255,255,0.2);-ms-box-shadow:inset 0 -1px 1px 1px rgba(255,255,255,0.2);background:#000;background-image:-webkit-gradient(linear,left top,left bottom,from(#323d43),to(#000));background-image:-webkit-linear-gradient(#323d43,#000);background-image:-ms-linear-gradient(#323d43,#000);background-image:linear-gradient(#323d43,#000)}
+        .ui-list li{margin:5px 0}.ui-list a,.ui-list button{display:block;position:relative;padding:8px 30px 8px 8px;width:100%;line-height:26px;border:1px solid #bfbfbf;background-color:#fff;color:#333;text-align:left;border-radius:6px;-webkit-border-radius:6px;-ms-border-radius:6px}.ui-list a:active,.ui-list button:active,.ui-list a:hover,.ui-list button:hover{border-color:#ff9a51;background:#fff3e7;background-image:-webkit-gradient(linear,left top,left bottom,from(#ffe5cb),to(#fff3e7));background-image:-webkit-linear-gradient(#ffe5cb,#fff3e7);background-image:-ms-linear-gradient(#ffe5cb,#fff3e7);background-image:linear-gradient(#ffe5cb,#fff3e7)}.ui-list .icon-arrow-horizontal{position:absolute;top:50%;right:14px;margin-top:-8px;z-index:1;-webkit-transform:rotate(315deg);-ms-transform:rotate(315deg);transform:rotate(315deg)}.ui-list :active .icon-arrow-horizontal,.ui-list :hover .icon-arrow-horizontal{border-color:#f60}
+    </style>
+    <style type="text/css">
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+        body {
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            font-family: "Microsoft Yahei", tahoma, arial, "Hiragino Sans GB", \5b8b\4f53;
+            font-size: 1rem;          
+            -webkit-user-select: none;
+            -ms-touch-select: none;
+            -ms-touch-action: none;
+            -webkit-box-orient: vertical;
+            -moz-box-orient: vertical;
+            -ms-flex-direction: column;
+        }
+        header {
+            -moz-box-flex: 0;
+            font-size: 1.125rem;
+            line-height: 41px;
+            text-align: center;
+            color: #fff;
+            background: #000;
+            background-image: -webkit-gradient(linear,left top,left bottom,from(#525252),to(#424242));
+            background-image: -webkit-linear-gradient(#525252,#424242);
+            background-image: -ms-linear-gradient(#525252,#424242);
+            background-image: linear-gradient(#525252,#424242);
+        }
+        footer {
+            -moz-box-flex: 0;
+            font-size: .875rem;
+            line-height: 41px;
+            text-align: center;
+            color: #fff;
+            border-top: 1px solid #444;
+            background: #121212;
+            background-image: -webkit-gradient(linear,left top,left bottom,from(#505050),to(#121212));
+            background-image: -webkit-linear-gradient(#505050, #121212);
+            background-image: -ms-linear-gradient(#505050, #121212);
+            background-image: linear-gradient(#505050,#121212);
+        }
+
+        .grayscale { 
+            -webkit-filter: grayscale(100%);
+            -moz-filter: grayscale(100%);
+            -ms-filter: grayscale(100%);
+            -o-filter: grayscale(100%);
+            filter: grayscale(100%);
+            filter: gray;
+        }
+        .loading {
+            display: inline-block;
+            width: 37px;
+            height: 37px;
+            padding: 5px;
+            vertical-align: middle;
+            border-radius: 20px;
+            box-shadow: 0 0 15px 3px rgba(255,255,255,.6);
+            background: #fff url(http://s.n8n8.cn/Images/common/loading3201.gif) no-repeat 50% 50%;
+        }
+        .loading-overlay {
+            display: none;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            z-index: 10000;
+            width: 100%;
+            height: 100%;
+            opacity: 0.8;
+            background-color: #000;
+        }
+        .loading-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 10001;
+            width: 80px;
+            margin-left: -40px;
+            font-size: .875rem;
+            text-align: center;
+            color: #FFF;
+        }
+        .loading-icon {
+            display: inline-block;
+            width: 37px;
+            height: 37px;
+            padding: 5px;
+            font-size: .875rem;
+            vertical-align: middle;
+            border-radius: 20px;
+            box-shadow: 0 0 15px 3px rgba(255,255,255,.6);
+            background: #EEE url(http://s.n8n8.cn/Images/common/loading3201.gif) no-repeat 50% 50%;
+        }
+        
+        .ui-header {
+            top: 1px;
+            z-index: 2;
+            padding: 0;
+            border-top: 1px #484a48 solid;
+            border-bottom: 1px #484a48 solid;
+            box-shadow: 0 1px 0 #000000, 0 -1px 0 #000000;
+            -webkit-box-shadow: 0 1px 0 #000000, 0 -1px 0 #000000;
+            -ms-box-shadow: 0 1px 0 #000000, 0 -1px 0 #000000;
+            background: #000;
+            background-image: -webkit-gradient(linear,left top,left bottom,from(#4c4d4c),to(#363836));
+            background-image: -webkit-linear-gradient(#4c4d4c,#363836);
+            background-image: -ms-linear-gradient(#4c4d4c,#363836);
+            background-image: linear-gradient(#4c4d4c,#363836);
+        }
+        .ui-header h1 {
+            width: 100%;
+            line-height: 26px;
+            text-indent: 0;
+        }
+        .ui-header .icon-reverse,
+        .ui-header .icon-reverse:hover {
+            left: 10px;
+            width: auto;
+            height: auto;
+            padding: 8px 15px;
+            font-weight: 500;
+            font-size: .938rem;
+            line-height: 1;
+            border: 1px solid #2c2c2c;
+            border-radius: 5px;
+            box-shadow: inset 0 1px rgba(82,82,82,1),inset 0 -1px rgba(82,82,82,1),inset 1px 0 rgba(82,82,82,1),inset -1px 0 rgba(82,82,82,1);
+            -webkit-box-shadow: inset 0 1px rgba(82,82,82,1),inset 0 -1px rgba(82,82,82,1),inset 1px 0 rgba(82,82,82,1),inset -1px 0 rgba(82,82,82,1);
+            -ms-box-shadow: inset 0 1px rgba(82,82,82,1),inset 0 -1px rgba(82,82,82,1),inset 1px 0 rgba(82,82,82,1),inset -1px 0 rgba(82,82,82,1);
+            background: #000;
+            background-image: -webkit-gradient(linear,left top,left bottom,from(#525252),to(#424242));
+            background-image: -webkit-linear-gradient(#525252,#424242);
+            background-image: -ms-linear-gradient(#525252,#424242);
+            background-image: linear-gradient(#525252,#424242);
+        }
+
+        .ui-content {
+            -webkit-box-flex: 1;
+            -ms-flex: 1;
+            -moz-box-flex: 1;
+            overflow: hidden;
+            padding: 15px 0;
+            background: #f6f6f6;
+        }
+        
+        .ui-list {
+            padding: 55px 10px;
+        }
+
+        .ui-list li a {
+            width: auto;
+        }
+
+        /*.iscroller {
+            position: absolute;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            -webkit-transform: translateZ(0);
+            -moz-transform: translateZ(0);
+            -ms-transform: translateZ(0);
+            -o-transform: translateZ(0);
+            transform: translateZ(0);
+            -webkit-touch-callout: none;
+        }*/
+        
+        .iscroller {
+            /* overflow: auto; */
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+            width: 100%;
+            -webkit-transform: translateZ(0);
+            -moz-transform: translateZ(0);
+            -ms-transform: translateZ(0);
+            -o-transform: translateZ(0);
+            transform: translateZ(0);
+            -webkit-touch-callout: none;
+        }
+
+        .ui-footer {
+            position: fixed;
+            bottom: 0;
+            z-index: 2;
+            width: 100%;
+        }
+        .ui-footer a:link,
+        .ui-footer a:visited {
+            color: #d0d0d0;
+        }
+        
+        /* dialog */
+        .dialog {
+            visibility: hidden;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 999;
+            width: 260px;
+            margin: -123px 0 0 -130px;
+            color: #444;
+            border: 2px solid #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0,0,0,.4);
+            opacity: 0;
+            transition: all .2s ease-out;
+            background-color: white;
+        }
+        .dialog-overlay {
+            visibility: hidden;
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 99;
+            opacity: 0;
+            transition: opacity .2s ease-out;
+            background-color: rgba(0,0,0,.4);
+        }
+        .dialog h2 {
+            position: relative;
+            margin: 0;
+            padding: 5px 15px;
+            line-height: 30px;
+            text-shadow: 0 1px 0 rgba(0,0,0,.4);
+            color: #FFF;
+            border-bottom: 1px solid #6b696b;
+            border-radius: 5px 5px 0 0;
+            background-color: #000;
+            /*background-image: -webkit-gradient(linear,left top,left bottom,from(#323d43),to(#000));
+            background-image: -webkit-linear-gradient(#323d43, #000);
+            background-image: -ms-linear-gradient(#323d43, #000);
+            background-image: linear-gradient(#323d43,#000);*/
+            background: url(../../images/uran/dialog-hd-bg.png);
+        }
+        .dialog .icon-hd {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+            vertical-align: middle;
+            background: url(../../images/uran/icon-arrow.png);
+        }
+        .dialog .close {
+            display: block;
+            position: absolute;
+            top: 3px;
+            right: 10px;
+            font-size: 24px;
+            line-height: normal;
+            text-decoration: none;
+            text-shadow: none;
+            color: white;
+        }
+        .dialog .dialog-content {
+            min-height: 50px;
+            padding: 10px 15px;
+            color: #ffffff;
+            background: url(../../images/uran/dialog-hd-bg.png);
+        }
+        .dialog .dialog-footer {
+            height: 40px;
+            font-size: .875rem;
+            line-height: 40px;
+            text-align: center;
+            border-top: 1px solid #ccc;
+            background-color: #eee;
+        }
+        .dialog .dialog-btn {
+            display: inline-block;
+            width: 100px;
+            margin: 0 10px 0 0;
+            padding: 5px 10px;
+            line-height: 20px;
+            text-align: center;
+            text-decoration: none;
+            color: #000;
+            border: 1px solid #949294;
+            border-radius: 3px;
+            background-color: #f7f3f7;
+            background-image: -webkit-gradient(linear,left top,left bottom,from(#f7f3f7),to(#bdbebd));
+            background-image: -webkit-linear-gradient(#f7f3f7, #bdbebd);
+            background-image: -ms-linear-gradient(#f7f3f7, #bdbebd);
+            background-image: linear-gradient(#f7f3f7,#bdbebd);
+        }
+        .dialog .dialog-btn:last-child {
+            margin-right: 0;
+        }
+        .dialog .dialog-btn:hover {
+            background-color: #893140;
+        }
+        .dialog .dialog-btn:active {
+            background-color: #712936;
+        }
+        .dialog:target {
+            visibility: visible;
+            margin-top: -100px;
+            opacity: 1;
+        }
+        .dialog:target + .dialog-overlay {
+            visibility: visible;
+            opacity: 1;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- <a href="#dialog-1">打开对话框</a>
+<div id="dialog-1" class="dialog">
+    <h2><i class="icon-hd"></i>提示信息<a class="close" href="#closed">&#215;</a></h2>
+    <section class="dialog-content">
+        <p>CSS3对话框</p>
+        <i class="loading"></i>
+        正在加载中……
+    </section>
+    <div class="dialog-footer">
+        <a class="dialog-btn" href="#">确定</a>
+        <a class="dialog-btn" href="#">取消</a>
+    </div>
+</div>
+<div class="dialog-overlay"></div> -->
+
+<header class="ui-header" data-role="header">
+    <h1>移动前端开发</h1>
+    <a class="ui-icon icon-reverse" href="./" title="返回">返回</a>
+</header>
+
+<section class="ui-content" data-role="content">
+    <div class="iscroller">
+        <ul class="ui-list" data-role="list">
+            <li>
+                <a href="uran-page.html">列表标题测试<span class="ui-icon icon-arrow-horizontal"></span></a>
+            </li>
+            <li>
+                <a href="uran-page.html">列表标题测试<span class="ui-icon icon-arrow-horizontal"></span></a>
+            </li>
+            <li>
+                <a href="uran-page.html">列表标题测试<span class="ui-icon icon-arrow-horizontal"></span></a>
+            </li>
+            <li>
+                <a href="uran-page.html">列表标题测试<span class="ui-icon icon-arrow-horizontal"></span></a>
+            </li>
+            <li>
+                <a href="uran-page.html">列表标题测试<span class="ui-icon icon-arrow-horizontal"></span></a>
+            </li>
+            <li>
+                <a href="uran-page.html">列表标题测试<span class="ui-icon icon-arrow-horizontal"></span></a>
+            </li>
+            <li>
+                <a href="uran-page.html">列表标题测试<span class="ui-icon icon-arrow-horizontal"></span></a>
+            </li>
+            <li>
+                <a href="uran-page.html">列表标题测试<span class="ui-icon icon-arrow-horizontal"></span></a>
+            </li>
+            <li>
+                <a href="uran-page.html">列表标题测试<span class="ui-icon icon-arrow-horizontal"></span></a>
+            </li>
+            <li>
+                <a href="uran-page.html">列表标题测试<span class="ui-icon icon-arrow-horizontal"></span></a>
+            </li>
+            <li>
+                <a href="uran-page.html">列表标题测试<span class="ui-icon icon-arrow-horizontal"></span></a>
+            </li>
+            <li>
+                <a href="uran-page.html">列表标题测试<span class="ui-icon icon-arrow-horizontal"></span></a>
+            </li>
+            <li>
+                <a href="uran-page.html">列表标题测试<span class="ui-icon icon-arrow-horizontal"></span></a>
+            </li>
+            <li>
+                <a href="uran-page.html">列表标题测试<span class="ui-icon icon-arrow-horizontal"></span></a>
+            </li>
+            <li>
+                <a href="uran-page.html">列表标题测试<span class="ui-icon icon-arrow-horizontal"></span></a>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<footer class="ui-footer" data-role="footer">
+    <p>
+        <a href="http://www.jingzhuan.cn/">经传软件</a> •
+        <a href="http://www.yidejia.com/">伊的家</a> •
+        <a href="http://www.ezhiedu.com/">伊智教育</a>
+    </p>
+</footer>
+
+<div id="loading" class="loading-overlay">
+    <div class="loading-box">
+        <i class="loading-icon"></i>
+        <p class="loading-text">请稍后……</p>        
+    </div>
+</div>
+
+<script id="tplItem" type="text/x-underscore-template">
+    <%_.each(tplData, function(item) {%>
+        <li>
+            <p class="name"><i class="icon-comm icon-rev"></i><%=item.name%></p>
+            <p class="cont"><%=item.msg%></p>
+            <p class="date"><%=item.time%></p>
+        </li>
+    <%});%>
+</script>
+
+<script id="seajsnode" src="http://s.n6n6.cn/Js/??seajs/2.1.1/sea.js"></script>
+<script>
+    seajs.config({
+        base: '/js/',
+        alias: {
+            //'$': 'uran/jquto/1.0.0/jquto',
+            '$': 'core/zepto/1.0.0/zepto',
+            'picomodal': 'gallery/picomodal/1.0.0/picomodal',
+            'underscore': 'gallery/underscore/1.5.2/underscore',
+            'iscroll': 'uran/iscroll/5.0.0/iscroll',
+            'sweet': 'uran/sweet/1.0.0/sweet',
+            'validator': 'uran/validator/1.0.0/validator'
+        }
+    });
+    
+    seajs.use(['$', 'picomodal', 'underscore', 'iscroll', 'sweet', 'validator'], function ($, picoModal, _, IScroll, Sweet) {
+        // picoModal
+        /*picoModal({
+            content: '请不要关闭哦~',
+            width: 300,
+            closeButton: true
+        });*/
+
+        // Validator
+        /*var validator = new Validator('validatForm', {
+            stopOnError: false,
+            autoSubmit: false
+        });*/
+
+        // IScroll
+        /*$('.iscroller').each(function (i, scroller) {
+            new IScroll(scroller, {
+                scrollbars: true,
+                mouseWheel: true,
+                interactiveScrollbars: true,
+                shrinkScrollbars: 'scale',
+                fadeScrollbars: true
+            });
+        });*/
+        var listScroll = new IScroll('.iscroller', {
+            scrollbars: true,
+            mouseWheel: true,
+            interactiveScrollbars: true,
+            shrinkScrollbars: 'scale',
+            fadeScrollbars: true
+        });
+
+        // Form submit
+        $('#logForm').on('submit', function(e) {
+            var e = e || window.event;
+            e.preventDefault();
+            var $this = $(this);
+            var acc = $('#userAcc').val();
+            var pwd = $('#userPwd').val();
+            var pid = getUrlParam('pid');
+            $.ajax({
+                type: 'POST',
+                url: '#',
+                data: 'account=' + acc + '&password=' + pwd + '&pid=' + pid,
+                dataType: 'json',
+                success: function(r) {
+                    var code = r.code;
+                    var msg = r.msg;
+                    var res = r.response;
+
+                    if(code == 1) {
+                        picoModal(msg);
+                        $this[0].reset();
+                    } else {
+                        var errAlert = picoModal(msg);
+                        errAlert.onClose(function() {
+                            location.href = res;
+                        });
+                    }
+
+                }
+            });
+        });
+
+        // Sweet
+        var swtHtml = '<ul>'
+            // 可以使用Javascript表达式
+            + '<%foreach ($data as item) { if (item.showMe) { %>'
+                // <%= value %> is the assignment statement
+                + '<li><%= item.name %></li>'
+            + '<% } } %>'    
+        + '</ul>';
+        var swtData = [{showMe: true, name: "Jerry"}, {showMe: false, name: "Mark"}, {showMe: true, name: "Scotti"}, {showMe: true, name: "Carol"}, {showMe: false, name: "Tina"}, {showMe: true, name: "Owen"}];
+        var swtCont = Sweet(swtHtml).applyData(swtData);
+        //$('body').append(swtCont);
+
+        // Underscore
+        /*$.getJSON("#", {key: value}, function(r){
+            var res = r.response;
+            tplData = [
+                {
+                    name: "张三",
+                    content: "是好人",
+                    date: "2013-12-30"
+                },
+                {
+                    name: "李四",
+                    content: "是坏人",
+                    date: "2013-12-31"
+                }
+            ];      
+            $("body").html(_.template($("#tplItem").html(), tplData));
+        });*/
+
+        // 获取URL参数值
+        function getUrlParam(name) {
+            var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]); return null;
+        }
+    });
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "name": "sweet",
+  "version": "1.0.0",
+  "family": "handy",
+  "description": "一个轻量级的模板引擎",
+  "homepage": "http://code.google.com/p/sweet-template/",
+  "author": "Mark Wang <wanglingshu@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/handyjs/autocomplete.git"
+  },
+  "bugs": {
+    "url": "https://github.com/handyjs/autocomplete/issues"
+  },
+  "spm": {
+    "output": [
+      "sweet.js"
+    ]
+  }
+}

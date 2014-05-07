@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><!-- 去除IE8下body边框 -->
+<!--<!DOCTYPE HTML>-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <!-- 去除IE8下body边框 -->
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> -->
+    <title>经传软件</title>
+    <meta name="keywords" content="经传软件">
+    <meta name="description" content="经传软件">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="http://static.n8n8.cn/Public/Images/favicon.ico" type="image/x-icon">
+    <!-- 重设浏览器默认样式 -->
+    <link rel="stylesheet" href="http://static.n8n8.cn/Public/Css/common/base.min.css">
+    <style>
+        html, body {
+            overflow: hidden;
+        }
+        .mini_nav_wrap {
+            background: #F00!important;
+        }
+    </style>
+<!--    <script>
+        /*===== iframe宽高自适应 =====*/
+        var getFFVersion = navigator.userAgent.substring(navigator.userAgent.indexOf("Firefox")).split("/")[1]
+
+        var FFextraHeight = getFFVersion >= 0.1 ? 16 : 0 
+
+        function dynIframeSize(iframename) {
+
+            var pTar = null;
+            if(document.getElementById) {
+                pTar = document.getElementById(iframename);
+            } else {
+                eval('pTar = ' + iframename + ';');
+            }
+
+            if(pTar && !window.opera) {
+                pTar.style.display = "block";
+                if(pTar.contentDocument && pTar.contentDocument.body.offsetHeight) {
+                    // NS6
+                    pTar.height = pTar.contentDocument.body.offsetHeight + FFextraHeight; 
+                } else if(pTar.Document && pTar.Document.body.scrollHeight) {
+                    // IE5+
+                    pTar.height = pTar.Document.body.scrollHeight;
+                }
+
+            }
+
+        }
+    </script>-->
+</head>
+
+<body>
+
+<!-- <iframe scrolling="no" frameborder="no" src="http://www.n8n8.cn/" allowtransparency="true" style="border: medium none; width: 100%; display: block; height: 100%; overflow: hidden;"></iframe> -->
+
+<!-- <iframe id="insertIframe" width="100%" height="100%" marginwidth="0" marginheight="0" scrolling="auto" frameborder="0" allowtransparency="true" src="http://tougu.n8n8.cn/neican/2013-08-27.html" onload="javascript:{dynIframeSize('insertIframe');}"></iframe> -->
+
+<iframe id="insertIframe" style="margin-top:-300px;" width="100%" height="100%" marginwidth="0" marginheight="0" scrolling="auto" frameborder="0" allowtransparency="true" src="http://tougu.n8n8.cn/neican/2013-08-27.html"></iframe>
+
+<script>
+    /*====== 获取浏览器窗口大小 =====*/
+    var winWidth = 0;
+    var winHeight = 0;
+    function setIframeSize() {
+        // iframe Id
+        ifr = document.getElementById('insertIframe');
+        ifr.style.marginBottom = Math.abs(-300);
+        // 获取窗口宽度
+        if(window.innerWidth) {
+            winWidth = window.innerWidth;
+        } else if ((document.body) && (document.body.clientWidth)) {
+            winWidth = document.body.clientWidth;
+        }
+        // 获取窗口高度
+        if(window.innerHeight) {
+            winHeight = window.innerHeight;
+        } else if ((document.body) && (document.body.clientHeight)) {
+            winHeight = document.body.clientHeight;
+        }
+        // 通过深入Document内部对body进行检测，获取窗口大小
+        if (document.documentElement  && document.documentElement.clientHeight && document.documentElement.clientWidth) {
+            winHeight = document.documentElement.clientHeight;
+            winWidth = document.documentElement.clientWidth;
+        }
+        ifr.height = winHeight + Math.abs(-300);
+    }
+    setIframeSize();
+    // 调用函数，获取数值
+    window.onresize = setIframeSize;
+</script>
+</body>
+</html>

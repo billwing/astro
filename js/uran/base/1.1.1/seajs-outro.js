@@ -1,0 +1,1 @@
+if(_seajs&&_seajs.args)for(var methods=["define","config","use"],args=_seajs.args,g=0;g<args.length;g+=2)seajs[methods[args[g]]].apply(seajs,args[g+1]);

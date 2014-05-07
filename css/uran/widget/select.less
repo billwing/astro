@@ -1,0 +1,76 @@
+.ui-select {
+  position:relative;
+  padding:0 8px;
+  height:44px;
+  line-height:42px;
+  border:1px solid #bfbfbf;
+  background-color:#fff;
+  .border-radius(6px);
+  overflow:hidden;
+  color:#333;
+}
+
+.ui-select select {
+  cursor:pointer;
+  width:120%;
+  height:100%;
+  border:none;
+  appearance:none;
+  -webkit-appearance:none;
+}
+
+.ui-select:before,
+.ui-select:after{
+  position:absolute;
+  content:"\0020";
+}
+
+.ui-select:before {
+  width: 42px;
+  height: 42px;
+  top: 0;
+  right: 0;
+  .border-radius(6px);
+  background-color: #fff;
+}
+
+.ui-select:after{
+  width:16px;
+  height:16px;
+  top:10px;
+  right:15px;
+  border-bottom:solid 4px #a6a6a6;
+  border-right:solid 4px #a6a6a6;
+  .transform(rotate(45deg));
+  background:none;
+}
+
+.ui-select-disabled{
+  color:#c7c7c7;
+}
+
+.ui-select-disabled:after{
+  opacity:.7;
+}
+
+/* .ui-select-custom 需要js支持change行为 */
+.ui-select-custom select{
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:1;
+  opacity:0;
+}
+
+.ui-select-custom.ui-select-disabled select{
+  display: none;
+}
+
+.ui-select .ui-select-text em{
+  color:#f60;
+  margin-left:4px;
+}
+
+.ui-select-disabled .ui-select-text em{
+  color:#fcc;
+}

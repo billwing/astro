@@ -1,0 +1,30 @@
+body,input,textarea,select,button{font-size:16px;line-height:1.5;color:#333;}
+html,body{height:100%;font-family:microsoft yahei;-webkit-touch-callout:none;}
+.ui-content{min-height:200px;}
+body,.ui-page{background-color:#f2f2f2;}
+.ui-page{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+input{line-height:1;}
+a,a:visited{color:#2277bb;text-decoration:none;}
+form{padding:5px;color:#808080;}
+h2{color:#333;}
+h3{color:#808080;}
+.center{text-align:center;}
+.text-right{text-align:right;}
+.larger{font-size:1.125em;}
+.smaller{font-size:.875em;}
+.black{color:#333;}
+.gray{color:#808080;}
+.orange{color:#f60;}
+.ime-disabled{ime-mode:disabled;}
+.fn-clear:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0;}
+body .fn-hide{display:none;}
+.fn-left,.fn-right{display:inline;}
+.fn-left{float:left;}
+.fn-right{float:right;}
+.ui-fixed{position:fixed;}
+.ui-fixed-bottom{left:5px;right:5px;bottom:0;}
+.ui-icon{display:block;}
+.icon-arrow,.icon-arrow-horizontal{background:none;width:16px;height:16px;border-bottom:solid 4px #a6a6a6;border-right:solid 4px #a6a6a6;}
+.product{position:relative;padding:8px 5px 4px;}
+.product .price{font-size:1.2em;color:#f60;}
+#J-refresh{position:absolute;left:-9999px;top:-9999px;}

@@ -1,0 +1,90 @@
+.ui-field{
+  margin:5px 0;
+}
+
+.ui-field:after{
+  content:"\0020";
+  display:block;
+  height:0;
+  clear:both
+}
+
+.ui-field label{
+  display:block;
+}
+
+.ui-field-default-message,
+.ui-field-message{
+  float: left;
+  font-size:.875em;
+}
+
+.ui-field-error .ui-field-default-message,
+.ui-field-warn .ui-field-default-message{
+  display:none;
+}
+
+.ui-field-message,
+.ui-field-message:after{
+  display:none;
+}
+
+.ui-field-warn .ui-field-message,
+.ui-field-error .ui-field-message {
+  float:right;
+  position:relative;
+  margin-top:3px;
+  padding:2px 5px 1px;
+  color:#fff;
+  font-size:.875em;
+  .border-radius(5px);
+}
+
+.ui-field-warn .ui-field-message:after,
+.ui-field-error .ui-field-message:after {
+  content:"";
+  position:absolute;
+  z-index:1;
+  width:4px;
+  height:4px;
+  top:-2px;
+  right:19px;
+  .transform(rotate(45deg));
+}
+
+.ui-field-warn .ui-field-message,
+.ui-field-warn .ui-field-message:after {
+  background-color:#ff8634;
+}
+
+.ui-field-error .ui-field-message,
+.ui-field-error .ui-field-message:after {
+  background-color:#ff3a0c;
+}
+
+.ui-field-warn .ui-field-message,
+.ui-field-error .ui-field-message,
+.ui-field-warn .ui-field-message:after,
+.ui-field-error .ui-field-message:after{
+  display:block;
+}
+
+.ui-field-warn .ui-field-input input,
+.ui-field-warn .ui-select,
+.ui-field-warn .ui-checkbox{
+  border-color:#ff8634;
+}
+
+.ui-field-error .ui-field-input input,
+.ui-field-error .ui-select,
+.ui-field-error .ui-checkbox{
+  border-color:#ff3a0c;
+}
+
+.ui-field-error .ui-field-item-reset input{
+  border-color:#bfbfbf;
+}
+
+.ui-field-pack .ui-field-message:after{
+  display:none;
+}

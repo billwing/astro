@@ -1,0 +1,527 @@
+[
+	{
+		"title": "微笑",
+		"value": "[微笑]",
+		"image": "1"
+	},
+	{
+		"title": "撇嘴",
+		"value": "[撇嘴]",
+		"image": "2"
+	},
+	{
+		"title": "色",
+		"value": "[色]",
+		"image": "3"
+	},
+	{
+		"title": "发呆",
+		"value": "[发呆]",
+		"image": "4"
+	},
+	{
+		"title": "得意",
+		"value": "[得意]",
+		"image": "5"
+	},
+	{
+		"title": "流泪",
+		"value": "[流泪]",
+		"image": "6"
+	},
+	{
+		"title": "害羞",
+		"value": "[害羞]",
+		"image": "7"
+	},
+	{
+		"title": "闭嘴",
+		"value": "[闭嘴]",
+		"image": "8"
+	},
+	{
+		"title": "睡",
+		"value": "[睡]",
+		"image": "9"
+	},
+	{
+		"title": "大哭",
+		"value": "[大哭]",
+		"image": "10"
+	},
+	{
+		"title": "尴尬",
+		"value": "[尴尬]",
+		"image": "11"
+	},
+	{
+		"title": "发怒",
+		"value": "[发怒]",
+		"image": "12"
+	},
+	{
+		"title": "调皮",
+		"value": "[调皮]",
+		"image": "13"
+	},
+	{
+		"title": "呲牙",
+		"value": "[呲牙]",
+		"image": "14"
+	},
+	{
+		"title": "惊讶",
+		"value": "[惊讶]",
+		"image": "15"
+	},
+	{
+		"title": "难过",
+		"value": "[难过]",
+		"image": "16"
+	},
+	{
+		"title": "酷",
+		"value": "[酷]",
+		"image": "17"
+	},
+	{
+		"title": "冷汗",
+		"value": "[冷汗]",
+		"image": "18"
+	},
+	{
+		"title": "抓狂",
+		"value": "[抓狂]",
+		"image": "19"
+	},
+	{
+		"title": "吐",
+		"value": "[吐]",
+		"image": "20"
+	},
+	{
+		"title": "偷笑",
+		"value": "[偷笑]",
+		"image": "21"
+	},
+	{
+		"title": "可爱",
+		"value": "[可爱]",
+		"image": "22"
+	},
+	{
+		"title": "白眼",
+		"value": "[白眼]",
+		"image": "23"
+	},
+	{
+		"title": "傲慢",
+		"value": "[傲慢]",
+		"image": "24"
+	},
+	{
+		"title": "饥饿",
+		"value": "[饥饿]",
+		"image": "25"
+	},
+	{
+		"title": "困",
+		"value": "[困]",
+		"image": "26"
+	},
+	{
+		"title": "惊恐",
+		"value": "[惊恐]",
+		"image": "27"
+	},
+	{
+		"title": "流汗",
+		"value": "[流汗]",
+		"image": "28"
+	},
+	{
+		"title": "憨笑",
+		"value": "[憨笑]",
+		"image": "29"
+	},
+	{
+		"title": "大兵",
+		"value": "[大兵]",
+		"image": "30"
+	},
+	{
+		"title": "奋斗",
+		"value": "[奋斗]",
+		"image": "31"
+	},
+	{
+		"title": "咒骂",
+		"value": "[咒骂]",
+		"image": "32"
+	},
+	{
+		"title": "疑问",
+		"value": "[疑问]",
+		"image": "33"
+	},
+	{
+		"title": "嘘..",
+		"value": "[嘘..]",
+		"image": "34"
+	},
+	{
+		"title": "晕",
+		"value": "[晕]",
+		"image": "35"
+	},
+	{
+		"title": "折磨",
+		"value": "[折磨]",
+		"image": "36"
+	},
+	{
+		"title": "衰",
+		"value": "[衰]",
+		"image": "37"
+	},
+	{
+		"title": "骷髅",
+		"value": "[骷髅]",
+		"image": "38"
+	},
+	{
+		"title": "敲打",
+		"value": "[敲打]",
+		"image": "39"
+	},
+	{
+		"title": "再见",
+		"value": "[再见]",
+		"image": "40"
+	},
+	{
+		"title": "擦汗",
+		"value": "[擦汗]",
+		"image": "41"
+	},
+	{
+		"title": "抠鼻",
+		"value": "[抠鼻]",
+		"image": "42"
+	},
+	{
+		"title": "鼓掌",
+		"value": "[鼓掌]",
+		"image": "43"
+	},
+	{
+		"title": "糗大了",
+		"value": "[糗大了]",
+		"image": "44"
+	},
+	{
+		"title": "坏笑",
+		"value": "[坏笑]",
+		"image": "45"
+	},
+	{
+		"title": "左哼哼",
+		"value": "[左哼哼]",
+		"image": "46"
+	},
+	{
+		"title": "右哼哼",
+		"value": "[右哼哼]",
+		"image": "47"
+	},
+	{
+		"title": "哈欠",
+		"value": "[哈欠]",
+		"image": "48"
+	},
+	{
+		"title": "鄙视",
+		"value": "[鄙视]",
+		"image": "49"
+	},
+	{
+		"title": "委屈",
+		"value": "[委屈]",
+		"image": "50"
+	},
+	{
+		"title": "快哭了",
+		"value": "[快哭了]",
+		"image": "51"
+	},
+	{
+		"title": "阴险",
+		"value": "[阴险]",
+		"image": "52"
+	},
+	{
+		"title": "亲亲",
+		"value": "[亲亲]",
+		"image": "53"
+	},
+	{
+		"title": "吓",
+		"value": "[吓]",
+		"image": "54"
+	},
+	{
+		"title": "可怜",
+		"value": "[可怜]",
+		"image": "55"
+	},
+	{
+		"title": "菜刀",
+		"value": "[菜刀]",
+		"image": "56"
+	},
+	{
+		"title": "西瓜",
+		"value": "[西瓜]",
+		"image": "57"
+	},
+	{
+		"title": "啤酒",
+		"value": "[啤酒]",
+		"image": "58"
+	},
+	{
+		"title": "篮球",
+		"value": "[篮球]",
+		"image": "59"
+	},
+	{
+		"title": "乒乓",
+		"value": "[乒乓]",
+		"image": "60"
+	},
+	{
+		"title": "咖啡",
+		"value": "[咖啡]",
+		"image": "61"
+	},
+	{
+		"title": "饭",
+		"value": "[饭]",
+		"image": "62"
+	},
+	{
+		"title": "猪头",
+		"value": "[猪头]",
+		"image": "63"
+	},
+	{
+		"title": "玫瑰",
+		"value": "[玫瑰]",
+		"image": "64"
+	},
+	{
+		"title": "凋谢",
+		"value": "[凋谢]",
+		"image": "65"
+	},
+	{
+		"title": "示爱",
+		"value": "[示爱]",
+		"image": "66"
+	},
+	{
+		"title": "爱心",
+		"value": "[爱心]",
+		"image": "67"
+	},
+	{
+		"title": "心碎",
+		"value": "[心碎]",
+		"image": "68"
+	},
+	{
+		"title": "蛋糕",
+		"value": "[蛋糕]",
+		"image": "69"
+	},
+	{
+		"title": "闪电",
+		"value": "[闪电]",
+		"image": "70"
+	},
+	{
+		"title": "炸弹",
+		"value": "[炸弹]",
+		"image": "71"
+	},
+	{
+		"title": "刀",
+		"value": "[刀]",
+		"image": "72"
+	},
+	{
+		"title": "足球",
+		"value": "[足球]",
+		"image": "73"
+	},
+	{
+		"title": "瓢虫",
+		"value": "[瓢虫]",
+		"image": "74"
+	},
+	{
+		"title": "便便",
+		"value": "[便便]",
+		"image": "75"
+	},
+	{
+		"title": "月亮",
+		"value": "[月亮]",
+		"image": "76"
+	},
+	{
+		"title": "太阳",
+		"value": "[太阳]",
+		"image": "77"
+	},
+	{
+		"title": "礼物",
+		"value": "[礼物]",
+		"image": "78"
+	},
+	{
+		"title": "拥抱",
+		"value": "[拥抱]",
+		"image": "79"
+	},
+	{
+		"title": "强",
+		"value": "[强]",
+		"image": "80"
+	},
+	{
+		"title": "弱",
+		"value": "[弱]",
+		"image": "81"
+	},
+	{
+		"title": "握手",
+		"value": "[握手]",
+		"image": "82"
+	},
+	{
+		"title": "胜利",
+		"value": "[胜利]",
+		"image": "83"
+	},
+	{
+		"title": "抱拳",
+		"value": "[抱拳]",
+		"image": "84"
+	},
+	{
+		"title": "勾引",
+		"value": "[勾引]",
+		"image": "85"
+	},
+	{
+		"title": "拳头",
+		"value": "[拳头]",
+		"image": "86"
+	},
+	{
+		"title": "差劲",
+		"value": "[差劲]",
+		"image": "87"
+	},
+	{
+		"title": "爱你",
+		"value": "[爱你]",
+		"image": "88"
+	},
+	{
+		"title": "NO",
+		"value": "[NO]",
+		"image": "89"
+	},
+	{
+		"title": "OK",
+		"value": "[OK]",
+		"image": "90"
+	},
+	{
+		"title": "爱情",
+		"value": "[爱情]",
+		"image": "91"
+	},
+	{
+		"title": "飞吻",
+		"value": "[飞吻]",
+		"image": "92"
+	},
+	{
+		"title": "跳跳",
+		"value": "[跳跳]",
+		"image": "93"
+	},
+	{
+		"title": "发抖",
+		"value": "[发抖]",
+		"image": "94"
+	},
+	{
+		"title": "恼火",
+		"value": "[恼火]",
+		"image": "95"
+	},
+	{
+		"title": "转圈",
+		"value": "[转圈]",
+		"image": "96"
+	},
+	{
+		"title": "磕头",
+		"value": "[磕头]",
+		"image": "97"
+	},
+	{
+		"title": "回头",
+		"value": "[回头]",
+		"image": "98"
+	},
+	{
+		"title": "跳绳",
+		"value": "[跳绳]",
+		"image": "99"
+	},
+	{
+		"title": "挥手",
+		"value": "[挥手]",
+		"image": "100"
+	},
+	{
+		"title": "激吻",
+		"value": "[激吻]",
+		"image": "101"
+	},
+	{
+		"title": "街舞",
+		"value": "[街舞]",
+		"image": "102"
+	},
+	{
+		"title": "献吻",
+		"value": "[献吻]",
+		"image": "103"
+	},
+	{
+		"title": "左太极",
+		"value": "[左太极]",
+		"image": "104"
+	},
+	{
+		"title": "右太极",
+		"value": "[右太极]",
+		"image": "105"
+	}
+]

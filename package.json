@@ -1,0 +1,30 @@
+{
+  "family": "astro",
+  "name": "astro",
+  "version": "1.0.0",
+  "description": "A front-end template for the JZ Web",
+  "homepage": "http://astro.org/",
+  "keywords": ["FED", "template"],
+  "author": "Billwing <tbrweb@gmail.com>",
+  "engines": {
+    "node": ">= 0.6.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "~0.4.0",
+    "node-static": "~0.6.9",
+    "grunt-contrib-concat": "~0.2.0",
+    "gcc": "~0.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/astro/astro.git"
+  },
+  "main": "./js/seajs/2.1.1/sea.js",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://astro.org/LICENSE.md"
+    }
+  ]
+}

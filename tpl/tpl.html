@@ -1,0 +1,635 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+    <title>Astro Components Template</title>
+    <style type="text/css">
+        *{margin:0;padding:0;line-height:1.5;}
+        html{background:#f7f7f7;}
+        body{padding:10px 400px 10px 10px;}
+
+        .preview{width:800px;padding:20px 25px;margin-bottom:10px;font:12px/1.5 Courier, "Courier New", Arial, sans-serif;border:1px dotted #aaa;background:#fff;white-space:pre-wrap;ord-wrap:break-word;word-break:break-all;*zoom:1;}
+        .preview h3{font:500 16px 'Microsoft Yahei';margin:0;color:#c30;}
+        
+        #g{width:250px;padding:15px 25px;background:#eee;border:1px solid #bbb;position:fixed;right:10px;top:18px;}
+        #shortcut li{color:#888;margin-left:2em;font:italic 14px/1.6 Courier, 'Courier New';}
+        #shortcut a{color:#464646;font-style:normal;text-decoration:none;text-shadow:1px 1px 2px #fff;}
+        #shortcut a:hover{text-decoration:underline;}
+
+        pre{font-size:13px;border:1px solid #eee;border-left-width:5px;font-family:Courier,'Courier New';word-break:break-word;width:100%;margin:15px 0;padding:10px;background:#fbfbfb;}
+    </style>
+</head>
+<body id="list-0">
+<div id="g">
+    <ol id="shortcut">
+
+    </ol>   
+    <div id="copied"></div>
+</div>
+
+<pre class="brush: xml">
+<h3 id="link-0">列表(.ui-list)</h3>
+&lt;!-- 一般列表 --&gt;
+&lt;ul class="ui-list"&gt;
+    &lt;li class="ui-list-item"&gt;&lt;a href="#"&gt;新闻第一条&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="ui-list-item"&gt;&lt;a href="#"&gt;新闻第一条b&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="ui-list-item"&gt;&lt;a href="#"&gt;新闻第一条c&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- 图文列表 --&gt;
+&lt;ul class="ui-dlist"&gt;
+    &lt;li class="ui-list-item"&gt;
+        &lt;a class="ui-list-item-lnk" href="#"&gt;
+            &lt;p class="ui-list-item-img"&gt;&lt;img src="#"&gt;&lt;/p&gt;
+            &lt;p class="ui-list-item-txt"&gt;图文标题&lt;/p&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="ui-list-item"&gt;
+        &lt;a class="ui-list-item-lnk" href="#"&gt;
+            &lt;p class="ui-list-item-img"&gt;&lt;img src="#"&gt;&lt;/p&gt;
+            &lt;p class="ui-list-item-txt"&gt;图文标题&lt;/p&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+
+<pre class="brush: xml">
+<h3>导航(.ui-nav)</h3>
+&lt;!-- 菜单导航 --&gt;
+&lt;ul class="ui-nav"&gt;
+    &lt;li class="ui-nav-item"&gt;
+        &lt;a href="#"&gt;导航&lt;/a&gt;
+        &lt;ul class="ui-nav-item-child"&gt;
+        	&lt;li&gt;item&lt;/li&gt;
+        	&lt;li&gt;item&lt;/li&gt;
+        	&lt;li&gt;item&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li class="ui-nav-item ui-nav-item-current"&gt;
+        &lt;a href="#"&gt;导航&lt;/a&gt;
+        &lt;ul class="ui-nav-item-child"&gt;
+        	&lt;li&gt;item&lt;/li&gt;
+        	&lt;li&gt;item&lt;/li&gt;
+        	&lt;li&gt;item&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li class="ui-nav-item"&gt;
+        &lt;a href="#"&gt;导航&lt;/a&gt;
+        &lt;ul class="ui-nav-item-child"&gt;
+        	&lt;li&gt;item&lt;/li&gt;
+        	&lt;li&gt;item&lt;/li&gt;
+        	&lt;li&gt;item&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li class="ui-nav-item"&gt;
+        &lt;a href="#"&gt;导航&lt;/a&gt;
+        &lt;ul class="ui-nav-item-child"&gt;
+        	&lt;li&gt;item&lt;/li&gt;
+        	&lt;li&gt;item&lt;/li&gt;
+        	&lt;li&gt;item&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- 目录导航 --&gt;
+&lt;div class="dirnav"&gt;
+    &lt;div class="wrapper"&gt;
+        &lt;a class="nav-ind nav-item" href="/"&gt;网站首页&lt;/a&gt;&gt;
+        &lt;a class="nav-lnk nav-item" href="/"&gt;一级目录&lt;/a&gt;&gt;
+        &lt;a class="nav-lnk nav-item" href="/"&gt;二级目录&lt;/a&gt;&gt;
+        &lt;b class="nav-tit nav-item"&gt;内容标题&lt;/b&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<pre class="brush: xml">
+<h3>标题(.ui-title)</h3>
+&lt;div class="ui-title fn-clear"&gt;
+    &lt;h2 class="ui-title-cnt fn-left"&gt;标题&lt;/h2&gt;
+    &lt;div class="ui-title-subcnt fn-left"&gt;
+        &lt;!-- 标题中的其他内容 --&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- 如果标题没有其他内容，直接这样写 --&gt;
+&lt;h2 class="ui-title"&gt;标题&lt;/h2&gt;
+</pre>
+
+<pre class="brush: xml">
+<h3>步骤(.ui-step)</h3>
+&lt;ol class="ui-step"&gt;
+    &lt;li class="ui-step-item ui-step-item-first"&gt;
+        第一步
+    &lt;/li&gt;
+    &lt;li class="ui-step-item ui-step-item-current"&gt;
+        第二步
+    &lt;/li&gt;
+    &lt;li class="ui-step-item"&gt;
+       当前
+    &lt;/li&gt;
+    &lt;li class="ui-step-item-last"&gt;
+        最后一步
+    &lt;/li&gt;
+&lt;/ol&gt;
+</pre>
+
+<pre class="brush: xml">
+<h3>重复元素(.ui-repeater)</h3>
+&lt;ul class="ui-repeater"&gt;
+    &lt;li class="ui-repeater-item ui-repeater-item-current"&gt;内容&lt;/li&gt;
+    &lt;li class="ui-repeater-item"&gt;内容&lt;/li&gt;
+    &lt;li class="ui-repeater-item"&gt;内容&lt;/li&gt;
+    &lt;li class="ui-repeater-item"&gt;内容&lt;/li&gt;
+    &lt;li class="ui-repeater-item"&gt;内容&lt;/li&gt;
+    &lt;li class="ui-repeater-item"&gt;内容&lt;/li&gt;
+    &lt;li class="ui-repeater-item"&gt;内容&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+
+<pre class="brush: xml">
+<h3>分页(.ui-paging)</h3>
+&lt;div class="ui-paging"&gt;
+    &lt;a href="#" class="ui-paging-prev"&gt;
+        &lt;i class="iconfont"&gt;&#xF039;&lt;/i&gt; 上一页
+    &lt;/a&gt;
+    &lt;a href="#" class="ui-paging-item"&gt;1&lt;/a&gt;
+    &lt;a href="#" class="ui-paging-item ui-paging-current"&gt;2&lt;/a&gt;
+    &lt;a href="#" class="ui-paging-item"&gt;3&lt;/a&gt;
+    &lt;a href="#" class="ui-paging-item"&gt;4&lt;/a&gt;
+    &lt;a href="#" class="ui-paging-item"&gt;5&lt;/a&gt;
+    &lt;a href="#" class="ui-paging-item"&gt;6&lt;/a&gt;
+    &lt;a href="#" class="ui-paging-item"&gt;7&lt;/a&gt;
+    &lt;span class="ui-paging-ellipsis"&gt;...&lt;/span&gt;
+    &lt;a href="#" class="ui-paging-item"&gt;24&lt;/a&gt;
+    &lt;a href="#" class="ui-paging-next"&gt;
+        下一页 &lt;i class="iconfont"&gt;&#xF03A;&lt;/i&gt;
+    &lt;/a&gt;
+    &lt;span class="ui-paging-info"&gt;&lt;span class="ui-paging-bold"&gt;5/7&lt;/span&gt;页&lt;/span&gt;
+    &lt;span class="ui-paging-which"&gt;&lt;input name="some_name" value="6" type="text"&gt;&lt;/span&gt;
+    &lt;a class="ui-paging-info ui-paging-goto" href="#"&gt;跳转&lt;/a&gt;
+&lt;/div&gt;
+</pre>
+
+<pre class="brush: xml">
+<h3>表格(.ui-table)</h3>
+&lt;table class="ui-table ui-table-bordered ui-table-striped ui-table-hover"&gt;
+    &lt;caption&gt;表格标题&lt;/caption&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;表头表头表头表头表头表头&lt;/th&gt;
+            &lt;th&gt;表头表头表头&lt;/th&gt;
+            &lt;th&gt;表头&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;内容&lt;/td&gt;
+            &lt;td&gt;内容&lt;/td&gt;
+            &lt;td&gt;内容内容内容&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;内容&lt;/td&gt;
+            &lt;td&gt;内容&lt;/td&gt;
+            &lt;td&gt;内容内容内容&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+</pre>
+
+<pre class="brush: xml">
+<h3>按钮(.ui-button)</h3>
+&lt;input id="" class="sub-btn ui-button-sorange ui-button" type="submit" value="确定"&gt;
+&lt;a class=&quot;ui-button ui-button-sorange&quot;&gt;文字&lt;/a&gt;
+&lt;a class=&quot;ui-button ui-button-disabled&quot;&gt;&lt;span class=&quot;ui-button-text&quot;&gt;文字&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&quot;ui-button ui-button-round&quot;&gt;&lt;span class=&quot;ui-button-text&quot;&gt;文字&lt;/span&gt;&lt;/a&gt;
+&lt;a class=&quot;ui-button ui-button-icon-left&quot;&gt;&lt;span class=&quot;ui-icon ui-icon-rarr&quot;&gt;&rarr;&lt;/span&gt;&lt;span class=&quot;ui-button-text&quot;&gt;文字&lt;/span&gt;&lt;/a&gt;
+</pre>
+
+
+<pre class="brush: xml">
+<h3>表单项(.ui-input[label])</h3>
+&lt;label class=&quot;ui-label&quot; for=""&gt;&lt;input id=&quot;&quot; class=&quot;ui-input ui-input-hover&quot; type=&quot;text&quot; /&gt;&lt;/label&gt;
+
+&lt;textarea class=&quot;ui-textarea&quot;&gt;&lt;/textarea&gt;
+</pre>
+
+<pre class="brush: xml">
+<h3>表单(.ui-form)</h3>
+&lt;form id="" class="ui-form" action="#" method="post" name=""&gt;
+    &lt;fieldset&gt;
+        &lt;legend&gt;表单标题&lt;/legend&gt;
+        &lt;div class="ui-form-item"&gt;
+            &lt;label for="" class="ui-label"&gt;&lt;em class="ui-form-required"&gt;*&lt;/em&gt;表单项文本：&lt;/label&gt;
+            &lt;input class="ui-input" type="text" /&gt;
+            &lt;p class="ui-form-explain"&gt;表单项填写说明&lt;/p&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="ui-form-item ui-form-error"&gt;
+            &lt;label for="" class="ui-label"&gt;&lt;em class="ui-form-required"&gt;*&lt;/em&gt;表单项文本：&lt;/label&gt;
+            &lt;input class="ui-input" type="text" /&gt;
+            &lt;p class="ui-form-explain"&gt;出错文案&lt;/p&gt;
+        &lt;/div&gt;
+    
+        &lt;div class="ui-form-item"&gt;
+            &lt;span class="ui-button ui-button-ok"&gt;
+                &lt;input class="ui-button-text" type="submit" value="确 定" /&gt;
+            &lt;/span&gt;
+        &lt;/div&gt;
+        
+    &lt;/fieldset&gt;
+&lt;/form&gt;
+</pre>
+
+<pre class="brush: xml">
+<h3>提示信息(.ui-message)</h3>
+&lt;div class="ui-message"&gt;
+    &lt;span class="ui-icon ui-icon-uarr"&gt;&uarr;&lt;/span&gt;
+
+    &lt;div class="ui-message-cnt ui-message-cnt-success"&gt;
+    	&lt;span class="ui-icon ui-icon-rarr"&gt;&rarr;&lt;/span&gt;
+    	&lt;div class="ui-message-text"&gt;內容&lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;span class="ui-icon ui-icon-darr"&gt;&darr;&lt;/span&gt;
+&lt;/div&gt;
+</pre>
+
+<pre class="brush: xml">
+<h3>TAB(.ui-tab)</h3>
+&lt;div class="ui-tab"&gt;
+
+    &lt;div class="ui-tab-trigger"&gt; 
+        &lt;ul&gt; 
+            &lt;li class="ui-tab-trigger-item ui-switchable-active"&gt;&lt;a href="javascript:;"&gt;标题一&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="ui-tab-trigger-item"&gt;&lt;a href="javascript:;"&gt;当前选中项&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="ui-tab-trigger-item"&gt;&lt;a href="javascript:;"&gt;其他项&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+
+    &lt;div class="ui-tab-cnt"&gt;
+    	&lt;div class="ui-tab-cnt-item ui-tab-cnt-item-current"&gt;
+            基础 ui-tab
+    	&lt;/div&gt;
+    	&lt;div class="ui-tab-cnt-item"&gt;
+            基础 ui-tab
+    	&lt;/div&gt;
+        &lt;div class="ui-tab-cnt-item"&gt;
+            基础 ui-tab
+        &lt;/div&gt;
+    &lt;/div&gt;
+	
+&lt;/div&gt;
+
+</pre>
+
+<pre class="brush: xml">
+<h3>下拉菜单(.ui-dropdown）</h3>
+&lt;div class=&quot;ui-dropdown ui-dropdown-active&quot;&gt;
+    &lt;div class=&quot;ui-dropdown-header&quot;&gt;
+        &lt;a href=&quot;#&quot;&gt;请选择xxx&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;ui-dropdown-cnt&quot;&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<pre class="brush: xml">
+<h3>浮层信息(.ui-tip)</h3>
+&lt;div class=&quot;ui-tip&quot;&gt;
+    &lt;div class=&quot;ui-tip-cnt&quot;&gt;
+    	我是提示内容
+    &lt;/div&gt;
+    &lt;span class=&quot;ui-icon ui-icon-uarr&quot;&gt;&uarr;&lt;/span&gt;
+&lt;/div&gt;
+</pre>
+
+<pre class="brush: xml">
+<h3>带标题的标准区块(.ui-box)</h3>
+&lt;div class=&quot;ui-box&quot;&gt;
+    &lt;div class=&quot;ui-box-head&quot;&gt;
+        &lt;div class=&quot;ui-box-head-border&quot;&gt;
+            &lt;h3 class=&quot;ui-box-head-title&quot;&gt;区块标题&lt;/h3&gt;
+            &lt;span class=&quot;ui-box-head-text&quot;&gt;其他文字&lt;/span&gt;
+            &lt;a class=&quot;ui-box-head-more&quot; href=&quot;#&quot;&gt;更多&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;ui-box-container&quot;&gt;
+        &lt;div class=&quot;ui-box-content&quot;&gt;ui-box-content 有默认内边距&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<pre class="brush: xml">
+<h3>带表单的搜索框(.ui-search)</h3>
+&lt;div class=&quot;ui-search&quot;&gt;
+    &lt;form id=&quot;searchForm&quot; class=&quot;ui-form&quot; action=&quot;#&quot; method=&quot;post&quot; name=&quot;searchForm&quot;&gt;
+        &lt;fieldset&gt;
+            &lt;div class=&quot;ui-form-item&quot;&gt;
+                &lt;label class=&quot;ui-label&quot; for=&quot;searchInp&quot;&gt;&lt;/label&gt;
+                &lt;input id=&quot;searchInp&quot; class=&quot;ui-input ui-input-hover&quot; type=&quot;text&quot; name=&quot;searchInp&quot; placeholder=&quot;请输入内容&quot; tabindex=&quot;2&quot; value=&quot;&quot; /&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;ui-form-item&quot;&gt;
+                &lt;input id=&quot;searchSub&quot; class=&quot;ui-button ui-button-sub&quot; type=&quot;submit&quot; name=&quot;searchSub&quot; tabindex=&quot;3&quot; value=&quot;确定&quot; /&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;ui-form-item&quot;&gt;
+                &lt;input id=&quot;searchRes&quot; class=&quot;ui-button ui-button-res&quot; type=&quot;reset&quot; name=&quot;searchRes&quot; tabindex=&quot;4&quot; value=&quot;重填&quot; /&gt;
+            &lt;/div&gt;
+        &lt;/fieldset&gt;
+    &lt;/form&gt;
+&lt;/div&gt;
+</pre>
+
+<pre class="brush: xml">
+<h3>带表单的登录框(.ui-login)</h3>
+&lt;div class=&quot;ui-login&quot;&gt;
+    &lt;form id=&quot;loginForm&quot; class=&quot;ui-form&quot; action=&quot;#&quot; method=&quot;post&quot; name=&quot;loginForm&quot;&gt;
+        &lt;fieldset&gt;
+            &lt;div class=&quot;ui-form-item&quot;&gt;
+                &lt;p id=&quot;J-loginTips&quot; class=&quot;ui-form-tips red&quot;&gt;&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;ui-form-item&quot;&gt;
+                &lt;label for=&quot;username&quot; class=&quot;ui-label&quot;&gt;账&nbsp;&nbsp;&nbsp;&nbsp;号：&lt;/label&gt;
+                &lt;input id=&quot;username&quot; class=&quot;ui-input ui-input-acc&quot; type=&quot;text&quot; name=&quot;username&quot; placeholder=&quot;请输入账号&quot; tabindex=&quot;2&quot; title=&quot;请输入您的账号&quot; value=&quot;&quot; /&gt;
+            &lt;/div&gt;
+            
+            &lt;div class=&quot;ui-form-item&quot;&gt;
+                &lt;label for=&quot;password&quot; class=&quot;ui-label&quot;&gt;密&nbsp;&nbsp;&nbsp;&nbsp;码：&lt;/label&gt;
+                &lt;input id=&quot;password&quot; class=&quot;ui-input ui-input-pwd&quot; type=&quot;password&quot; name=&quot;password&quot; tabindex=&quot;3&quot; title=&quot;请输入您的密码&quot; value=&quot;&quot; /&gt;
+                &lt;a class=&quot;ui-link-getpwd&quot; href=&quot;#&quot;&gt;忘记密码&lt;/a&gt;
+            &lt;/div&gt;
+
+            &lt;div class="ui-form-item"&gt;
+                &lt;label for="vercode" class="ui-label"&gt;验证码：&lt;/label&gt;
+                &lt;input id="vercode" class="ui-input ui-input-code" type="text" autocomplete="off" maxlength="6" name="vercode" tabindex="4" title="请输入图片验证码" value=""&gt;
+                &lt;a class="ui-form-getcode" href="javascript:;" title="点击换一张" onclick="this.firstChild.src='http://u.n8n8.cn/User/index.php?m=Mobi&amp;a=getVerCode&amp;t=' + Math.random();return false;"&gt;&lt;img class="ui-form-imgcode" src="http://u.n8n8.cn/User/index.php?m=Mobi&amp;a=getVerCode"&gt;看不清？换一张&lt;/a&gt;
+            &lt;/div&gt;
+            
+            &lt;div class=&quot;ui-form-item&quot;&gt;
+                &lt;input id=&quot;autoLogin&quot; class=&quot;ui-input-rem&quot; type=&quot;checkbox&quot; checked=&quot;checked&quot; name=&quot;autoLogin&quot; /&gt;
+                &lt;label for=&quot;autoLogin&quot;&gt;记住密码&lt;/label&gt;
+            &lt;/div&gt;
+        
+            &lt;div class=&quot;ui-form-item ui-form-button&quot;&gt;
+                &lt;input id=&quot;loginSub&quot; class=&quot;ui-button-sorange ui-button ui-button-sub&quot; type=&quot;submit&quot; name=&quot;loginSub&quot; tabindex=&quot;4&quot; value=&quot;马上登录&quot; /&gt;
+                &lt;a class=&quot;ui-button ui-button-reg&quot; href=&quot;#&quot;&gt;立即注册&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/fieldset&gt;
+    &lt;/form&gt;
+&lt;/div&gt;
+</pre>
+
+<pre class="brush: xml">
+<h3>带表单的注册框(.ui-register)</h3>
+&lt;div class="ui-register"&gt;
+    &lt;form id="registerForm" class="ui-form" action="#" method="post" name="registerForm"&gt;
+        &lt;div class="ui-form-item"&gt;
+            &lt;label for="username" class="ui-label"&gt;&lt;span class="ui-form-required"&gt;*&lt;/span&gt;您的账号：&lt;/label&gt;
+            &lt;input id="username" class="ui-input" type="text" data-explain="请输入您的手机号码" name="username" tabindex="5" /&gt;
+            &lt;div class="ui-form-explain"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="ui-form-item"&gt;
+            &lt;label for="vercode" class="ui-label"&gt;&lt;span class="ui-form-required"&gt;*&lt;/span&gt;验证码：&lt;/label&gt;
+            &lt;input id="vercode" class="ui-input ui-input-checkcode" type="text" autocomplete="off" data-explain="请输入您手机收到的验证码" maxlength="6" name="vercode" tabindex="6" value=""&gt;
+            &lt;input id="getcode" class="ui-button ui-button-getcode" type="button" tabindex="7" value="获取验证码"&gt;
+            &lt;div class="ui-form-explain"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="ui-form-item"&gt;
+            &lt;label for="password" class="ui-label"&gt;&lt;span class="ui-form-required"&gt;*&lt;/span&gt;输入密码：&lt;/label&gt;
+            &lt;input id="password" class="ui-input" type="password" data-explain="请输入您的密码" name="password" tabindex="8" value=""/&gt;
+            &lt;div class="ui-form-explain"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="ui-form-item"&gt;
+            &lt;label for="repassword" class="ui-label"&gt;&lt;span class="ui-form-required"&gt;*&lt;/span&gt;再输一次：&lt;/label&gt;
+            &lt;input id="repassword" class="ui-input" type="password" data-explain="请再次输入密码" name="repassword" tabindex="9"/&gt;
+            &lt;div class="ui-form-explain ui-tiptext"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="ui-form-item"&gt;
+            &lt;input id="registerSub" class="ui-button ui-button-sub" type="submit" tabindex="10" value="立即注册"&gt;
+        &lt;/div&gt;
+    &lt;/form&gt;
+&lt;/div&gt;
+</pre>
+
+<pre class="brush: xml">
+<h3>图文混排(.ui-imgtext)</h3>
+&lt;!-- 适用于人物简介、直播话题、图文新闻等 --&gt;
+&lt;div class="ui-imgtext"&gt;
+    &lt;div class="ui-imgtext-item"&gt;
+        &lt;div class="ui-imgtext-info"&gt;
+            &lt;div class="ui-imgtext-img"&gt;
+                &lt;a href="#"&gt;&lt;img class="img" src="#" alt="img"&gt;&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class="ui-imgtext-txt"&gt;
+                &lt;p&gt;&lt;span class="name"&gt;&lt;a class="name-lnk" href="#"&gt;姓名&lt;/a&gt;&lt;/span&gt;内容&lt;/p&gt;
+                &lt;p&gt;其它&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="ui-imgtext-help"&gt;
+            &lt;span class="date"&gt;今天 14:32:10&lt;/span&gt;
+            &lt;span class="from"&gt;来自：&lt;a class="from-lnk" href="#"&gt;经传微社区&lt;/a&gt;&lt;/span&gt;
+            &lt;span class="oper"&gt;
+                &lt;a class="oper-btn" href="javascript:;"&gt;转发(0)&lt;/a&gt;|
+                &lt;a class="oper-btn" href="javascript:;"&gt;评论(100)&lt;/a&gt;|
+                &lt;a class="oper-btn" href="javascript:;"&gt;收藏&lt;/a&gt;
+            &lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<pre class="brush: xml">
+<h3>旋转木马(.ui-carousel)</h3>
+&lt;div id="J-Car" class="ui-carousel"&gt;
+    &lt;span class="prev" data-role="prev"&gt;&lsaquo; 上一页&lt;/span&gt;
+    &lt;span class="next" data-role="next"&gt;下一页 &rsaquo;&lt;/span&gt;
+    &lt;div class="ui-carousel-cont"&gt;
+        &lt;ul class="ui-carousel-list" data-role="content"&gt;
+            &lt;li class="ui-carousel-item"&gt;
+                &lt;a class="ui-carousel-link" href="#" target="_blank"&gt;
+                    &lt;p class="ui-carousel-item-img"&gt;&lt;img src="#"&gt;&lt;/p&gt;
+                    &lt;p class="ui-carousel-item-tit"&gt;说明文字&lt;/p&gt;
+                &lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li class="ui-carousel-item"&gt;
+                &lt;a class="ui-carousel-link" href="#" target="_blank"&gt;
+                    &lt;p class="ui-carousel-item-img"&gt;&lt;img src="#"&gt;&lt;/p&gt;
+                    &lt;p class="ui-carousel-item-tit"&gt;说明文字&lt;/p&gt;
+                &lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li class="ui-carousel-item"&gt;
+                &lt;a class="ui-carousel-link" href="#" target="_blank"&gt;
+                    &lt;p class="ui-carousel-item-img"&gt;&lt;img src="#"&gt;&lt;/p&gt;
+                    &lt;p class="ui-carousel-item-tit"&gt;说明文字&lt;/p&gt;
+                &lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li class="ui-carousel-item"&gt;
+                &lt;a class="ui-carousel-link" href="#" target="_blank"&gt;
+                    &lt;p class="ui-carousel-item-img"&gt;&lt;img src="#"&gt;&lt;/p&gt;
+                    &lt;p class="ui-carousel-item-tit"&gt;说明文字&lt;/p&gt;
+                &lt;/a&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<pre class="brush: xml">
+<h3>卡盘轮播(.ui-slide)</h3>
+&lt;div id="J-slide" class="ui-slide"&gt;
+    &lt;ul class="ui-switchable-content" data-role="content"&gt;
+        &lt;li class="ui-switchable-panel"&gt;
+            &lt;a class="ui-slide-img" href="#"&gt;&lt;img title="卡盘轮播图片" src="#" /&gt;&lt;/a&gt;
+            &lt;p class="ui-slide-tit"&gt;&lt;a href="#"&gt;卡盘轮播标题&lt;/a&gt;&lt;/p&gt;
+        &lt;/li&gt;
+        &lt;li class="ui-switchable-panel"&gt;
+            &lt;a class="ui-slide-img" href="#"&gt;&lt;img title="卡盘轮播图片" src="#" /&gt;&lt;/a&gt;
+            &lt;p class="ui-slide-tit"&gt;&lt;a href="#"&gt;卡盘轮播标题&lt;/a&gt;&lt;/p&gt;
+        &lt;/li&gt;
+        &lt;li class="ui-switchable-panel"&gt;
+            &lt;a class="ui-slide-img" href="#"&gt;&lt;img title="卡盘轮播图片" src="#" /&gt;&lt;/a&gt;
+            &lt;p class="ui-slide-tit"&gt;&lt;a href="#"&gt;卡盘轮播标题&lt;/a&gt;&lt;/p&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;ul class="ui-switchable-nav" data-role="nav"&gt;
+        &lt;li class="ui-switchable-trigger ui-switchable-active"&gt;•&lt;/li&gt;
+        &lt;li class="ui-switchable-trigger"&gt;•&lt;/li&gt;
+        &lt;li class="ui-switchable-trigger"&gt;•&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+
+<pre class="brush: xml">
+<h3>评论框(.ui-commbox)</h3>
+&lt;div class="ui-commbox"&gt;
+    &lt;form id="J-commentForm" class="ui-form" action="#" method="post" name="commentForm"&gt;
+        &lt;div class="ui-commbox-head"&gt;
+            &lt;h3 class="ui-commbox-title"&gt;用户评论：&lt;/h3&gt;
+            &lt;span class="ui-commbox-login"&gt;
+                &lt;a href="#"&gt;登录&lt;/a&gt; | &lt;a href="#"&gt;注册&lt;/a&gt;
+            &lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class="ui-commbox-body"&gt;
+            &lt;textarea id="J-commentArea" class="ui-commbox-area" name="comment" placeholder="有什么感想，您也来说说吧~"&gt;&lt;/textarea&gt;
+        &lt;/div&gt;
+        &lt;div class="ui-commbox-foot"&gt;
+            &lt;div class="ui-commbox-help"&gt;
+                &lt;span class="J-faceBtn ui-commbox-help-btn"&gt;&lt;i class="icon-comm icon-face"&gt;&lt;/i&gt;表情&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class="ui-commbox-submit"&gt;
+                &lt;input id="J-commentSub" class="ui-commbox-submit-btn ui-button-sorange ui-button" type="submit" value="发表评论"&gt;
+                &lt;span class="ui-commbox-count"&gt;13/300&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/form&gt;
+&lt;/div&gt;
+</pre>
+
+<pre class="brush: xml">
+<h3>评论列表(.ui-commlist)</h3>
+&lt;div class="ui-commlist"&gt;
+    &lt;div class="ui-commlist-head"&gt;
+        &lt;h3 class="ui-commlist-title"&gt;全部评论：&lt;/h3&gt;
+        &lt;span class="ui-commlist-count"&gt;（共99999条评论）&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="ui-commlist-body"&gt;
+        &lt;div class="ui-commlist-item"&gt;
+            &lt;div class="ui-commlist-info"&gt;
+                &lt;div class="ui-commlist-avat"&gt;
+                    &lt;a href="#"&gt;&lt;img src="http://s.n8n8.cn/Images/common/avatar.gif"&gt;&lt;/a&gt;
+                &lt;/div&gt;
+                &lt;div class="ui-commlist-cont"&gt;
+                    &lt;p class="ui-commlist-name"&gt;&lt;a href="#"&gt;测试员&lt;/a&gt;&lt;/p&gt;
+                    &lt;p class="ui-commlist-text"&gt;评论内容测试&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="ui-commlist-help"&gt;
+                &lt;span class="ui-commlist-date"&gt;今天 16:32:10&lt;/span&gt;
+                &lt;span class="ui-commlist-from"&gt;来自&lt;a href="#"&gt;经传软件&lt;/a&gt;&lt;/span&gt;
+                &lt;span class="ui-commlist-oper"&gt;
+                    &lt;a href="javascript:;"&gt;转发(0)&lt;/a&gt; |
+                    &lt;a href="javascript:;"&gt;收藏&lt;/a&gt; |
+                    &lt;a href="javascript:;"&gt;评论(100)&lt;/a&gt;
+                &lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class="ui-commrep"&gt;
+                &lt;form class="ui-commrep-form" action="#" method="post" name="replyform"&gt;
+                    &lt;div class="ui-commrep-body"&gt;
+                        &lt;textarea class="ui-commrep-area" name="replyarea"&gt;&lt;/textarea&gt;
+                    &lt;/div&gt;
+                    &lt;div class="ui-commrep-foot"&gt;
+                        &lt;span class="J-faceBtn ui-commrep-btn"&gt;&lt;i class="icon-comm icon-face"&gt;&lt;/i&gt;&lt;/span&gt;
+                        &lt;span class="ui-commrep-submit"&gt;&lt;input class="ui-commrep-submit-btn ui-button-sorange ui-button" type="submit" name="replysub" value="评论"&gt;&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/form&gt;
+                &lt;div class="ui-commrep-list"&gt;
+                    &lt;div class="ui-commrep-item"&gt;
+                        &lt;div class="ui-commrep-info"&gt;
+                            &lt;div class="ui-commrep-avat"&gt;
+                                &lt;a href="#"&gt;&lt;img src="http://s.n8n8.cn/Images/common/avatar.gif"&gt;&lt;/a&gt;
+                            &lt;/div&gt;
+                            &lt;div class="ui-commrep-cont"&gt;
+                                &lt;p class="ui-commrep-name"&gt;&lt;a href="#"&gt;测试员&lt;/a&gt;：回复内容测试&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class="ui-commrep-help"&gt;
+                            &lt;span class="ui-commrep-date"&gt;今天 16:32:10&lt;/span&gt;
+                            &lt;span class="ui-commrep-from"&gt;来自&lt;a href="#"&gt;经传软件&lt;/a&gt;&lt;/span&gt;
+                            &lt;span class="ui-commrep-oper"&gt;
+                                &lt;a href="javascript:;"&gt;删除&lt;/a&gt; |
+                                &lt;a href="javascript:;"&gt;回复(100)&lt;/a&gt;
+                            &lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="ui-commrep-item"&gt;
+                        &lt;div class="ui-commrep-info"&gt;
+                            &lt;div class="ui-commrep-avat"&gt;
+                                &lt;a href="#"&gt;&lt;img src="http://s.n8n8.cn/Images/common/avatar.gif"&gt;&lt;/a&gt;
+                            &lt;/div&gt;
+                            &lt;div class="ui-commrep-cont"&gt;
+                                &lt;p class="ui-commrep-name"&gt;&lt;a href="#"&gt;测试员&lt;/a&gt;：回复内容测试&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class="ui-commrep-help"&gt;
+                            &lt;span class="ui-commrep-date"&gt;今天 16:32:10&lt;/span&gt;
+                            &lt;span class="ui-commrep-from"&gt;来自&lt;a href="#"&gt;经传软件&lt;/a&gt;&lt;/span&gt;
+                            &lt;span class="ui-commrep-oper"&gt;
+                                &lt;a href="javascript:;"&gt;删除&lt;/a&gt; |
+                                &lt;a href="javascript:;"&gt;回复(100)&lt;/a&gt;
+                            &lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<script>
+    
+(function(){
+    var pre = document.getElementsByTagName('pre'),
+        h3 = document.getElementsByTagName('h3'),
+        ol = document.getElementById('shortcut'),
+        li = '',
+        ilen = h3.length,
+        jlen = pre.length,
+        i, j;
+
+    for(j=0; j < jlen; j++) {
+        pre[j].style.display = 'block'
+    }
+
+    for(i=0; i < ilen; i++) {
+        h3[i].id = 'list-' + i;
+        link = 'list-' + i;
+        li += '<li><a href="#' + link + '">' + h3[i].innerHTML + '</a></li>';
+    }
+
+    ol.innerHTML = li;
+  
+})();
+</script>
+
+</body>
+</html>

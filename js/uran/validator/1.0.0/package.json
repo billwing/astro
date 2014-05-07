@@ -1,0 +1,19 @@
+{
+    "name": "validator",
+    "version": "1.0.0",
+    "root": "handy",
+    "description": "lightweight validator",
+    "homepage": "",
+    "author": "异草 <zhouqiuping@gmail.com>",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/handyjs/validator"
+    },
+    "bugs": {
+        "url": "https://github.com/handyjs/validator/issues"
+    },
+    "license": "MIT",
+    "spm": {
+        "output": ["validator.js"]
+    }
+}

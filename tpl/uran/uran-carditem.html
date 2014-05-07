@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, minimal-ui">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>卡片元素 — 移动前端H5开发模板</title>
+    <link rel="stylesheet" href="http://s.n8n8.cn/Css/??uran/base-ui/2.0.2/base-ui.min.css">
+    <style type="text/css">
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+        body {
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            font-family: "Microsoft Yahei", tahoma, arial, "Hiragino Sans GB", \5b8b\4f53;
+            font-size: 1rem;          
+            -webkit-user-select: none;
+            -ms-touch-select: none;
+            -ms-touch-action: none;
+            -webkit-box-orient: vertical;
+            -moz-box-orient: vertical;
+            -ms-flex-direction: column;
+        }
+
+        .grayscale { 
+            -webkit-filter: grayscale(100%);
+            -moz-filter: grayscale(100%);
+            -ms-filter: grayscale(100%);
+            -o-filter: grayscale(100%);
+            filter: grayscale(100%);
+            filter: gray;
+        }
+
+        .ui-content {
+            -webkit-box-flex: 1;
+            -ms-flex: 1;
+            -moz-box-flex: 1;
+            overflow: hidden;
+            background: #f6f6f6;
+        }
+
+        .iscroller {
+            position: absolute;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            -webkit-transform: translateZ(0);
+            -moz-transform: translateZ(0);
+            -ms-transform: translateZ(0);
+            -o-transform: translateZ(0);
+            transform: translateZ(0);
+            -webkit-touch-callout: none;
+        }
+
+        .ui-list a {
+            padding-right: 8px;
+            border-color: #E6E6E6;
+        }
+        .ui-list a:hover {
+            border-color: #CD3379;
+            background: #FFF;
+        }
+
+        /* activity list */
+        .actlist {
+            padding: 5px 10px;
+        }
+        .actlist .hd {
+            overflow: hidden;
+            height: 30px;
+        }
+        .actlist .tit {
+            overflow: hidden;
+            float: left;
+            width: 200px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        .actlist .date {
+            float: right;
+        }
+        .actlist .bd {
+            clear: both;
+            padding-top: 5px;
+        }
+        .actlist .img {
+            width: 100%;
+            max-width: 480px;
+        }
+        .actlist .ft {
+            overflow: hidden;
+            height: 55px;
+        }
+        .actlist .desc {
+            overflow: hidden;
+            display: inline-block;
+            width: 200px;
+            height: 50px;
+            text-overflow: ellipsis;
+        }
+        .actlist .state {
+            float: right;
+            padding: 8px 10px;
+        }
+        .actlist .icon-state {
+            display: block;
+            width: 19px;
+            height: 19px;
+            margin: 0 auto;
+        }
+        .actlist .icon-start {            
+            background: url(http://m.yidejia.com/resources/images/ydj/activity/start-btn.png) no-repeat;
+        }
+        .actlist .icon-end {
+            background: url(http://m.yidejia.com/resources/images/ydj/activity/end-btn.png) no-repeat;
+        }
+
+        /* rules list */
+        .rulelist .ft {
+            height: 100%;
+            padding-left: 10px;
+        }
+        .rulelist .rule-hd {
+            font-weight: 700;
+            font-size: .875rem;
+            color: #333;
+        }
+        .rulelist .rule-bd {
+            margin: 0;
+            font-size: .75rem;
+            line-height: 1.3;
+        }
+        .rulelist .rule-bd .ui-list-item {
+            margin: 0;
+            line-height: 1.3;
+        }
+
+        /* goodlist */
+        .goodlist {
+            float: left;
+            width: 100%;
+            padding: 0 10px;
+        }
+        .goodlist .ui-list-item {
+            float: left;
+            width: 50%;
+            font-size: .875rem;
+        }
+        .goodlist .ui-list-link {
+            padding: 10px;
+        }
+        .goodlist .hd {
+            position: relative;
+            text-align: center;
+        }
+        .goodlist .hd .end {
+            position: absolute;
+            display: inline-block;
+            width: 55px;
+            height: 29px;
+            background: url(http://m.yidejia.com/resources/images/ydj/activity/act-complete.png) no-repeat;
+        }
+        .goodlist .img {
+            width: 120px;
+            height: 120px;
+        }
+        .goodlist .tit {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        .goodlist .ft {
+            overflow: hidden;
+            height: 25px;
+            font-size: .75rem;
+        }
+        .goodlist .price {
+            float: left;
+            font-size: .875rem;
+            color: #EE2A7A;
+        }
+        .goodlist .sold {
+            float: right;
+            width: 62px;
+            padding-top: 1px;
+            text-align: right;
+            white-space: nowrap;
+            color: #ADADAD;
+        }
+    </style>
+</head>
+
+<body>
+
+<section class="ui-content" data-role="content">
+    <div class="iscroller">
+        <ul class="rulelist actlist ui-list" data-role="list">
+            <li class="ui-list-item">
+                <a class="ui-list-link">
+                    <div class="hd">
+                        <h2 class="tit">双十一逆袭钜惠 一天震撼疯狂抢一天震撼疯狂抢一天震撼疯狂抢</h2>
+                        <p class="date">2013-11-20</p>
+                    </div>
+                    <div class="bd">
+                        <img class="img" src="http://m.yidejia.com/resources/images/ydj/activity/demo-ad.png">
+                    </div>
+                    <div class="ft">
+                        <h3 class="rule-hd">活动细则</h3>
+                        <!-- <p class="rule-bd">1.全场购买满299元，即可参与积分兑换活动；<br>2.单笔购买可以相应积分兑换多个产品；3.本活动优惠只适合伊的家会员。</p> -->
+                        <ol class="rule-bd ui-list">
+                            <li class="ui-list-item">1.全场购买满299元，即可参与积分兑换活动；</li>
+                            <li class="ui-list-item">2.单笔购买可以相应积分兑换多个产品；</li>
+                            <li class="ui-list-item">3.本活动优惠只适合伊的家会员。</li>
+                        </ol>
+                    </div>
+                </a>
+            </li>
+        </ul>
+        <ui class="goodlist ui-list" data-role="list">
+            <li class="ui-list-item">
+                <a class="ui-list-link" href="#">
+                    <div class="hd">
+                        <i class="end"></i>
+                        <img class="img" src="http://m.yidejia.com/resources/images/ydj/activity/demo-good.png">
+                    </div>
+                    <div class="bd">    
+                        <p class="tit">妍诗美BC04水漾保湿蚕丝面水漾保湿蚕丝面</p>
+                    </div>
+                    <div class="ft">
+                        <p class="price">￥78.00</p>
+                        <p class="sold">已售:9999</p>
+                    </div>
+                </a>
+            </li>
+            <li class="ui-list-item">
+                <a class="ui-list-link" href="#">
+                    <div class="hd">
+                        <img class="img" src="http://m.yidejia.com/resources/images/ydj/activity/demo-good2.png">
+                    </div>
+                    <div class="bd">    
+                        <p class="tit">妍诗美BC04水漾保湿蚕丝面水漾保湿蚕丝面</p>
+                    </div>
+                    <div class="ft">
+                        <p class="price">￥78.00</p>
+                        <p class="sold">已售:9999</p>
+                    </div>
+                </a>
+            </li>
+            <li class="ui-list-item">
+                <a class="ui-list-link" href="#">
+                    <div class="hd">
+                        <img class="img" src="http://m.yidejia.com/resources/images/ydj/activity/demo-good.png">
+                    </div>
+                    <div class="bd">    
+                        <p class="tit">妍诗美BC04水漾保湿蚕丝面水漾保湿蚕丝面</p>
+                    </div>
+                    <div class="ft">
+                        <p class="price">￥78.00</p>
+                        <p class="sold">已售:9999</p>
+                    </div>
+                </a>
+            </li>
+            <li class="ui-list-item">
+                <a class="ui-list-link" href="#">
+                    <div class="hd">
+                        <img class="img" src="http://m.yidejia.com/resources/images/ydj/activity/demo-good2.png">
+                    </div>
+                    <div class="bd">    
+                        <p class="tit">妍诗美BC04水漾保湿蚕丝面水漾保湿蚕丝面</p>
+                    </div>
+                    <div class="ft">
+                        <p class="price">￥78.00</p>
+                        <p class="sold">已售:9999</p>
+                    </div>
+                </a>
+            </li>
+        </ui>
+    </div>
+</section>
+
+<script id="seajsnode" src="http://s.n6n6.cn/Js/??seajs/2.1.1/sea.js"></script>
+<script>
+    seajs.config({
+        //base: 'http://www.astro.org/js/',
+        alias: {
+            '$': 'core/zepto/1.0.0/zepto',
+            'picomodal': 'gallery/picomodal/1.0.0/picomodal'
+        }
+    });
+    
+    seajs.use(['$', 'picomodal'], function ($, picoModal) {
+       picoModal('Test');
+    });
+
+</script>
+
+</body>
+</html>

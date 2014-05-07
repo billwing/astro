@@ -1,0 +1,701 @@
+
+/*table { 
+    table-layout:auto; 
+    border-spacing:0px;
+}
+
+li {
+	list-style:none;
+}*/
+
+.wrs_editor {
+	color:#000;
+	background:transparent;
+	position:relative;
+	height: 300px;
+	overflow:hidden;
+}
+.wrs_editor div, .wrs_editor dl, .wrs_editor dt, .wrs_editor dd, .wrs_editor ul, .wrs_editor ol, .wrs_editor li, .wrs_editor h1, .wrs_editor h2, .wrs_editor h3, .wrs_editor h4, .wrs_editor h5, .wrs_editor h6, .wrs_editor pre, .wrs_editor code, .wrs_editor form, .wrs_editor fieldset, .wrs_editor legend, .wrs_editor input, .wrs_editor button, .wrs_editor textarea, .wrs_editor p, .wrs_editor blockquote, .wrs_editor th, .wrs_editor td {
+	margin:0;
+	padding:0;
+}
+.wrs_editor table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+.wrs_editor fieldset, .wrs_editor img {
+	border:0;
+}
+.wrs_editor address, .wrs_editor caption, .wrs_editor cite, .wrs_editor code, .wrs_editor dfn, .wrs_editor em, .wrs_editor strong, .wrs_editor th, .wrs_editor var, .wrs_editor optgroup {
+	font-style:inherit;
+	font-weight:inherit;
+}
+.wrs_editor del, .wrs_editor ins {
+	text-decoration:none;
+}
+.wrs_editor caption, .wrs_editor th {
+	text-align:left;
+}
+.wrs_editor h1, .wrs_editor h2, .wrs_editor h3, .wrs_editor h4, .wrs_editor h5, .wrs_editor h6 {
+	font-size:100%;
+	font-weight:normal;
+}
+.wrs_editor q:before, .wrs_editor q:after {
+	content:'';
+}
+.wrs_editor abbr, .wrs_editor acronym {
+	border:0;
+	font-variant:normal;
+}
+.wrs_editor sup {
+	vertical-align:baseline;
+}
+.wrs_editor sub {
+	vertical-align:baseline;
+}
+.wrs_editor legend {
+	color:#000;
+}
+.wrs_editor input, .wrs_editor button, .wrs_editor textarea, .wrs_editor select, .wrs_editor optgroup, .wrs_editor option {
+	font-family:inherit;
+	font-size:inherit;
+	font-style:inherit;
+	font-weight:inherit;
+}
+.wrs_editor input, .wrs_editor button, .wrs_editor textarea, .wrs_editor select {
+*font-size:100%;
+}
+.wrs_viewer {
+	color:#000;
+	background:transparent;
+}
+.wrs_viewer div, .wrs_viewer dl, .wrs_viewer dt, .wrs_viewer dd, .wrs_viewer ul, .wrs_viewer ol, .wrs_viewer li, .wrs_viewer h1, .wrs_viewer h2, .wrs_viewer h3, .wrs_viewer h4, .wrs_viewer h5, .wrs_viewer h6, .wrs_viewer pre, .wrs_viewer code, .wrs_viewer form, .wrs_viewer fieldset, .wrs_viewer legend, .wrs_viewer input, .wrs_viewer button, .wrs_viewer textarea, .wrs_viewer p, .wrs_viewer blockquote, .wrs_viewer th, .wrs_viewer td {
+	margin:0;
+	padding:0;
+}
+.wrs_viewer table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+.wrs_viewer fieldset, .wrs_viewer img {
+	border:0;
+}
+.wrs_viewer address, .wrs_viewer caption, .wrs_viewer cite, .wrs_viewer code, .wrs_viewer dfn, .wrs_viewer em, .wrs_viewer strong, .wrs_viewer th, .wrs_viewer var, .wrs_viewer optgroup {
+	font-style:inherit;
+	font-weight:inherit;
+}
+.wrs_viewer del, .wrs_viewer ins {
+	text-decoration:none;
+}
+
+.wrs_viewer caption, .wrs_viewer th {
+	text-align:left;
+}
+.wrs_viewer h1, .wrs_viewer h2, .wrs_viewer h3, .wrs_viewer h4, .wrs_viewer h5, .wrs_viewer h6 {
+	font-size:100%;
+	font-weight:normal;
+}
+.wrs_viewer q:before, .wrs_viewer q:after {
+	content:'';
+}
+.wrs_viewer abbr, .wrs_viewer acronym {
+	border:0;
+	font-variant:normal;
+}
+.wrs_viewer sup {
+	vertical-align:baseline;
+}
+.wrs_viewer sub {
+	vertical-align:baseline;
+}
+.wrs_viewer legend {
+	color:#000;
+}
+.wrs_viewer input, .wrs_viewer button, .wrs_viewer textarea, .wrs_viewer select, .wrs_viewer optgroup, .wrs_viewer option {
+	font-family:inherit;
+	font-size:inherit;
+	font-style:inherit;
+	font-weight:inherit;
+}
+.wrs_viewer input, .wrs_viewer button, .wrs_viewer textarea, .wrs_viewer select {
+*font-size:100%;
+}
+
+/* Fonts */
+
+@font-face {
+ font-family: 'Conv_brackets';
+ src: url('fonts/brackets.eot');
+ src: local('☺'), url('fonts/brackets.ttf') format('truetype');
+ font-weight: normal;
+ font-style: normal;
+}
+ @font-face {
+ font-family: 'Conv_brack_sm';
+ src: url('fonts/brack_sm.eot');
+ src: local('☺'), url('fonts/brack_sm.ttf') format('truetype');
+ font-weight: normal;
+ font-style: normal;
+}
+ @font-face {
+ font-family: 'Conv_math1';
+ src: url('fonts/math1.eot');
+ src: local('☺'), url('fonts/math1.ttf') format('truetype');
+ font-weight: normal;
+ font-style: normal;
+}
+/* Editor */
+
+.wrs_editor {
+	overflow: hidden;
+	text-align: left;
+	white-space: nowrap;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+/* Viewer */
+
+.wrs_viewer {
+	overflow: hidden;
+	text-align: left;
+	position: relative;
+	display: inline-block;
+	white-space: nowrap;
+	/* IE 7 hacks */
+	zoom: 1;
+ *display: inline;
+}
+/* Common */
+
+.wrs_editor .wrs_imageContainer {									/* Image container */
+	position: relative;
+	display: block;
+	margin: auto;
+	margin: 0px !important;
+    padding: 0px !important;
+	overflow: hidden;
+	float:left;
+	clear: both;
+	
+}
+.wrs_editor .wrs_image {												/* Image */
+	position: absolute;
+}
+
+.wrs_editor .sbtabbox
+{
+	width: 40px !important;
+}
+.wrs_editor .wrs_symbimgbox
+{
+	/*position:absolute;*/
+	display: inline-block;
+	background-repeat:no-repeat;
+	padding: 0px !important;
+	margin: 0px !important;
+/*	padding: 0px;
+	margin: 0px;*/
+}
+.wrs_editor .wrs_line {												/* Section separator */
+	display: inline-block;
+	/* IE 7 hacks */
+	zoom: 1;
+}
+.wrs_editor .wrs_panelContainer {									/* Body */
+	clear: both;
+	/*width: 494px;*/
+/*	height: 66px;*/
+	overflow: hidden;
+}
+.wrs_editor .wrs_panelContainer  div.esymbolbox {								/* Panel */
+	display: none;
+	padding:0px !important;
+    height: 66px !important;
+}
+.wrs_editor .wrs_panelContainer div.esymbolbox .wrs_layoutFor2Rows,.wrs_editor .wrs_panelContainer div.esymbolbox .wrs_line, .wrs_editor .wrs_panelContainer div.esymbolbox .wrs_layoutFor3Rows, .wrs_editor .wrs_panelContainer div.esymbolbox .wrs_expand {							/* Panel contents */
+	vertical-align: middle;
+	padding: 0px;
+	margin:0px;
+    overflow: hidden;
+}
+
+.wrs_editor .wrs_panelContainer div.esymbolbox .wrs_layoutFor2Rows td, .wrs_editor .wrs_panelContainer div.esymbolbox .wrs_layoutFor3Rows td,.wrs_editor .wrs_panelContainer div.esymbolbox .wrs_layoutFor2Rows tr, .wrs_editor .wrs_panelContainer div.esymbolbox .wrs_layoutFor3Rows tr
+{
+	padding: 0px !important;
+	margin: 0px !important;
+	overflow:hidden;
+}
+
+.wrs_editor .wrs_panelContainer div.esymbolbox .wrs_layoutFor2Rows tr, .wrs_editor .wrs_panelContainer div.esymbolbox .wrs_layoutFor3Rows tr
+{
+	border: solid 1px #009;
+}
+.wrs_editor .wrs_panelContainer div.wrs_selected {					/* Selected panel */
+	display: block;
+	padding: 0px !important;    
+}
+.wrs_editor .wrs_panelContainer  div.esymbolbox table {							/* Section */
+	display: inline-block;
+	border-collapse: separate;
+	width: auto;
+	/* IE 7 hacks */
+	margin:0px;
+	zoom: 1;
+ *display: inline;
+}
+.wrs_editor .wrs_hidden {
+	display: none;
+}
+/* Context panel */
+
+.wrs_editor .wrs_contextPanel {
+	position: absolute;
+	z-index: 10999;
+	float: left;	
+	overflow: hidden;	
+}
+
+.wrs_editor .wrs_contextPanel .wrs_panelContainer,.wrs_editor .wrs_contextPanel .wrs_panelContainer div
+{
+	clear:both;
+    float: left; 
+	padding: 0px;
+	margin: 0px;	
+	overflow:hidden !important;
+}
+
+/* Toolbar */
+
+.wrs_editor .wrs_toolbar {											/* Toolbar */
+	margin-bottom: 2px;			/* Important: javascript thinks this value is 2px. */
+	width: 100%;
+	height:97px;
+	overflow:hidden;
+	z-index: 99999 !important;
+}
+.wrs_editor .wrs_toolbar .wrs_linkButton {							/* Link button */
+	float: right;
+	position: relative;
+	z-index: 1;
+}
+.wrs_editor .wrs_toolbar .wrs_header {								/* Header */
+	position: relative;
+	top: 1px;
+	width:502px;
+	height: 25px;
+	overflow:hidden;
+}
+.wrs_editor .wrs_toolbar .wrs_header  div {							/* Tabs */
+	text-align: center;
+	display: inline-block;
+	vertical-align: bottom;
+	margin-right: 2px;
+	/* IE 7 hacks */
+	zoom: 1;
+ *display: inline;
+}
+.wrs_editor .wrs_toolbar .wrs_header  div.wrs_selected,				/* Selected tab */ .wrs_editor .wrs_toolbar .wrs_header  div.wrs_selected:hover {
+	background-color: #ddd;
+	border-bottom: none;
+}
+.wrs_editor .wrs_toolbar .wrs_header  div:hover {						/* Hover tab */
+	background-color: #eee;
+}
+/* Formula display */
+
+.wrs_editor .wrs_formulaDisplay {									/* Formula display */
+	/*position: relative;*/
+	border: 1px solid #969696;	/* Important: javascript thinks this value is 1px. */
+	overflow: auto;
+	background-color: #fff;
+	cursor: text;
+	z-index: 0;
+	padding-top: 0px;
+	height: 199px !important; /*by cf*/
+	width:500px !important;
+}
+.wrs_editor .wrs_formulaDisplay .wrs_container {						/* Container */
+	display: inline-block;
+	position: relative;
+	margin: 5px;				/* Important: javascript thinks this value is 5px. */
+	/* IE 7 hacks */
+	/*zoom: 1;
+ *display: inline;*/
+}
+
+/*.wrs_editor .wrs_formulaDisplay .wrs_container span, .wrs_editor .wrs_formulaDisplay .wrs_container div, .wrs_editor .wrs_formulaDisplay .wrs_container *
+{
+	 float: left !important;    
+}*/
+.wrs_viewer .wrs_container {											/* Container */
+	display: inline-block;
+	position: relative;
+	/* IE 7 hacks */
+	zoom: 1;
+ *display: inline;
+}
+.wrs_editor .wrs_formulaDisplay.wrs_focused .wrs_caret {				/* Caret */
+	position: absolute;
+	background-color: #000;
+}
+.wrs_editor .wrs_formulaDisplay.wrs_focused .wrs_caret.wrs_blink {	/* Caret blinking */
+	background-color: transparent;
+}
+.wrs_editor .wrs_formulaDisplay .wrs_selection {						/* Selection background */
+	position: absolute;
+	background-color: #c3c3c3;
+}
+.wrs_editor .wrs_focusElement {										/* Hidden focus element */
+	position: absolute;
+	border: none;
+	outline: 0;
+	width: 1px;
+	height: 1px;
+	opacity: 0;
+	background: #000;		/* By this way, the cursor is the opposite color: #fff. */
+}
+.wrs_editor .wrs_formulaDisplay .wrs_specialChar, .wrs_viewer .wrs_specialChar {										/* Text with special font */
+	font-family: 'Conv_brackets';
+}
+.wrs_editor .wrs_formulaDisplay .wrs_specialSmallChar, .wrs_viewer .wrs_specialSmallChar {									/* Text with special small font */
+	font-family: 'Conv_brack_sm';
+}
+.wrs_editor .wrs_formulaDisplay .wrs_mathChar, .wrs_viewer .wrs_mathChar {											/* Text with math font */
+	font-family: 'Conv_math1';
+	/*font-family: 'arial';*/
+	overflow:hidden !important;
+	padding:0px !important;
+	margin:0px !important;
+	font-style:normal;
+	display: inline-block;    
+}
+.wrs_editor .wrs_formulaDisplay .wrs_italic, .wrs_viewer .wrs_italic {											/* Italic text */
+	font-style: italic;
+}
+.wrs_editor .wrs_formulaDisplay .wrs_notItalic, .wrs_viewer .wrs_notItalic {											/* Not italic text */
+	font-style: normal;
+	padding:0px !important;
+	margin:0px !important;
+}
+.wrs_editor .wrs_formulaDisplay .wrs_bold, .wrs_viewer .wrs_bold {												/* Bold text */
+	font-weight: bold;
+}
+.wrs_editor .wrs_formulaDisplay .wrs_notBold, .wrs_viewer .wrs_notBold {											/* Not bold text */
+	font-weight: normal;
+}
+/* Style */
+
+.wrs_editor, .wrs_viewer {
+	font-family: sans-serif;
+}
+
+.wrs_editor .wrs_toolbar {
+	font-weight: bold;
+	font-size: 11px;
+}
+.wrs_editor .wrs_toolbar .wrs_linkButton {							/* Link button */
+	margin-top: 4px;
+	margin-right: 2px;
+}
+.wrs_editor .wrs_line {
+	margin-right: 1px;
+	width: 1px;
+	background: #bbbdbe;
+	height: 60px;
+	margin-top: 3px;
+	display:inline-block;
+	overflow:hidden;
+}
+.wrs_editor .wrs_layoutFor2Rows .wrs_empty {							/* Empty section cell for 2 rows layout */
+	height: 33px;
+}
+.wrs_editor .wrs_layoutFor3Rows .wrs_empty {							/* Empty section cell for 3 rows layout */
+	height: 22px;
+}
+.wrs_editor .wrs_button {											/* Button */
+	border: 2px solid transparent;
+	cursor: pointer;
+}
+.wrs_editor .wrs_button:hover {										/* Button hover */
+	border: 2px solid #778e9a;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+* html .wrs_editor .wrs_button
+{
+	border-style: none;   
+}
+
+.wrs_editor .wrs_layoutFor3Rows
+{
+	display:inline-block;
+	margin:0px;
+	padding:0px;
+	vertical-align:top;	
+    height: 66px;
+}
+.wrs_editor .wrs_layoutFor2Rows .wrs_button:active,					/* Button active for 2 rows layout */ .wrs_editor .wrs_layoutFor2Rows .wrs_button.wrs_toggled, .wrs_editor .wrs_layoutFor2Rows .wrs_button.wrs_pressed {
+	background: url('decoration/button_active.png') -2px -2px;
+}
+.wrs_editor .wrs_layoutFor3Rows .wrs_button:active,					/* Button active for 3 rows layout */ .wrs_editor .wrs_layoutFor3Rows .wrs_button.wrs_toggled, .wrs_editor .wrs_layoutFor3Rows .wrs_button.wrs_pressed {
+	background: url('decoration/button_small_active.png') -2px -2px;
+}
+.wrs_editor .wrs_comboButton {										/* Combo button */
+	background: url('decoration/combo_button.png') bottom center no-repeat;
+	width: 33px;
+	height: 62px;
+	cursor: pointer;
+	border: 2px solid transparent;
+}
+.wrs_editor .wrs_comboButton:hover {									/* Combo button hover */
+	background: url('decoration/combo_button_hover.png') -2px -2px;
+}
+.wrs_editor .wrs_comboButton:active,									/* Combo button active */ .wrs_editor .wrs_comboButton.wrs_pressed {
+	background: url('decoration/combo_button_active.png') -2px -2px;
+}
+.wrs_editor .wrs_button.wrs_disabled,								/* Button disabled */ .wrs_editor .wrs_comboButton.wrs_disabled {
+	border: 2px solid transparent !important;
+	background: none !important;
+	cursor: auto;
+}
+* html .wrs_editor .wrs_button.wrs_disabled, * html .wrs_editor .wrs_comboButton.wrs_disabled { /* Button disabled */ 
+	border-style:none !important;
+}
+.wrs_editor .wrs_button.wrs_disabled img,								/* Button disabled image */ .wrs_editor .wrs_comboButton.wrs_disabled img {
+	opacity: 0.3;
+	filter: alpha(opacity=30);
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+ filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+}
+.wrs_editor .wrs_comboButton .wrs_imageContainer {
+	width: 33px !important;
+	height: 59px !important;
+	position: relative;
+}
+.wrs_editor .wrs_comboButtonItem {									/* Combo button item */
+	display: inline-block;
+	vertical-align: middle;
+	margin: 2px;
+	cursor: pointer;
+	/* IE 7 hacks */
+	zoom: 1;
+ *display: inline;
+}
+.wrs_editor .wrs_comboButtonItem:hover {								/* Combo button item */
+	background: #a4cae7;
+}
+.wrs_editor .wrs_comboButtonPanel {									/* Combo button panel */
+	background: #fff;
+	border: 1px solid #000;
+}
+.wrs_editor .wrs_select {
+	background: url('decoration/select_background.png') no-repeat right center;
+	color: #b1b3b4;
+	border: 1px solid #b1b3b4;		/* Important: javascript thinks this value is 1px. */
+	height: 18px;
+	padding: 0 15px 0 5px;
+	overflow: hidden;
+	display: none !important;
+}
+.wrs_editor .wrs_select div {
+	max-width: 80px;
+	overflow: hidden;
+}
+.wrs_editor .wrs_select:hover {
+	background: url('decoration/select_background_hover.png') no-repeat right center;
+	border: 1px solid #778e9a;
+	color: #778e9a;
+	cursor: pointer;
+}
+.wrs_editor .wrs_select.wrs_pressed {
+	background: #778e9a url('decoration/select_background_pressed.png') no-repeat right center;
+	color: #fff;
+	border: 1px solid #b1b3b4;
+	cursor: auto;
+}
+.wrs_editor .wrs_layoutFor2Rows .wrs_select {
+	margin: 6.5px 2px;
+}
+.wrs_editor .wrs_layoutFor3Rows .wrs_select {
+	padding:0px;
+	margin: 1px 2px;
+}
+.wrs_editor .wrs_select .wrs_label {
+	height: 18px;
+	line-height: 18px;
+	display:none !important;
+    
+}
+.wrs_editor .wrs_selectPanel {
+	background: #edf2f4;
+	color: #778e9a;
+	border: 1px solid #b1b3b4;		/* Important: javascript thinks this value is 1px. */
+}
+.wrs_editor .wrs_selectPanel div {
+	height: 18px;
+	line-height: 18px;
+	padding: 0 5px;
+}
+.wrs_editor .wrs_selectPanel div:hover {
+	background: #778e9a;
+	color: #fff;
+	cursor: pointer;
+}
+.wrs_editor .wrs_layoutFor2Rows .wrs_colorChooser {
+	width: 29px;
+	height: 29px;
+}
+.wrs_editor .wrs_layoutFor3Rows .wrs_colorChooser {
+	width: 18px;
+	height: 18px;
+}
+.wrs_editor .wrs_colorChooserPanel {
+	background: #edf2f4;
+	color: #778e9a;
+	border: 1px solid #b1b3b4;		/* Important: javascript thinks this value is 1px. */
+}
+.wrs_editor .wrs_colorChooserPanel table {
+	border-collapse: separate;
+	border-spacing: 5px;
+}
+.wrs_editor .wrs_colorChooserPanel .wrs_colorButton {
+	width: 13px;
+	height: 13px;
+	border: 1px solid #b1b3b4;
+	cursor: pointer;
+}
+.wrs_editor .wrs_colorChooserPanel > div {
+	padding: 0 5px 5px 5px;
+}
+.wrs_editor .wrs_colorChooserPanel input {
+	border: 1px solid #b1b3b4;
+	width: 50px;
+	margin-left: 5px;
+}
+.wrs_editor .wrs_colorChooserPanel .wrs_acceptButton {
+	display: inline;
+	border: 1px solid #b1b3b4;
+	cursor: pointer;
+	padding: 0 2px;
+}
+.wrs_editor .wrs_panelContainer {									/* Body */
+	background: #dae4e9 url('decoration/body_background.png') bottom left no-repeat;
+	border: 1px solid #778E9A;
+	padding: 2px;
+	-webkit-border-bottom-right-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-moz-border-radius-bottomright: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	/*border:solid 1px red;
+	background:#f00;*/
+}
+.wrs_editor .wrs_panelContainer div.esymbolbox table {							/* Section */
+	border-spacing: 0;
+	margin-right: 1px;
+}
+.wrs_editor .wrs_panelContainer div.esymbolbox table.wrs_last {					/* Last section */
+	margin: 0;
+}
+.wrs_editor .wrs_toolbar .wrs_header  div {							/* Tabs */
+	background: #556e7b url('decoration/tab_background.png') top left no-repeat;
+	border-bottom: 1px solid #778E9A;
+	cursor: default;
+	padding: 0 2px;
+	padding-top: 2px;
+	height: 19px;
+	width: 40px;
+	text-align: center;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+.wrs_editor .wrs_toolbar .wrs_header  div.wrs_selected {				/* Selected tab */
+	background: #f2f3f5 url('decoration/selected_tab_background.png') top left no-repeat !important;
+	border: 1px solid #778E9A;
+	border-bottom: none;
+	padding-top: 3px;
+	height: 21px;
+	width: 40px;
+	overflow:hidden;
+}
+.wrs_editor .wrs_toolbar .wrs_header  div:hover {						/* Hover tab */
+	background: #95ae99 url('decoration/tab_background_hover.png') top left no-repeat;
+}
+.wrs_editor .wrs_toolbar .wrs_header  div.wrs_context {				/* Context tabs */
+	background: #dc9e9e url('decoration/context_tab_background.png') top left no-repeat;
+}
+.wrs_editor .wrs_toolbar .wrs_header  div.wrs_context:hover {			/* Context tabs hover */
+	background: #dcc09e url('decoration/context_tab_background_hover.png') top left no-repeat;
+}
+.wrs_editor .wrs_toolbar .wrs_expandButton {							/* Expand button */
+    margin:0px;
+	background: url('decoration/expand_button.png') no-repeat bottom center;
+	cursor: pointer;
+	width: 7px;
+	height: 60px;
+	display: inline-block;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	padding:0px;
+	margin-right: 1px;
+	margin-top: 3px;
+ }
+.wrs_editor .wrs_toolbar .wrs_expandButton:hover {					/* Expand button hover */
+	background: url('decoration/expand_button_active.png') no-repeat bottom center #778e9a;
+}
+.wrs_editor .wrs_toolbar .wrs_expandButton.wrs_pressed {				/* Expand button pressed */
+	background: url('decoration/expand_button_active.png') no-repeat bottom center #778e9a;
+}
+.wrs_editor .wrs_contextPanel {
+	font-weight: bold;
+	font-size: 11px;
+}
+/* Fonts */
+
+.wrs_editor .wrs_font_arial {
+	font-family: arial, helvetica, sans-serif;
+}
+.wrs_editor .wrs_font_courierNew {
+	font-family: courier new, courier;
+}
+.wrs_editor .wrs_font_tahoma {
+	font-family: tahoma, arial, helvetica, sans-serif;
+}
+.wrs_editor .wrs_font_timesNewRoman {
+	font-family: times new roman, times;
+}
+.wrs_editor .wrs_font_verdana {
+	font-family: verdana, geneva;
+}
+
+
+.wrs_editor .esymbolbox  .wrs_layoutFor2Rows, .wrs_editor .esymbolbox .wrs_layoutFor3Rows, .wrs_editor  .esymbolbox .wrs_expandButton, .wrs_editor .esymbolbox  .wrs_line
+{
+	float: left;
+	vertical-align: middle;
+}
+
+.wrs_layoutFor2Rows tbody , .wrs_layoutFor2Rows td 
+{
+	padding: 0px !important;
+	margin: 0px !important;
+}
+
+.wrs_editor .wrs_panelContainer div.esymbolbox .wrs_layoutFor2Rows td, .wrs_editor .wrs_panelContainer div.esymbolbox .wrs_layoutFor3Rows td,.wrs_editor .wrs_panelContainer div.esymbolbox .wrs_layoutFor2Rows tr, .wrs_editor .wrs_panelContainer div.esymbolbox .wrs_layoutFor3Rows tr
+{
+	padding: 0px !important;
+	margin: 0px !important;
+	overflow:hidden;
+}
+

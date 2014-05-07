@@ -1,0 +1,104 @@
+@charset "utf-8";
+
+/*! 
+ * @name: astro
+ * @overview: astro
+ * @author: tbrweb@gmail.com
+ * @create: 2013-05-07
+ * @revise: 2013-08-30
+ */
+
+// Core variables and mixins
+@import "../less/variables.less"; // Modify this for custom colors, font-sizes, etc
+@import "../less/mixins.less";
+
+// CSS reset
+@import "../less/reset.less";
+
+// Utility classes
+@import "../less/utilities.less"; // Has to be last to override when necessary
+
+// UI
+@import "../ui/nav/1.0.0/nav.less";
+@import "../ui/tab/1.0.0/tab.less";
+@import "../ui/box/1.0.0/box.less";
+@import "../ui/list/1.0.0/list.less";
+@import "../ui/table/1.0.1/table.less";
+@import "../ui/form/1.0.0/form.less";
+@import "../ui/button/1.1.0/button.less";
+@import "../ui/paging/1.0.1/paging.less";
+@import "../ui/iconfont/1.0.0/iconfont.less";
+//@import "../ui/select/1.0.0/select.less";
+//@import "../ui/loading/1.0.0/loading.less";
+
+// Js: dialog
+@import "../js/dialog/dialog.less";
+// Js: popovers
+//@import "../js/popovers/popovers.less";
+// Js: autocomplete
+//@import "../js/autocomplete/autocomplete.less";
+// Js: faces
+//@import "../js/faces/faces.less";
+
+// solutions
+//@import "../less/solutions.less";
+
+/*
+ * @name: 公用
+ * @overview: 项目公用
+ * @require: null
+ */  
+.cm-wid {
+    width: 1048px;
+    .container-fixed();
+}
+.mt-10 {
+    margin-top: 10px;
+}
+.mt-15 {
+    margin-top: 15px;
+}
+
+@redDark: #B30102;
+
+a {
+	cursor: pointer;
+    color: @grayDarker;
+}
+a:hover {
+    color: @redDark;
+    text-decoration: none;
+}
+
+/*
+ * @name: footer
+ * @overview: 网站底部
+ * @require: null
+ */
+.footer {
+	overflow: hidden;
+	padding-top: 10px;
+	font-size: 13px;
+}
+.footer .ui-nav {
+	height: 25px;
+	line-height: 25px;
+	text-align: center;
+	background-color: #EFEFEF;
+}
+.footer .ui-nav-item {
+	display: inline;
+	float: none;
+	padding: 0 15px;
+}
+.footer .ui-nav-item a {
+	height: inherit;
+	padding: 0;
+	font-weight: 500;
+	line-height: inherit;
+}
+.footer .copyright {
+	padding: 25px 0 10px 0;
+	text-align: center;
+	color: #666;
+}

@@ -1,0 +1,25 @@
+{
+  "name": "page-transitions",
+  "family": "handy",
+  "version": "1.1.0",
+  "description": "页面切换动画组件",
+  "information": "ali00925807:收银台新混合支付",
+  "author": "daxia.shidx <danxia.shidx@alipay.com>",
+  "homepage": "https://github.com/handyjs/page-transitions",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/handyjs/page-transitions.git"
+  },
+  "bugs": {
+    "url": "https://github.com/handyjs/page-transitions/issues"
+  },
+  "spm": {
+    "alias": {
+      "$": "$"
+    },
+    "output": [
+      "page-transitions.js",
+      "page-transitions.css"
+    ]
+  }
+}

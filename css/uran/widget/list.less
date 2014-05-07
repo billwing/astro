@@ -1,0 +1,59 @@
+.ui-list li {
+  margin:5px 0;
+}
+
+.ui-list a, .ui-list button {
+  display:block;
+  position:relative;
+  padding:8px 30px 8px 8px;
+  width:100%;
+  line-height:26px;
+  border:1px solid #bfbfbf;
+  background-color:#fff;
+  color:#333;
+  text-align:left;
+  .border-radius(6px);
+}
+
+.ui-list a:active, .ui-list button:active, .ui-list a:hover, .ui-list button:hover {
+  border-color:#ff9a51;
+  .background(#ffe5cb,#fff3e7);
+}
+
+.ui-list .icon-arrow-horizontal {
+  position:absolute;
+  top:50%;
+  right:14px;
+  margin-top:-8px;
+  z-index:1;
+  .transform(rotate(315deg));
+}
+
+.ui-list :active .icon-arrow-horizontal, .ui-list :hover .icon-arrow-horizontal {
+  border-color:#f60;
+}
+
+.ui-list-placeholder a, .ui-list-placeholder button {
+  color: #c7c7c7;
+}
+
+.ui-list-compact {
+  border-top:1px solid #bfbfbf;
+}
+
+.ui-list-compact li {
+  margin:0;
+}
+
+.ui-list-compact a {
+  color:#666;
+  line-height:24px;
+  border: none;
+  border-bottom:1px solid #bfbfbf;
+  .background(#f5f6f7, #eeeff1);
+  .border-radius(0);
+}
+
+.ui-list-compact a:active, .ui-list-compact a:hover {
+  border-color:#bfbfbf;
+}

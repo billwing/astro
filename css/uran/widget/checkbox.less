@@ -1,0 +1,149 @@
+.ui-checkbox {
+  display:block;
+  position:relative;
+  padding:0 48px 0 8px;
+  height:44px;
+  color:#333;
+  line-height:42px;
+  border:1px solid #bfbfbf;
+  background-color:#fff;
+  .border-radius(6px);
+}
+
+.ui-checkbox-disabled{
+  color:#c7c7c7;
+  border-color:#d9d9d9;
+}
+
+.ui-checkbox-naked {
+  height:32px;
+  padding:0 30px 0px 0;
+  line-height:32px;
+  color:#808080;
+  border:0;
+  background-color:transparent;
+}
+
+.ui-checkbox-mini {
+  height:24px;
+  padding:0 0 0 21px;
+  line-height:24px;
+  font-size:.9em;
+  color:#808080;
+  border:0;
+  background-color:transparent;
+}
+
+.ui-checkbox-simple {
+  height:24px;
+  padding:0 0 0 30px;
+  line-height:24px;
+  border:0;
+  background-color:transparent;
+}
+
+.ui-checkbox .icon-check {
+  position:absolute;
+  top:5px;
+  right:8px;
+  z-index:1;
+  width:32px;
+  height:32px;
+  border:2px solid #b2b2b2;
+  .border-radius(4px);
+}
+
+.ui-checkbox .icon-check:after{
+  position:absolute;
+  top:3px;
+  right:8px;
+  z-index:999;
+  width:10px;
+  height:17px;
+  border:solid 4px #b2b2b2;
+  border-width:0 4px 4px 0;
+  content:"\0020";
+  .transform(rotate(45deg));
+}
+
+.ui-checkbox-naked .icon-check {
+  top:0;
+  right:9px;
+}
+
+.ui-checkbox-mini .icon-check {
+  top:4px;
+  left:0;
+  width:16px;
+  height:16px;
+  border-width:2px;
+  .border-radius(2px);
+}
+
+.ui-checkbox-mini .icon-check:after{
+  top:0px;
+  right:3px;
+  width:7px;
+  height:10px;
+  border-width:0 2px 2px 0; 
+}
+
+.ui-checkbox-simple .icon-check {
+  top:0;
+  left:0;
+  width:22px;
+  height:22px;
+  border-width:2px;
+  .border-radius(2px);
+}
+
+.ui-checkbox-simple .icon-check:after{
+  top:0px;
+  right:5px;
+  width:9px;
+  height:15px;
+  border-width:0 3px 3px 0; 
+}
+
+.ui-checkbox-disabled .icon-check,
+.ui-checkbox-disabled .icon-check:after {
+  border-color:#e6e6e6;
+}
+
+.ui-checkbox label {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.ui-checkbox input {
+  position:absolute;
+  top: 0;
+  left: 0;
+  opacity:0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.ui-checkbox-simple a {
+  color:#333;
+  text-decoration:underline;
+}
+
+.ui-checkbox input:checked + .icon-check {
+  border-color:#3bb000;
+  background-color:#3bb000;
+}
+
+.ui-checkbox input:checked + .icon-check:after {
+  border-color:#fff;
+}
+
+.ui-checkbox-mini input:checked + .icon-check,
+.ui-checkbox-mini input:checked + .icon-check:after,
+.ui-checkbox-simple input:checked + .icon-check,
+.ui-checkbox-simple input:checked + .icon-check:after {
+  border-color:#3bb000;
+  background:none
+}

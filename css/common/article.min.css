@@ -1,0 +1,4 @@
+@charset "utf-8";*{margin:0;padding:0}html,body{overflow:hidden}body{font-size:14px;font-family:tahoma,arial,sans-serif;line-height:1.5;word-wrap:break-word}
+li{list-style:none}img{border:0}h1{font-size:18px;text-align:center}h2{font-size:16px}h3{font-size:14px}.art{padding:10px}.art_hd .date{padding-bottom:3px;text-align:center}
+.art_hd .date span{margin-right:10px}.art_bd p{margin:.5em 0;text-indent:2em}.art_bd .img_lnk{display:block;margin:0 auto;text-align:center}.art_bd img{display:block;max-width:100%;margin:0 auto}
+.art_bd .link{color:#f0aa02}.art_bd .aut{float:right;padding-right:20px}#J-content{overflow:auto}

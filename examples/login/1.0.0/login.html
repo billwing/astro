@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>登录 — 经传前端开发页面模板</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="http://static.n8n8.cn/Public/Images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="http://s.n8n8.cn/Css/tpl/common/1.0.0/common.css">
+    <!-- <link rel="stylesheet" href="http://s.n8n8.cn/Css/tpl/login/1.0.0/login.css"> -->
+    <link rel="stylesheet" href="../../statics/css/tpl/login/1.0.0/login.css">
+</head>
+
+<body>
+
+<div class="header">
+    <div class="wrapper">
+        <h1 class="logo fn-left">
+            <a class="logo-lnk" href="../../template/1.0.0/template.html"><img src="http://s.n8n8.cn/Images/common/astro.png" alt="经传"></a>
+        </h1>
+        <span class="fn-left">
+            <a href="../../template/1.0.0/template.html"><img height="70" src="http://s.n8n8.cn/Images/common/astroboy.png"></a>
+        </span>
+    </div>
+</div>
+
+<div class="nav bg-gray">
+    <div class="wrapper">
+        <ul class="ui-nav">
+            <li class="ui-nav-item"><a href="../../template/1.0.0/template.html">首页</a></li>
+            <li class="ui-nav-item"><a href="../../register/1.0.0/register.html">注册</a></li>
+            <li class="ui-nav-item ui-nav-item-current"><a href="../../login/1.0.0/login.html">登录</a></li>
+            <li class="ui-nav-item"><a href="../../information/1.0.0/information.html">个人资料</a></li>
+            <li class="ui-nav-item"><a href="../../password/1.0.0/password.html">修改密码</a></li>
+            <li class="ui-nav-item"><a href="../../findpwd/1.0.0/findpwd.html">找回密码</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="main wrapper mt-10">
+    <!-- login Start -->
+    <div class="tpl-login ui-box">
+        <div class="ui-box-head">
+            <div class="ui-box-head-border">
+                <h3 class="ui-box-head-title"><i class="icon-comm icon-head"></i>用户登录</h3>
+            </div>
+        </div>
+
+        <div class="ui-box-container">
+            <div class="ui-box-content fn-clear">
+                <div class="log-ban fn-left">
+                    <a href="#" target="_blank"><img class="log-ban-img" src="http://placehold.it/450x360"></a>
+                </div>
+                <div class="log-box fn-left">
+                    <form id="J-loginForm" class="ui-form" action="#" method="post" name="loginForm">
+                        <div class="ui-form-item">
+                            <label for="J-loginAcc" class="ui-label">账号：</label>
+                            <input id="J-loginAcc" class="ui-input" placeholder="请输入账号" type="text" name="account" />
+                            <div class="ui-form-explain"></div>
+                        </div>
+
+                        <div class="ui-form-item">
+                            <label for="J-loginPwd" class="ui-label">密码：</label>
+                            <input id="J-loginPwd" class="ui-input" placeholder="请输入密码" type="password" name="pwd" />
+                            <div class="ui-form-explain"></div>
+                        </div>
+
+                        <div class="ui-form-item">
+                            <label for="J-logImgCode" class="ui-label">验证码：</label>
+                            <input id="J-logImgCode" class="imgcode-inp ui-input" type="text" autocomplete="off" maxlength="4" name="img_code" placeholder="请输入验证码" title="请输入图片验证码" />
+                            <a class="imgcode-btn" href="javascript:;" title="点击换一张" onclick="this.firstChild.src='index.php?m=system&c=index&a=imgcode&t=' + Math.random();return false;"><img class="imgcode-img" src="http://u.n8n8.cn/User/index.php?m=Mobi&a=getVerCode">看不清？换一张</a>
+                            <div class="ui-form-explain"></div>
+                        </div>
+
+                        <div class="ui-form-item">
+                            <label for="J-loginAuto" class="aut-lab"><input id="J-loginAuto" class="aut-inp" type="checkbox" checked="checked" name="logauto" />下次自动登录</label>
+                            <a class="for-lnk" href="#">忘记密码？</a>
+                            <div class="ui-form-explain"></div>
+                        </div>
+
+                        <div class="ui-form-item">
+                            <input id="J-loginSub" class="log-sub ui-button-sorange ui-button" type="submit" value="登&nbsp;录">
+                            <a class="reg-lnk ui-button-swhite ui-button" href="#">免费注册</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- login End -->
+</div>
+
+<div class="footer wrapper">
+    <ul class="ui-nav">
+        <li class="ui-nav-item"><a href="http://www.jingzhuan.cn/" target="_blank">经传软件</a></li>
+        <li class="ui-nav-item"><a href="http://www.yidejia.com/" target="_blank">伊的家</a></li>
+        <li class="ui-nav-item"><a href="http://ezhiedu.com/" target="_blank">伊智教育</a></li>
+        <li class="ui-nav-item"><a href="http://xy.yidejia.com/" target="_blank">经传学院</a></li>
+        <li class="ui-nav-item"><a href="http://www.n8n8.cn/" target="_blank">经传多盈</a></li>
+    </ul>
+    <div class="copyright">
+        <p>广州经传信息科技有限公司</p>
+        <p>所载文章、数据仅供参考，使用前请核实，风险自负</p>
+        <p>Copyright &copy; 广州经传信息科技有限公司 All Rights Reserved 版权所有 复制必究</p>
+        <p>Powered by <a href="http://www.jingzhuan.cn" target="_blank" title="广州经传信息科技有限公司">www.jingzhuan.cn</a> &copy; 2008-2014  <a href="http://www.miibeian.gov.cn" rel="nofollow" target="_blank">粤ICP备11037409号-3</a></p>
+    </div>
+</div>
+
+<script id="seajsnode" src="http://s.n8n8.cn/Js/??seajs/2.1.1/sea.js,seajs/2.1.1/seajs-text.js,seajs/2.1.1/seajs-style.js,seajs/2.1.1/seajs-combo.js"></script>
+<script src="../../statics/js/common/config/3.0.0/config.js"></script>
+<script>
+    seajs.use('tpl/login/1.0.0/login');
+</script>
+
+</body>
+</html>

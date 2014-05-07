@@ -1,0 +1,31 @@
+{
+  "family": "handy",
+  "name": "base",
+  "version": "1.1.1",
+  "description": "移动Web开发的基础样式和脚本",
+  "author": "Denis",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:handyjs/base.git"
+  },
+  "bugs": {
+    "url": "https://github.com/handyjs/base/issues"
+  },
+  "spm": {
+    "output": [
+      "page.css",
+      "transitions/slide.css",
+      "flex.js",
+      "page.js"
+    ],
+    "alias": {
+      "$": "$",
+      "base": "arale/base/1.1.1/base",
+      "detector": "arale/detector/1.2.1/detector"
+    }
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-uglify": "~0.2.0"
+  }
+}

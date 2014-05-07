@@ -1,0 +1,41 @@
+/*
+ *@名称: Utility classes
+ *@功能: 实用工具类
+ *@作者: tbrweb@gmail.com
+ *@创建: 2013-02-22
+ *@修改: 2013-02-22
+ */
+
+/* 清理浮动 */
+.fn-clear:after {
+    visibility: hidden;
+	display: block;
+    clear:both;
+    content:" ";
+    height:0;
+	font-size: 0;
+}
+.fn-clear {
+    zoom:1; /* for IE6 IE7 */
+}
+
+/* 隐藏, 通常用来与 JS 配合 */
+.fn-hide {
+    display: none;
+}
+
+/* 显示, 通常用来与 JS 配合 */
+.fn-show {
+    display: block;
+}
+
+/* 设置内联, 减少浮动带来的bug */
+.fn-left,.fn-right {
+    display: inline;
+}
+.fn-left {
+	float:left;
+}
+.fn-right {
+	float: right;
+}

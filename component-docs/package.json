@@ -1,0 +1,29 @@
+{
+  "family": "astro",
+  "name": "astro",
+  "version": "1.0.0",
+  "description": "A front-end template for the JZ Web",
+  "homepage": "https://bitbucket.org/billwing/astro",
+  "author": "Billwing",
+  "maintainers": [
+    "Billwing"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://billwing@bitbucket.org/billwing/astro.git"
+  },
+  "bugs": {
+    "url": "https://bitbucket.org/billwing/astro/issues?status=new&status=open"
+  },
+  "keywords": [],
+  "licenses": "MIT",
+  "spm": {
+    "output": [
+      "astro.js",
+      "astro.css"
+    ],
+    "alias": {},
+    "devAlias": {},
+    "engines": {}
+  }
+}

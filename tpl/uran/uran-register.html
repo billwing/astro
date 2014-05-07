@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, minimal-ui">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>注册 — 移动前端H5开发模板</title>
+    <link rel="stylesheet" href="http://s.n8n8.cn/Css/??uran/base-ui/2.0.2/base-ui.min.css">
+    <style type="text/css">
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+        body {
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            font-family: "Microsoft Yahei", tahoma, arial, "Hiragino Sans GB", \5b8b\4f53;
+            font-size: 1rem;          
+            -webkit-user-select: none;
+            -ms-touch-select: none;
+            -ms-touch-action: none;
+            -webkit-box-orient: vertical;
+            -moz-box-orient: vertical;
+            -ms-flex-direction: column;
+        }
+        header {
+            -moz-box-flex: 0;
+            font-size: 1.125rem;
+            line-height: 41px;
+            text-align: center;
+            color: #fff;
+            background: #000;
+            background-image: -webkit-gradient(linear,left top,left bottom,from(#525252),to(#424242));
+            background-image: -webkit-linear-gradient(#525252,#424242);
+            background-image: -ms-linear-gradient(#525252,#424242);
+            background-image: linear-gradient(#525252,#424242);
+        }
+        footer {
+            -moz-box-flex: 0;
+            font-size: .875rem;
+            line-height: 41px;
+            text-align: center;
+            color: #fff;
+            border-top: 1px solid #444;
+            background: #121212;
+            background-image: -webkit-gradient(linear,left top,left bottom,from(#505050),to(#121212));
+            background-image: -webkit-linear-gradient(#505050, #121212);
+            background-image: -ms-linear-gradient(#505050, #121212);
+            background-image: linear-gradient(#505050,#121212);
+        }
+
+        .grayscale { 
+            -webkit-filter: grayscale(100%);
+            -moz-filter: grayscale(100%);
+            -ms-filter: grayscale(100%);
+            -o-filter: grayscale(100%);
+            filter: grayscale(100%);
+            filter: gray;
+        }
+        .loading {
+            display: inline-block;
+            width: 37px;
+            height: 37px;
+            padding: 5px;
+            vertical-align: middle;
+            border-radius: 20px;
+            box-shadow: 0 0 15px 3px rgba(255,255,255,.6);
+            background: #fff url(http://s.n8n8.cn/Images/common/loading3201.gif) no-repeat 50% 50%;
+        }
+        .loading-overlay {
+            display: none;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            z-index: 10000;
+            width: 100%;
+            height: 100%;
+            opacity: 0.8;
+            background-color: #000;
+        }
+        .loading-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 10001;
+            width: 80px;
+            margin-left: -40px;
+            font-size: .875rem;
+            text-align: center;
+            color: #FFF;
+        }
+        .loading-icon {
+            display: inline-block;
+            width: 37px;
+            height: 37px;
+            padding: 5px;
+            font-size: .875rem;
+            vertical-align: middle;
+            border-radius: 20px;
+            box-shadow: 0 0 15px 3px rgba(255,255,255,.6);
+            background: #EEE url(http://s.n8n8.cn/Images/common/loading3201.gif) no-repeat 50% 50%;
+        }
+
+        .ui-header {
+            top: 1px;
+            z-index: 2;
+            padding: 0;
+            border-top: 1px #484a48 solid;
+            border-bottom: 1px #484a48 solid;
+            box-shadow: 0 1px 0 #000000, 0 -1px 0 #000000;
+            -webkit-box-shadow: 0 1px 0 #000000, 0 -1px 0 #000000;
+            -ms-box-shadow: 0 1px 0 #000000, 0 -1px 0 #000000;
+            background: #000;
+            background-image: -webkit-gradient(linear,left top,left bottom,from(#4c4d4c),to(#363836));
+            background-image: -webkit-linear-gradient(#4c4d4c,#363836);
+            background-image: -ms-linear-gradient(#4c4d4c,#363836);
+            background-image: linear-gradient(#4c4d4c,#363836);
+        }
+        .ui-header h1 {
+            width: 100%;
+            line-height: 26px;
+            text-indent: 0;
+        }
+        .ui-header .icon-reverse,
+        .ui-header .icon-reverse:hover {
+            left: 10px;
+            width: auto;
+            height: auto;
+            padding: 8px 15px;
+            font-weight: 500;
+            font-size: .938rem;
+            line-height: 1;
+            border: 1px solid #2c2c2c;
+            border-radius: 5px;
+            box-shadow: inset 0 1px rgba(82,82,82,1),inset 0 -1px rgba(82,82,82,1),inset 1px 0 rgba(82,82,82,1),inset -1px 0 rgba(82,82,82,1);
+            -webkit-box-shadow: inset 0 1px rgba(82,82,82,1),inset 0 -1px rgba(82,82,82,1),inset 1px 0 rgba(82,82,82,1),inset -1px 0 rgba(82,82,82,1);
+            -ms-box-shadow: inset 0 1px rgba(82,82,82,1),inset 0 -1px rgba(82,82,82,1),inset 1px 0 rgba(82,82,82,1),inset -1px 0 rgba(82,82,82,1);
+            background: #000;
+            background-image: -webkit-gradient(linear,left top,left bottom,from(#525252),to(#424242));
+            background-image: -webkit-linear-gradient(#525252,#424242);
+            background-image: -ms-linear-gradient(#525252,#424242);
+            background-image: linear-gradient(#525252,#424242);
+        }
+
+        .ui-content {
+            -webkit-box-flex: 1;
+            -ms-flex: 1;
+            -moz-box-flex: 1;
+            overflow: hidden;
+            padding: 15px 0;
+            background: #f6f6f6;
+        }
+        
+        .ui-field {
+            padding-bottom: 10px;
+        }
+        .ui-flexbox .ui-flexbox-item {
+            margin: 0;
+        }
+        .ui-captcha-button,
+        .ui-captcha-image {
+            margin: 0 0 0 5px;
+        }
+        .agree-field {
+            width: 250px;
+            margin: 0 auto;
+        }
+        
+    </style>
+</head>
+
+<body>
+
+<header class="ui-header" data-role="header">
+    <h1>用户注册</h1>
+    <a class="ui-icon icon-reverse" href="./" title="返回">返回</a>
+</header>
+
+<section class="ui-content" data-role="content">
+    <div class="register">
+        <form id="validatForm" action="" novalidate>
+            <div class="ui-field">
+                <div class="ui-field-input">
+                    <input type="tel" name="tel" placeholder="手机号" value="" required data-display="手机号" />
+                </div>
+                <div class="ui-field-message">提示信息</div>
+            </div>
+            
+            <div class="ui-flexbox ui-captcha">
+                <div class="ui-field ui-flexbox-item">
+                    <div class="ui-field-input">
+                        <input type="text" name="captcha" data-display="短信验证码" required pattern="/d{4}" maxlength="4" minlength="4" placeholder="短信验证码">
+                    </div>
+                </div>
+                <div class="ui-captcha-button">
+                    <button type="button" class="ui-button ui-button-submit">获取验证码</button>
+                </div>
+            </div>
+            
+            <div class="ui-field">
+                <div class="ui-field-input">
+                    <input type="password" name="password" placeholder="密码" value="" required data-display="密码" />
+                </div>
+            </div>
+            
+            <div class="ui-field">
+                <div class="ui-field-input">
+                    <input type="password" name="password_confirm" placeholder="确认密码" value="" required data-display="确认密码" />
+                </div>
+            </div>
+            
+            <div class="agree-field ui-field">
+                <span class="ui-checkbox ui-checkbox-simple fn-left"><input id="agree" type="checkbox"><span class="ui-icon icon-check"></span></span><label for="agree">注册即视为同意<a href="#">《服务条款》</a></label>
+            </div>
+
+            <div class="ui-field">
+                <button class="ui-button ui-button-submit" type="submit">确定</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<div id="loading" class="loading-overlay">
+    <div class="loading-box">
+        <i class="loading-icon"></i>
+        <p class="loading-text">请稍后……</p>        
+    </div>
+</div>
+
+<script id="seajsnode" src="http://s.n6n6.cn/Js/??seajs/2.1.1/sea.js"></script>
+<script>
+    seajs.config({
+        base: 'http://www.astro.org/js/',
+        alias: {
+            //'$': 'uran/jquto/1.0.3/jquto',
+            '$': 'core/zepto/1.0.0/zepto',
+            'picomodal': 'gallery/picomodal/1.0.0/picomodal',
+            'validator': 'uran/validator/1.0.0/validator'
+        }
+    });
+    
+    seajs.use(['$', 'picomodal', 'validator'], function ($, picoModal) {
+
+        var validator = new Validator('validatForm', {
+            stopOnError: false,
+            autoSubmit: false
+        });
+
+        $('#logForm').on('submit', function(e) {
+            var e = e || window.event;
+            e.preventDefault();
+            var $this = $(this);
+            var acc = $('#userAcc').val();
+            var pwd = $('#userPwd').val();
+            var pid = getUrlParam('pid');
+            $.ajax({
+                type: 'POST',
+                url: '#',
+                data: 'account=' + acc + '&password=' + pwd + '&pid=' + pid,
+                dataType: 'json',
+                success: function(r) {
+                    var code = r.code;
+                    var msg = r.msg;
+                    var res = r.response;
+
+                    if(code == 1) {
+                        picoModal(msg);
+                        $this[0].reset();
+                    } else {
+                        var errAlert = picoModal(msg);
+                        errAlert.onClose(function() {
+                            location.href = res;
+                        });
+                    }
+
+                }
+            });
+        });
+
+        // 获取URL参数值
+        function getUrlParam(name) {
+            var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]); return null;
+        }
+    });
+
+</script>
+
+</body>
+</html>

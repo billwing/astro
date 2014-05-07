@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>注册 — 经传前端开发页面模板</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="http://static.n8n8.cn/Public/Images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="http://s.n8n8.cn/Css/tpl/common/1.0.0/common.css">
+    <link rel="stylesheet" href="http://s.n8n8.cn/Css/tpl/register/1.0.0/register.css">
+    <script>
+        var urlConfig = {
+            agreement_url: './agreement.html'
+        }
+    </script>
+</head>
+
+<body>
+
+<div class="header">
+    <div class="wrapper">
+        <h1 class="logo fn-left">
+            <a class="logo-lnk" href="../../template/1.0.0/template.html"><img src="http://s.n8n8.cn/Images/common/astro.png" alt="经传"></a>
+        </h1>
+        <span class="fn-left">
+            <a href="../../template/1.0.0/template.html"><img height="70" src="http://s.n8n8.cn/Images/common/astroboy.png"></a>
+        </span>
+    </div>
+</div>
+
+<div class="nav bg-gray">
+    <div class="wrapper">
+        <ul class="ui-nav">
+            <li class="ui-nav-item"><a href="../../template/1.0.0/template.html">首页</a></li>
+            <li class="ui-nav-item ui-nav-item-current"><a href="../../register/1.0.0/register.html">注册</a></li>
+            <li class="ui-nav-item"><a href="../../login/1.0.0/login.html">登录</a></li>
+            <li class="ui-nav-item"><a href="../../information/1.0.0/information.html">个人资料</a></li>
+            <li class="ui-nav-item"><a href="../../password/1.0.0/password.html">修改密码</a></li>
+            <li class="ui-nav-item"><a href="../../findpwd/1.0.0/findpwd.html">找回密码</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="main wrapper mt-10">
+    <!-- register Start -->
+    <div class="tpl-register ui-box">
+        <div class="ui-box-head">
+            <div class="ui-box-head-border">
+                <h3 class="ui-box-head-title"><i class="icon-comm icon-head"></i>用户注册</h3>
+            </div>
+        </div>
+        <div class="ui-box-container">
+            <div class="ui-box-content">
+                <div class="J-tabsHover ui-tab">
+
+                    <div class="ui-tab-trigger"> 
+                        <ul> 
+                            <li class="ui-tab-trigger-item ui-switchable-active"><a href="javascript:;">用户注册</a></li>
+                            <li class="ui-tab-trigger-item"><a href="javascript:;">手机注册</a></li>
+                            <li class="ui-tab-trigger-item"><a href="javascript:;">邮箱注册</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="ui-tab-cnt">
+                        <div class="ui-tab-cnt-item ui-tab-cnt-item-current">
+                            <!-- 用户注册 Start  -->
+                            <form id="J-userRegForm" class="ui-form" action="" method="post" name="userRegForm">
+                                <div class="ui-form-tips">
+                                    <p class="tips-txt"><i class="icon-tips iconfont">&#xF046;</i><span class="tips-tit">请填写您的账号信息</span>并仔细阅读<a class="J-agreeBtn" href="javascript:;">《用户注册协议》</a></p>
+                                </div>
+
+                                <div class="ui-form-item">
+                                    <label for="J-userRegAcc" class="ui-label"><span class="ui-form-required">*</span>用户账号：</label>
+                                    <input id="J-userRegAcc" class="ui-input" type="text" name="account" />
+                                    <div class="ui-form-explain">7-16位字符，字母、数字或下划线组成</div>
+                                </div>
+
+                                <div class="ui-form-item">
+                                    <label for="J-userRegPwd" class="ui-label"><span class="ui-form-required">*</span>登录密码：</label>
+                                    <input id="J-userRegPwd" class="ui-input" type="password" name="pwd" />
+                                    <div class="ui-form-explain">6-16位字符，字母或数字组成</div>
+                                </div>
+
+                                <div class="ui-form-item">
+                                    <label for="J-userRegRep" class="ui-label"><span class="ui-form-required">*</span>确认密码：</label>
+                                    <input id="J-userRegRep" class="ui-input" type="password" name="re_pwd"/>
+                                    <div class="ui-form-explain">请再次输入密码</div>
+                                </div>
+
+                                <div class="ui-form-item">
+                                    <label for="J-userImgCode" class="ui-label"><span class="ui-form-required">*</span>验证码：</label>
+                                    <input id="J-userImgCode" class="imgcode-inp ui-input" type="text" autocomplete="off" maxlength="4" name="img_code" title="请输入图片验证码" />
+                                    <a class="imgcode-btn" href="javascript:;" title="点击换一张" onclick="this.firstChild.src='index.php?m=system&c=index&a=imgcode&t=' + Math.random();return false;"><img class="imgcode-img" src="http://u.n8n8.cn/User/index.php?m=Mobi&a=getVerCode">看不清？换一张</a>
+                                    <div class="ui-form-explain">请填写验证码</div>
+                                </div>
+
+                                <div class="ui-form-item">
+                                    <input id="J-userAgrChk" type="checkbox" checked="checked" disabled="disabled" name="agreement">
+                                    <label for="J-userAgrChk">我已经看过并同意<a class="J-agreeBtn" href="javascript:;">《用户注册协议》</a></label>
+                                </div>
+
+                                <div class="ui-form-item">
+                                    <input id="J-userRegSub" class="reg-sub ui-button-sorange ui-button" type="submit" value="立即注册">
+                                </div>
+                            </form>
+                            <!-- 用户注册 End -->
+                        </div>
+
+                        <div class="ui-tab-cnt-item">
+                            <!-- 手机注册 Start -->
+                            <form id="J-mobiRegForm" class="ui-form" action="" method="post" name="mobiRegForm">
+                                <div class="ui-form-tips">
+                                    <p class="tips-txt"><i class="icon-tips iconfont">&#xF046;</i><span class="tips-tit">请填写您的账号信息，</span>先仔细阅读<a class="J-agreeBtn" href="javascript:;">《用户注册协议》</a></p>
+                                </div>
+
+                                <div class="ui-form-item">
+                                    <label for="J-mobiRegAcc" class="ui-label"><span class="ui-form-required">*</span>手机号码：</label>
+                                    <input id="J-mobiRegAcc" class="ui-input" type="text" name="mobile" />
+                                    <div class="ui-form-explain">请输入您的手机号码</div>
+                                </div>
+
+                                <div class="ui-form-item">
+                                    <label class="ui-label"></label>
+                                    <input id="J-getMobiCode" class="mobicode-btn ui-button-swhite ui-button" type="button" value="免费获取验证码">
+                                </div>
+
+                                <div class="ui-form-item">
+                                    <label for="J-mobiRegCode" class="ui-label"><span class="ui-form-required">*</span>验证码：</label>
+                                    <input id="J-mobiRegCode" class="ui-input" type="text" autocomplete="off" name="mob_code" value="">
+                                    <div class="ui-form-explain">请输入您手机收到的验证码</div>
+                                </div>
+
+                                <div class="ui-form-item">
+                                    <label for="J-mobiRegPwd" class="ui-label"><span class="ui-form-required">*</span>登录密码：</label>
+                                    <input id="J-mobiRegPwd" class="ui-input" type="password" name="pwd" value=""/>
+                                    <div class="ui-form-explain">6-16位字符，字母或数字组成</div>
+                                </div>
+
+                                <div class="ui-form-item">
+                                    <label for="J-mobiRegRep" class="ui-label"><span class="ui-form-required">*</span>确认密码：</label>
+                                    <input id="J-mobiRegRep" class="ui-input" type="password" name="re_pwd"/>
+                                    <div class="ui-form-explain ui-tiptext">请再次输入密码</div>
+                                </div>
+
+                                <div class="ui-form-item">
+                                    <input id="J-userAgrChk" type="checkbox" checked="checked" disabled="disabled" name="agreement">
+                                    <label for="J-userAgrChk">我已经看过并同意<a class="J-agreeBtn" href="javascript:;">《用户注册协议》</a></label>
+                                </div>
+
+                                <div class="ui-form-item">
+                                    <input id="J-mobiRegSub" class="reg-sub ui-button-sorange ui-button" type="submit" value="立即注册">
+                                </div>
+                            </form>
+                            <!-- 手机注册 End -->
+                        </div>
+
+                        <div class="ui-tab-cnt-item">
+                            <!-- 邮箱注册 Start -->
+                            <form id="J-mailRegForm" class="ui-form" action="" method="post" name="mailRegForm">
+                                <div class="ui-form-tips">
+                                    <p class="tips-txt"><i class="icon-tips iconfont">&#xF046;</i><span class="tips-tit">请填写您的账号信息，</span>先仔细阅读<a class="J-agreeBtn" href="javascript:;">《用户注册协议》</a></p>
+                                </div>
+
+                                <div class="ui-form-item">
+                                    <label for="J-mailRegAcc" class="ui-label"><span class="ui-form-required">*</span>电子邮箱：</label>
+                                    <input id="J-mailRegAcc" class="ui-input" type="text" name="email" />
+                                    <div class="ui-form-explain">请输入您的邮箱</div>
+                                </div>
+
+                                <div class="ui-form-item">
+                                    <label class="ui-label"></label>
+                                    <input id="J-getMailCode" class="mobicode-btn ui-button-swhite ui-button" type="button" value="邮件获取验证码">
+                                </div>
+
+                                <div class="ui-form-item">
+                                    <label for="J-findPwdMailCode" class="ui-label">验证码：</label>
+                                    <input id="J-findPwdMailCode" class="ui-input" type="text" autocomplete="off" name="eml_code" value="">
+                                    <div class="ui-form-explain">请输入您邮箱收到的验证码</div>
+                                </div>
+
+                                <div class="ui-form-item">
+                                    <label for="J-mailRegPwd" class="ui-label"><span class="ui-form-required">*</span>登录密码：</label>
+                                    <input id="J-mailRegPwd" class="ui-input" type="password" name="pwd" value=""/>
+                                    <div class="ui-form-explain">6-16位字符，字母或数字组成</div>
+                                </div>
+
+                                <div class="ui-form-item">
+                                    <label for="J-mailRegRep" class="ui-label"><span class="ui-form-required">*</span>确认密码：</label>
+                                    <input id="J-mailRegRep" class="ui-input" type="password" name="re_pwd"/>
+                                    <div class="ui-form-explain ui-tiptext">请再次输入密码</div>
+                                </div>
+
+                                <div class="ui-form-item">
+                                    <input id="J-userAgrChk" type="checkbox" checked="checked" disabled="disabled" name="agreement">
+                                    <label for="J-userAgrChk">我已经看过并同意<a class="J-agreeBtn" href="javascript:;">《用户注册协议》</a></label>
+                                </div>
+
+                                <div class="ui-form-item">
+                                    <input id="J-mailRegSub" class="reg-sub ui-button-sorange ui-button" type="submit" value="立即注册">
+                                </div>
+                            </form>
+                            <!-- 邮箱注册 End -->
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- register End -->
+</div>
+
+<div class="footer wrapper">
+    <ul class="ui-nav">
+        <li class="ui-nav-item"><a href="http://www.jingzhuan.cn/" target="_blank">经传软件</a></li>
+        <li class="ui-nav-item"><a href="http://www.yidejia.com/" target="_blank">伊的家</a></li>
+        <li class="ui-nav-item"><a href="http://ezhiedu.com/" target="_blank">伊智教育</a></li>
+        <li class="ui-nav-item"><a href="http://xy.yidejia.com/" target="_blank">经传学院</a></li>
+        <li class="ui-nav-item"><a href="http://www.n8n8.cn/" target="_blank">经传多盈</a></li>
+    </ul>
+    <div class="copyright">
+        <p>广州经传信息科技有限公司</p>
+        <p>所载文章、数据仅供参考，使用前请核实，风险自负</p>
+        <p>Copyright &copy; 广州经传信息科技有限公司 All Rights Reserved 版权所有 复制必究</p>
+        <p>Powered by <a href="http://www.jingzhuan.cn" target="_blank" title="广州经传信息科技有限公司">www.jingzhuan.cn</a> &copy; 2008-2014  <a href="http://www.miibeian.gov.cn" rel="nofollow" target="_blank">粤ICP备11037409号-3</a></p>
+    </div>
+</div>
+
+<script id="seajsnode" src="http://s.n8n8.cn/Js/??seajs/2.1.1/sea.js,seajs/2.1.1/seajs-text.js,seajs/2.1.1/seajs-style.js,seajs/2.1.1/seajs-combo.js"></script>
+<script src="../../statics/js/common/config/3.0.0/config.js"></script>
+<script>
+    seajs.use('tpl/register/1.0.0/register');
+
+    // 注册页选项卡效果，不写入注册组件
+    seajs.use('tabs', function(Tabs) {
+        var tabsRegCls = '.J-tabsHover';
+        var tabsReg = new Tabs({
+            element: tabsRegCls,
+            triggers: tabsRegCls + ' .ui-tab-trigger-item',
+            panels: tabsRegCls + ' .ui-tab-cnt-item',
+            triggerType: 'hover',
+            activeIndex: 0
+        }).render();
+    });
+</script>
+
+</body>
+</html>

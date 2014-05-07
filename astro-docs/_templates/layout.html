@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html lang="{{theme.lang}}">
+    <head>
+        <meta charset="UTF-8">
+        {%- if post.filename == 'index' %}
+        <title>{{config.package.title|title}} - {{config.package.description}}</title>
+        {%- else %}
+        <title>{{config.package.title|title}} - {{post.title}}</title>
+        {%- endif %}
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="generator" content="{{system.name}} {{system.version}}" />
+        {%- block assets %}
+        <link type="image/x-icon" href="{{static_url('css/favicon.ico')}}" rel="icon">
+        <link rel="stylesheet" href="{{static_url('css/normalize.css')}}" />
+        <link rel="stylesheet" href="{{static_url('css/site.css')}}" />
+        <link rel="stylesheet" href="{{static_url('css/solarized.css')}}" />
+        <link rel="stylesheet" href="{{static_url('style.css')}}" />
+        {%- include "snippet/head.html" %}
+        <script src="{{config.assets_host}}/seajs/seajs-text/1.0.2/seajs-text.js"></script>
+        <script src="{{static_url('js/site.js')}}"></script>
+        <!--[if lt IE 9]>
+        <script src="{{static_url('js/html5shiv.js')}}"></script>
+        <script src="{{static_url('es5-safe.js')}}"></script>
+        <![endif]-->
+        {%- endblock %}
+        {%- block afterstyle %}{% endblock %}
+        <script>
+        seajs.use(['arale/sticky/1.2.1/sticky', '/static/side'], function(Sticky, side) {
+            Sticky('.side-area', 20);
+            side.init();
+        });
+        </script>
+    </head>
+    <body>
+        <div id="body-wrapper">
+            <div class="head-area">
+                <div class="title-area">
+                    <h1 class="inline">
+                        <a href="{{content_url('index.html')}}">{{config.package.title|title}}</a>
+                    </h1>
+                    <input type="text" placeholder="{{config.package.description}}" id="search" class="inline" autocomplete="off">
+                </div>
+            </div>
+            <div class="nav-area">
+                <ol class="main-nav">
+                    <li><a href="/"><i class="iconfont" title="首页">&#xF034;</i> 首页</a></li>
+                    {%- for item in resource.pages|find_category('astro') %}
+                    <li><a href="{{permalink_url(item)}}">{{item.title}}</a></li>
+                    {%- endfor %}
+                </ol>
+            </div>
+            <div class="main-area">
+                {%- if post.filename == 'index' %}
+                <div class="side-area">
+                    <ul>
+                        <li><a href="#index1">侧边导航<i class="iconfont" title="单箭头右">&#x00E5;</i></a></li>
+                        <li><a href="#index2">侧边导航<i class="iconfont" title="单箭头右">&#x00E5;</i></a></li>
+                        <li><a href="#index3">侧边导航<i class="iconfont" title="单箭头右">&#x00E5;</i></a></li>
+                        <li><a href="#index4">侧边导航<i class="iconfont" title="单箭头右">&#x00E5;</i></a></li>
+                        <li><a href="#index5">侧边导航<i class="iconfont" title="单箭头右">&#x00E5;</i></a></li>
+                    </ul>
+                </div>
+                {%- else %}
+                <div class="side-area">{{post.toc}}</div>
+                {%- endif %}
+                <script type="text/template" id="list-template">
+                    <li><a href="#"><i class="iconfont" title="单箭头右">&#x00E5;</i></a></li>
+                </script>
+                {%- if post.filename == 'index' %}
+                <div class="content-area" id="module-wrapper">
+                    <p>这里显示首页内容</p>
+                </div>
+                <div class="comment-area">
+                    <!-- Duoshuo Comment BEGIN -->
+                    <div class="ds-thread"></div>
+                    <script type="text/javascript">
+                    var duoshuoQuery = {short_name:"yunbiao"};
+                    (function() {
+                        var ds = document.createElement('script');
+                        ds.type = 'text/javascript';ds.async = true;
+                        ds.src = 'http://static.duoshuo.com/embed.js';
+                        ds.charset = 'UTF-8';
+                        (document.getElementsByTagName('head')[0] 
+                        || document.getElementsByTagName('body')[0]).appendChild(ds);
+                        })();
+                    </script>
+                    <!-- Duoshuo Comment END -->
+                </div>
+                {%- else %}
+                <div class="content-area">
+                    <h1>{{post.title}}</h1>
+                    <div class="content entry-content">{{post.html | add_anchor}}</div>
+                </div>
+                {%- endif %}
+            </div>
+        </div>
+        <div id="footer-wrapper">
+            <footer>
+            <p class="powered">
+                {%- block footer %}{% endblock %}
+                {%- include "snippet/foot.html" %}
+            </p>
+            </footer>
+        </div>
+    </body>
+</html>

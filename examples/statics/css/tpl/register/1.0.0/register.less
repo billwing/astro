@@ -1,0 +1,89 @@
+@charset "utf-8";
+
+/*! 
+ * @name: register
+ * @overview: 用户注册模板
+ * @author: tbrweb@gmail.com
+ * @create: 2014-03-11
+ * @revise: 2014-03-17
+ */
+
+// Base url
+@cssUrl: "http://s.n8n8.cn/Css";
+@imgUrl: "../../images/astro/";
+
+// Global less
+@import "@{cssUrl}/tpl/common/1.0.0/global.less";
+
+// Autocomplete
+@import "@{cssUrl}/js/autocomplete/autocomplete.less";
+
+/*
+ * @name: global
+ * @overview: 页面全局
+ * @require: null
+ */
+.ui-autocomplete-item {
+	width: 168px;
+}
+
+/*
+ * @name: tpl-register
+ * @overview: 用户注册
+ * @require: .ui-box, .ui-tab, .ui-form, .ui-button
+ */
+.tpl-register .ui-tab-trigger {
+	padding-left: 190px;
+}
+.tpl-register .ui-switchable-active a {
+	height: 33px;
+	font-weight: 700;
+	border-bottom: 0;
+}
+.tpl-register .ui-form {
+	padding-left: 120px;
+}
+.tpl-register .ui-form-item {
+	padding-bottom: 15px;
+}
+.tpl-register .ui-form-tips {
+	margin: 15px 0;
+	padding-left: 75px;
+	color: #666;
+}
+.tpl-register .icon-tips {
+	margin-right: 5px;
+	font-size: 14px;
+}
+.tpl-register .ui-input {
+	padding: 4px 9px;
+}
+.tpl-register .ui-form-explain {
+	display: inline-block;
+	margin-left: 10px;
+}
+.tpl-register .imgcode-img {
+	margin: 0 10px;
+	vertical-align: middle;
+}
+.tpl-register .ui-button {
+	height: 30px;
+	font-size: 13px;
+	line-height: 28px;
+}
+.tpl-register .agree {
+	border-bottom: 0;
+}
+.tpl-register .agree-cont {
+	overflow-y: auto;
+	height: 400px;
+	font-size: 13px;
+}
+.tpl-register .agree-foot {
+	margin-top: 15px;
+	text-align: center;
+}
+.tpl-register .agree-foot .ui-button {
+	height: 25px;
+	line-height: 25px;
+}

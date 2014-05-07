@@ -1,0 +1,716 @@
+﻿/* ----------------------------------------------元素重置  ---------------------------------------------------------*/
+
+/*body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, input, textarea, p, tr, th, td,i,img {
+    font-size: inherit;
+    margin: 0;
+    padding: 0;
+    word-break: break-all;
+    word-wrap: break-word;
+    z-index:0;
+}
+body {
+    color: #333333;
+    font-size:12px;
+    line-height:1.5em;
+    font-family:Arial !important;*/ /*很奇怪的事情，如果设置超过一种字体，打开公式编辑器就会自动进入兼容性视图*/
+/*}
+ul, ol {
+    list-style: none outside none;
+}
+i {
+    font-style: normal;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size: 12px;
+}
+input[type="button"], input[type="submit"], button {
+    cursor: pointer;
+    outline: medium none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    table-layout: fixed;
+}
+img {
+    border: medium none;
+}
+a {
+    color: #666666;
+    cursor: pointer;
+    outline: medium none;
+    text-decoration: none;
+}
+a:hover {
+    color: #209400;
+}*/
+.clear10{ clear:both; height:10px; overflow:hidden; display:block; }
+.fl{ float:left; _display:inline; }
+.fr{ float:right; _display:inline; }
+.tc{ text-align:center; }
+
+.mt5 { margin-top:5px;}
+.mt10 { margin-top:10px; }
+.mt20 { margin-top:20px; }
+
+/* ----------------------------------------------公共部分  ---------------------------------------------------------*/
+.cke_questions {
+    padding:15px;
+    border:1px solid #B6B6B6;
+    border-top-width:0px;
+}
+
+/* 编辑区 */
+.cke_questions_editor .cke_questions_editorArea{
+    padding: 3px 5px;
+    border:1px solid #c6c6c6;
+	background: #efefef;
+	cursor: text;
+    min-height:18px;/*必须要加一个高度，在不然在list中的编辑区，按删除按钮将内容删除完后，会将编辑区也删除*/
+}
+.cke_questions_editor .cke_questions_editorArea * {
+    font-size:12px;
+    line-height:18px;
+}
+.cke_questions_editor .cke_questions_editorArea strong{
+    font-weight:bold;
+}
+.cke_questions_editor .cke_questions_editorArea em{
+    font-style:italic;
+}
+.cke_questions_editor .cke_questions_editorArea u{
+    text-decoration:underline;
+}
+.cke_questions_editor .cke_questions_editorArea sub{
+    vertical-align:sub;
+}
+.cke_questions_editor .cke_questions_editorArea img.mathml {
+    vertical-align:middle;
+}
+
+.cke_questions_header {
+    height:30px;
+    margin: 0;
+    padding: 0;
+    line-height:30px;
+    font-weight:bold;
+    font-size:14px;
+    display:block;
+    clear:both;
+    _zoom:1;
+    overflow:hidden;
+}
+.cke_questions_header span {
+    float:left;
+}
+.cke_questions_header .cke_questions_button {
+    float:right;
+    display:block;
+}
+
+.cke_questions_part {
+    padding-bottom:10px;
+}
+
+.cke_questions_content {
+	display: block;
+    overflow:hidden;
+    clear:both;
+    _zoom:1;
+}
+
+/* ----------------------------------------------选项（单项选择题、多项选择题、填空题、判断题、试题类型）  ---------------------------------------------------------*/
+
+.cke_questions_options {
+    display:block;
+    overflow:hidden;
+    _zoom:1;
+}
+
+.cke_questions_options .cke_questions_option {
+    position: relative;
+    margin-bottom: 8px;
+    z-index:0;
+}
+
+.cke_questions_options .cke_questions_icon_del,.cke_questions_options .cke_questions_icon_add {
+    height: 25px;
+	width: 22px;
+	cursor: pointer;
+    display:inline-block;
+}
+.cke_questions_options .cke_questions_icon_del {
+    background: url(images/del.png) no-repeat 0 0;
+}
+.cke_questions_options .cke_questions_icon_add {
+    background: url(images/add.png) no-repeat 0 0;
+    display:none;
+}
+
+/*选项编辑区*/
+.cke_questions_options .cke_questions_editorspace {
+    margin-left:25px;
+    margin-right:45px;
+}
+
+.cke_questions_options .cke_questions_editoritem {
+    position: relative;
+}
+
+.cke_questions_options .cke_questions_editorspace .cke_questions_button {
+    float:right;
+    display:inline-block;
+    position:absolute;
+    top:0px;
+    right:0px;
+	z-index: 5;
+}
+
+/*选项删除按钮*/
+.cke_questions_options .cke_questions_button {
+    float:right;
+    position:absolute;
+    top:0px;
+    right:0px;
+	z-index: 5;
+}
+
+/*选项是否为答案*/
+.cke_questions_options .cke_questions_isAnswer {
+    position:absolute;
+    top:7px;
+    right:27px;
+    vertical-align:middle;
+}
+/*选项序号*/
+.cke_questions_options .cke_questions_sort {
+    position:absolute;
+    left:0px;
+    top:3px;
+}
+
+/*填空题选项相关*/
+.cke_questions_filling .cke_questions_option .cke_questions_editorspace {
+    margin-right:25px;
+}
+
+/*判断题、试题模型选项相关*/
+.cke_questions_interpretation  .cke_questions_option,.cke_questions_mode .cke_questions_option{
+    float:left;
+    list-style:none;
+    padding-right:15px;
+    display:inline-block;
+}
+.cke_questions_interpretation .cke_questions_options .cke_questions_editorspace,.cke_questions_mode .cke_questions_options .cke_questions_editorspace {
+    display:inline-block;
+    border-width:0px;
+    background:none;
+    padding-right:10px;
+    margin-right:0px;
+}
+.cke_questions_interpretation .cke_questions_isAnswer,.cke_questions_mode .cke_questions_isAnswer{
+    position:static;
+}
+.cke_questions_interpretation .cke_questions_sort,.cke_questions_mode .cke_questions_sort{
+    display:none;
+}
+
+/* ----------------------------------------------附件  ---------------------------------------------------------*/
+
+.cke_questions_attachment {
+    display:block;
+    border:1px solid #c6c6c6;
+    border-top-width:0px;
+	background: #fff;
+    clear:both;
+    overflow:hidden;
+    _zoom:1;
+    padding:3px 5px;
+}
+
+.cke_questions_attachment li {
+    display:block;
+    float: left;
+    width:50%;
+    overflow:hidden;
+}
+
+.cke_questions_attachment li span {
+    display:inline-block;
+    padding-right:10px;
+}
+
+.cke_questions_options .cke_questions_attachment .cke_questions_button {
+    position: static;
+    float:none;
+}
+
+.filePanel {
+    padding:5px;
+}
+
+.filePanel li {
+    display:block;
+    line-height:25px;
+    height:25px;
+    overflow:hidden;
+}
+
+.filePanel .file {
+    width:180px;
+    overflow:hidden;
+    display:inline-block;
+    text-overflow:ellipsis;
+    cursor:pointer;
+    white-space:nowrap; 
+    word-wrap:normal;
+}
+
+.filePanel .file .icon_img{
+    background: url("images/bg_jmm.png") no-repeat scroll 0 0 transparent;
+    display: inline-block;
+    height: 20px;
+    margin-right: 5px;
+    vertical-align: middle;
+    width: 16px;
+}
+
+.filePanel .direction {
+    overflow:hidden;
+    display:inline-block;
+}
+.filePanel .direction input{
+    vertical-align: middle;
+    margin-right:3px;
+    margin-left:8px;
+}
+
+.filePanel .del {
+    display:inline-block;
+    margin-left:15px;
+    vertical-align: middle;
+    cursor:pointer;
+    height:inherit;
+}
+
+/* --------------------------------------------------复合题型子试题（完型填空、阅读理解） -----------------------------------------------*/
+.cke_questions_childrenspace {
+    padding-left:25px;
+}
+.cke_questions_childrenspace .cke_questions_questions {
+    list-style-type:decimal;
+    border:1px dashed #a8a8a8;
+}
+.cke_questions_childrenspace .cke_questions_questions .cke_questions_header {
+    border-bottom:1px dashed #a8a8a8;    
+    background:#eee;
+    float:right;
+    width:100%;
+}
+
+.cke_questions_childrenspace .cke_questions_questions .cke_questions_header span{
+    padding:0 0 0 10px;   
+}
+
+.cke_questions_childrenspace .cke_questions_questions .cke_questions_header a{
+    padding:0 10px 0 0;   
+}
+
+.cke_questions_childrenspace .cke_questions_questions div.cke_questions_part .cke_questions_header {
+    border-width:0px;
+    padding:0px;
+    background:none;
+    float:none;
+}
+
+.cke_questions_childrenspace .cke_questions_questions div.cke_questions_part .cke_questions_header span {
+    padding:0px;
+}
+
+.cke_questions_childrenspace .cke_questions_questions div.cke_questions_part .cke_questions_header a {
+    padding:0px;
+}
+
+.cke_questions_childrenspace .cke_questions_questions div.cke_questions_part {
+    padding-left:10px;
+    padding-right:10px;
+}
+
+/* ---------------------------------------高级选项 ---------------------------------*/
+.cke_questions_advanced > div {
+    overflow:hidden;
+    clear:both;
+    _zoom:1;
+}
+
+.cke_questions_advanced > div .cke_questions_header{
+    float:left;
+    width:80px;
+    text-align:right;
+    color:#999;
+}
+.cke_questions_advanced > div .cke_questions_header span {
+    float:right;
+}
+.cke_questions_advanced > div .cke_questions_header span:after{
+    content:"：";
+    width:25px;
+}
+.cke_questions_advanced > div > div,.cke_questions_advanced > div > ul {
+    margin-left:85px;
+}
+
+.cke_questions_advanced .cke_questions_checkboxlist span {
+    margin-right:10px;
+    line-height:22px;
+    height:22px;
+}
+.cke_questions_advanced .cke_questions_checkboxlist input{
+    vertical-align:middle;
+    margin-right:5px;
+}
+
+.cke_questions_advanced .cke_questions_textbox input{
+    vertical-align:middle;
+    width:500px;
+    height:20px;
+    line-height:20px;
+}
+
+.cke_questions_checkBox {
+     white-space:nowrap;
+     display:inline-block;
+}
+
+.cke_questions_advanced .cke_questions_scope .cke_checkbox_checkAll,.cke_questions_advanced .cke_questions_area .cke_checkbox_checkAll {
+    display:block;
+}
+
+/* 知识点 */
+.cke_questions_know_content { 
+    color: #404040;
+    font-size: 12px;
+    line-height: 20px;
+    min-height: 40px;
+    padding: 10px 20px;
+}
+.cke_questions_know_title{ 
+     font-size: 14px;
+}
+.cke_questions_know_content .menu_02{ height:33px; zoom:1; border-bottom:2px solid #2c4579; margin:20px 0 0 0; }
+.cke_questions_know_content .menu_02:after{ clear:both; content:""; visibility:hidden; height:0px; display:block; }
+.cke_questions_know_content .menu_02 ul{ }
+.cke_questions_know_content .menu_02 ul li{ float:left; margin-right:10px; display:inline; }
+.cke_questions_know_content .menu_02 ul li a{ cursor: pointer; background:#fff; border:1px solid #ccc; border-bottom:0; height:33px; color:#3055a0; float:left; padding:0 25px; line-height:32px; height:32px; font-size:14px; }
+.cke_questions_know_content .menu_02 ul li a:hover{ color:#f00; text-decoration:none; }
+.cke_questions_know_content .menu_02 ul li.curr a,.cke_questions_know_menu_02 ul li.curr a:hover{ background:#365ba9; border-color:#2c4579; color:#fff; }
+.cke_questions_know_content .list_zsd li{ float:left; width:200px; height:50px; line-height:25px; background:#fff; border:1px solid #ccc; padding:5px; display:inline; margin:0 5px 5px 0; }
+.cke_questions_know_content select{ border:1px solid #c6c6c6; }
+.cke_questions_know_content .dl_lsit dd {
+    border: 1px solid #CCCCCC;
+    display: inline;
+    float: left;
+    height: 300px;
+    margin: 0 5px 0 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 210px;
+}
+.cke_questions_know_content .dl_lsit dd li {
+    float: left;
+    margin-bottom: 2px;
+    width: 190px;
+}
+.cke_questions_know_content .dl_lsit dd li a {
+    background-color: #ECF1F3;
+    display: block;
+    float: left;
+    height: 18px;
+    line-height: 18px;
+    overflow: hidden;
+    padding: 0 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 170px;
+    word-wrap: normal;
+}
+.cke_questions_know_content .dl_lsit dd li a:hover {
+    background-color: #ACD4E9;
+    color: #000000;
+    text-decoration: none;
+}
+.cke_questions_know_content .dl_lsit dd li a.next {
+    background-image: url("images/icon_pop_arrow.png");
+    background-position: 180px 4px;
+    background-repeat: no-repeat;
+}
+.cke_questions_know_content .dl_lsit dd li.curr a, .dl_lsit dd li.curr a:hover {
+    background-color: #ACD4E9;
+    color: #000000;
+}
+
+.cke_questions_know_content .btn_yes{
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    text-decoration: none;
+    width: 79px;
+    clear:both;
+    float:left;
+    margin:25px 0 0 400px;
+    background: url("http://style.ciwong.net/room/images/pop_bg.png") no-repeat scroll 0 0 transparent;
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: middle;
+    cursor:pointer;
+}
+.btn_yes:hover {
+    background-position: 0 -30px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.cke_questions_know_content .tc {
+    text-align: center;
+}
+
+
+.cke_questions_know_dl_lsit dd {
+    border: 1px solid #CCCCCC;
+    display: inline;
+    float: left;
+    height: 300px;
+    margin: 0 5px 0 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 210px;
+}
+
+.cke_questions_know_content .menu_04 a {
+    color: #3B5998;
+    padding: 2px 7px;
+    cursor:pointer;
+}
+.cke_questions_know_content .menu_04 a:hover {
+    color: #3B5998;
+    text-decoration: underline;
+}
+.cke_questions_know_content .menu_04 a.curr, .menu_04 a.curr:hover {
+    background: none repeat scroll 0 0 #3B5998;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.cke_questions_know_content .btn_cls { cursor:pointer; }
+
+.cke_questions_know_content .t_elli {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    line-height:25px;
+    margin:0 0 10px 0;
+}
+.cke_questions_know_content .f_14 {
+    font-size: 14px;
+}
+.cke_questions_know_content .fl {
+    float: left;
+}
+.cke_questions_know_content .fr {
+    float: right;
+}
+.cke_questions_know_content .link_1 {
+    color: #0456AD;
+}
+
+.cke_questions_know_content .box_formula {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #CCCCCC;
+    left: 0;
+    min-width: 100px;
+    padding: 10px;
+    position: absolute;
+    top: 20px;
+}
+.cke_questions_know_content .formula_xl {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #AAAAAA;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+    height: 300px;
+    left: 0;
+    padding: 10px;
+    position: absolute;
+    top: 57px;
+    width: 500px;
+}
+.cke_questions_know_content .formula_xl .btn_cls {
+    background: url("../images/close_bg.png") no-repeat scroll 0 0 transparent;
+    height: 13px;
+    overflow: hidden;
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    width: 13px;
+}
+.cke_questions_know_content .formula_xl .btn_cls:hover {
+    background-position: 0 -13px;
+}
+
+
+.cke_questions_know_content .cf:after, .cf:before,.cke_questions_knowledgeInfo .cf:after,.cke_questions_knowledgeInfo .cf:before {
+    clear: both;
+    content: "";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+.cke_questions_know_content .li_cf li:after, .li_cf li:before {
+    clear: both;
+    content: "";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+
+.cke_questions_know_content .btn_01, .btn_01 span {
+    background: url("images/btn_bg.png") no-repeat scroll left 0 transparent;
+    display: inline-block;
+    height: 24px;
+    line-height: 24px;
+    padding-left: 10px;
+    vertical-align: middle;
+    cursor:pointer;
+}
+.cke_questions_know_content .btn_01 span,.btn_01 span {
+    background-position: right 0;
+    float: left;
+    font-size: 12px;
+    padding: 0 10px 0 0;
+}
+.cke_questions_know_content .btn_01:hover,.btn_01:hover {
+    background-position: left -24px;
+    text-decoration: none;
+}
+.cke_questions_know_content .btn_01:hover span,.btn_01:hover span {
+    background-position: right -24px;
+    color: #333333;
+    text-decoration: none;
+}
+
+
+.cke_questions_know_content .li_fl li {
+    float: left;
+}
+.cke_questions_know_content .mt5 {
+    margin-top: 5px;
+}
+.cke_questions_know_content .mt10 {
+    margin-top: 10px;
+}
+.cke_questions_know_content .mb10 {
+    margin-bottom: 10px;
+}
+.cke_questions_know_content .vam {
+    vertical-align: middle;
+}
+.cke_questions_know_content .w_150 {
+    width: 150px;
+}
+
+.cke_questions_know_content a {
+    color: #666666;
+    cursor: pointer;
+    outline: medium none;
+    text-decoration: none;
+}
+
+.box_score_1 { 
+    background: none repeat scroll 0 0 #FFFFFF;
+    /*border: 4px solid #EEEEEE;*/
+    padding: 10px 0;
+    /*border:4px solid #eee; background:#fff; padding:10px 0;*/
+}
+
+.box_score .in_score,.box_score_1 .in_score{ float:left; display:inline; border:1px solid #ffd; padding:10px; width:185px; height:55px; margin:5px 0 10px 10px; border:1px solid #eee; }
+
+.stars_0, .stars_1, .stars_2, .stars_3, .stars_del {
+    background: url("images/stars.png") no-repeat scroll 0 -16px transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 16px;
+    margin-right: 3px;
+    vertical-align: middle;
+    width: 16px;
+}
+.stars_1 {
+    background-position: 0 0;
+}
+.stars_2 {
+    background-position: 0 -32px;
+}
+.stars_3 {
+    background-position: 0 -80px;
+}
+.stars_del {
+    background-position: 0 -64px;
+    margin-left: 10px;
+}
+.stars_del:hover {
+    background-position: 0 -48px;
+}
+.no_pointer .stars_0, .no_pointer .stars_1 {
+    cursor: default;
+}
+.cke_questions_known_button_add { width:95px; height:30px; border:1px solid #ccc; display:block; text-align:center; line-height:30px;margin:0 0 10px 10px; }
+
+.cke_questions_childrenspace .cke_questions_questions .cke_questions_header_children { 
+   background:none;
+   border:0px;
+}
+
+
+/* ----------------------------------------- 其它 ---------------------------------------------------*/
+.cke_questions_textarea .cke_questions_editor .cke_questions_editorArea{
+    min-height:54px;
+}
+
+.cke_questions_reading {
+    margin-top:10px;
+}
+
+.cke_questions_reading .cke_questions_header .cke_questions_button {
+    float:none;
+    border:1px solid #a6a6a6;
+    display: inline-block;
+    height: 21px;
+    line-height: 21px;
+    padding-left: 5px;
+    padding-right:5px;
+    vertical-align: middle;
+    margin-left:15px;
+    font-weight:normal;
+    font-size:12px;
+}
+
+.cke_questions_reading .cke_questions_header .cke_questions_button:hover {
+    background:#eee;
+}
+
+.cke_questions_blankInput {
+    border-width:0px;
+    background:none;
+    text-align:center;
+    width:50px;
+    border-bottom:1px solid #000;
+}
+
+.cke_questions_mathExpression {
+    vertical-align:middle;
+}
+
+

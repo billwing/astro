@@ -1,0 +1,13 @@
+{
+  "family": "gallery",
+  "name": "raphael",
+  "version": "2.1.0",
+  "description": "JavaScript Vector Library",
+  "homepage": "http://raphaeljs.com/",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/DmitryBaranovskiy/raphael.git"
+  },
+  "author": "Dmitry Baranovskiy",
+  "license": "MIT"
+}

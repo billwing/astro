@@ -1,0 +1,91 @@
+{
+  "family": "astro",
+  "name": "astro",
+  "version": "1.0.0",
+  "spm": {
+  	"alias": {
+		// core
+		"$": "$",
+
+		// base
+		"base": "base",
+		"class": "class",
+		"events": "events",
+		"widget": "widget",
+
+		// tool
+		"cookie": "cookie",
+		"dnd": "dnd",
+		"detector": "detector",
+		"easing": "easing",
+		"iframe-shim": "iframe-shim",
+		"messenger": "messenger",
+		"name-storage": "name-storage",
+		"placeholder": "placeholder",
+		"position": "position",
+		"qrcode": "qrcode",
+		"sticky": "sticky",
+		"templatable": "templatable",
+		"upload": "upload",
+
+		// component
+		"autocomplete": "autocomplete",
+		"calendar": "calendar",
+		"dialog": "dialog",
+		"confirmbox": "confirmbox",
+		"overlay": "overlay",
+		"mask": "mask",
+		"popup": "popup",
+		"switchable": "switchable",
+		"tabs": "tabs",
+		"slide": "slide",
+		"carousel": "carousel",
+		"accordion": "accordion",
+		"select": "select",
+		"tip": "tip",
+		"validator": "validator",
+
+		// gallery
+		"handlebars": "handlebars",
+		"moment": "moment",
+		"ckeditor": "ckeditor",
+		"kindeditor": "kindeditor",
+		"zeroclipboard": "zeroclipboard",
+		"ztree": "ztree",
+		"morris": "morris",
+		"lazyload": "lazyload",
+		"store": "store",
+		"jcrop": "jcrop",
+		"menuaim": "menuaim",
+
+		// common
+		"util": "util",
+		"urlconfig": "urlconfig",
+		"validatorrules": "validatorrules",
+		"mobilecode": "mobilecode",
+		"emailcode": "emailcode",
+		"jzloginpopup": "jzloginpopup",
+		"jzim": "jzim",
+		"jiathis": "jiathis",
+		"baiduad": "baiduad",
+		"navselected": "navselected",
+		"address": "address",
+		"addfavorite": "addfavorite",
+		"avatar": "avatar",
+
+		// tpl
+		"register": "register",
+		"login": "login",
+		"information": "information",
+		"password": "password",
+		"findpwd": "findpwd"
+    }
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-cmd-transport": "~0.2.0",
+    "grunt-cmd-concat": "~0.2.0",
+    "grunt-contrib-uglify": "~0.2.0",
+    "grunt-contrib-clean": "~0.4.0"
+  }
+}

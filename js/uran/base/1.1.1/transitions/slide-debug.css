@@ -1,0 +1,94 @@
+/*! define handy/base/1.1.1/transitions/slide-debug.css */
+.page-slideoutleft {
+  -webkit-animation:slideoutleft .25s linear;
+  animation:slideoutleft .25s linear;
+}
+
+.page-slideinright {
+  z-index:2;
+  -webkit-animation:slideinright .25s linear;
+  animation:slideinright .25s linear;
+}
+
+.page-slideoutright {
+  -webkit-animation:slideoutright .25s linear;
+  animation:slideoutright .25s linear;
+}
+
+.page-slideinleft {
+  z-index:2;
+  -webkit-animation:slideinleft .25s linear;
+  animation:slideinleft .25s linear;
+}
+
+@keyframes slideoutleft {
+  from {
+    transform:translateX(0%);
+  }
+  to {
+    transform:translateX(-100%);
+  }
+}
+
+@-webkit-keyframes slideoutleft {
+  from {
+    -webkit-transform:translateX(0%);
+  }
+  to {
+    -webkit-transform:translateX(-100%);
+  }
+}
+
+@keyframes slideinright {
+  from {
+    transform:translateX(100%);
+  }
+  to {
+    transform:translateX(0%);
+  }
+}
+
+@-webkit-keyframes slideinright {
+  from {
+    -webkit-transform:translateX(100%);
+  }
+  to {
+    -webkit-transform:translateX(0%);
+  }
+}
+
+@keyframes slideoutright {
+  from {
+    transform:translateX(0%);
+  }
+  to {
+    transform:translateX(100%);
+  }
+}
+
+@-webkit-keyframes slideoutright {
+  from {
+    -webkit-transform:translateX(0%);
+  }
+  to {
+    -webkit-transform:translateX(100%);
+  }
+}
+
+@keyframes slideinleft {
+  from {
+    transform:translateX(-100%);
+  }
+  to {
+    transform:translateX(0%);
+  }
+}
+
+@-webkit-keyframes slideinleft {
+  from {
+    -webkit-transform:translateX(-100%);
+  }
+  to {
+    -webkit-transform:translateX(0%);
+  }
+}

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>图片列表 — 移动前端H5开发模板</title>
+    <link rel="stylesheet" href="http://www.astro.org/css/uran/base-ui/2.0.2/base-ui.css">
+    <style type="text/css">
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+        body {
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            font-family: "Microsoft Yahei", tahoma, arial, "Hiragino Sans GB", \5b8b\4f53;
+            font-size: 1rem;          
+            -webkit-user-select: none;
+            -ms-touch-select: none;
+            -ms-touch-action: none;
+            -webkit-box-orient: vertical;
+            -moz-box-orient: vertical;
+            -ms-flex-direction: column;
+        }
+        header {
+            -moz-box-flex: 0;
+            font-size: 1.125rem;
+            line-height: 41px;
+            text-align: center;
+            color: #fff;
+            background: #000;
+            background-image: -webkit-gradient(linear,left top,left bottom,from(#525252),to(#424242));
+            background-image: -webkit-linear-gradient(#525252,#424242);
+            background-image: -ms-linear-gradient(#525252,#424242);
+            background-image: linear-gradient(#525252,#424242);
+        }
+        footer {
+            -moz-box-flex: 0;
+            font-size: .875rem;
+            line-height: 41px;
+            text-align: center;
+            color: #fff;
+            border-top: 1px solid #444;
+            background: #121212;
+            background-image: -webkit-gradient(linear,left top,left bottom,from(#505050),to(#121212));
+            background-image: -webkit-linear-gradient(#505050, #121212);
+            background-image: -ms-linear-gradient(#505050, #121212);
+            background-image: linear-gradient(#505050,#121212);
+        }
+
+        .content {
+            -webkit-box-flex: 1;
+            -ms-flex: 1;
+            -moz-box-flex: 1;
+            overflow: hidden;
+            padding: 35px 10px;
+            background: #f6f6f6;
+        }
+
+        .page {
+            -webkit-tap-highlight-color:rgba(0, 0, 0, 0);
+        }
+
+        .iscroller {
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+            width: 100%;
+            -webkit-transform: translateZ(0);
+            -moz-transform: translateZ(0);
+            -ms-transform: translateZ(0);
+            -o-transform: translateZ(0);
+            transform: translateZ(0);
+            -webkit-touch-callout: none;
+        }
+
+        .page ul {
+            list-style: none;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            text-align: left;
+        }
+
+        .page li {
+            padding: 0 .5rem;
+            font-size: 1rem;
+            line-height: 2.5rem;
+            text-align: center;
+        }
+
+        .page li img {
+            display: block;
+            width: 100%;
+        }
+
+        .empty {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -12px 0 0 -104px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+<section class="content">
+    <div class="page">
+        <div class="iscroller">
+            <ul id="detImgList"></ul>
+        </div>
+    </div>
+</section>
+
+<script id="seajsnode" src="http://s.n6n6.cn/Js/??seajs/2.1.1/sea.js"></script>
+<script>
+    seajs.config({
+        //base: '/js/',
+        alias: {
+            '$': 'core/zepto/1.0.0/zepto'
+        }
+    });
+    
+    seajs.use(['$'], function ($) {
+        $.ajax({
+            type: 'GET',
+            url: 'http://m.yidejia.com/index.php?a=getGoodsDescById',
+            data: 'id=' + getUrlParam('gid'),
+            dataType: 'json',
+            success: function(r) {
+                var code = r.code;
+                var msg = r.msg;
+                var res = r.response;
+
+                if(!res || code == -1) {
+                    detailEmpty();
+                    return;
+                }
+
+                var data = res.desc.replace(/\\\\\\/g, '');
+
+                // 获取图片路径
+                var imgArr = [];
+                //var imgReg = /<img\s+src="(.*?)"/g;
+                var imgReg = /<img [^>]*src="(.*?[^\\])"[^>]*\/>/g;
+                var item,
+                    items = '';
+                /*while (item = imgReg.exec(data)) {
+                    imgArr.push(item[1]);
+                }*/
+                data.replace(imgReg, function(s, match) {
+                    imgArr.push(match);
+                });
+
+                if(imgArr.length) {
+                    // 生成图片代码
+                    for(var i = 0; i < imgArr.length; i ++) {
+                        items += '<li><img src="' + imgArr[i] + '"></li>';
+                    }
+
+                    $('#detImgList').html(items);
+                } else {
+                    detailEmpty();
+                }
+            }
+        });
+
+        // 商品详情为空
+        function detailEmpty() {
+            $('#detImgList').html('<div class="empty">该商品暂时还没有详情介绍！</div>');
+        }
+
+        // 获取URL参数值
+        function getUrlParam(name) {
+            var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]); return null;
+        }
+    });
+
+</script>
+
+</body>
+</html>

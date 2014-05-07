@@ -1,0 +1,42 @@
+{
+  "family": "astro",
+  "name": "astro",
+  "title": "Astro",
+  "version": "1.0.0",
+  "description": "A front-end template for the JZ Web",
+  "homepage": "https://bitbucket.org/billwing/astro",
+  "author": "Billwing",
+  "maintainers": [
+    "Billwing"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://billwing@bitbucket.org/billwing/astro.git"
+  },
+  "bugs": {
+    "url": "https://bitbucket.org/billwing/astro/issues?status=new&status=open"
+  },
+  "keywords": [],
+  "licenses": "MIT",
+  "spm": {
+    "output": [
+      "astro.js",
+      "astro.css"
+    ],
+    "alias": {
+      "popup": "arale/popup/1.1.2/popup",
+      "autocomplete": "arale/autocomplete/1.2.2/autocomplete",
+      "placeholder": "arale/placeholder/1.0.1/placeholder",
+      "sticky": "arale/sticky/1.2.1/sticky",
+      "keymaster": "gallery/keymaster/1.0.2/keymaster",
+      "moment": "gallery/moment/2.3.1/moment",
+      "word-color": "afc163/word-color/1.0.0/word-color"
+    }
+  },
+  "module-tags": {
+    "deprecated": [
+      "arale/placeholder",
+      "alipay/qrcode"
+    ]
+  }
+}

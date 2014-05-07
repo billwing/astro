@@ -1,0 +1,26 @@
+{
+  "family": "arale",
+  "name": "name-storage",
+  "version": "1.0.0",
+  "description": "Storage on window.name",
+  "homepage": "https://github.com/aralejs/name-storage",
+  "author": "闲耘<hotoo.cn@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:aralejs/name-storage.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aralejs/name-storage/issues"
+  },
+  "scripts": {
+    "prepublish": "spm build"
+  },
+  "keywords": ["utility"],
+  "licenses": "MIT",
+  "spm": {
+    "output": ["name-storage.js"],
+    "alias": {},
+    "devAlias": {},
+    "engines": {}
+  }
+}

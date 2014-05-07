@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, minimal-ui">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>卡片列表 — 移动前端H5开发模板</title>
+    <link rel="stylesheet" href="http://s.n8n8.cn/Css/??uran/base-ui/2.0.2/base-ui.min.css">
+    <style type="text/css">
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+        body {
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            font-family: "Microsoft Yahei", tahoma, arial, "Hiragino Sans GB", \5b8b\4f53;
+            font-size: 1rem;          
+            -webkit-user-select: none;
+            -ms-touch-select: none;
+            -ms-touch-action: none;
+            -webkit-box-orient: vertical;
+            -moz-box-orient: vertical;
+            -ms-flex-direction: column;
+        }
+
+        .grayscale { 
+            -webkit-filter: grayscale(100%);
+            -moz-filter: grayscale(100%);
+            -ms-filter: grayscale(100%);
+            -o-filter: grayscale(100%);
+            filter: grayscale(100%);
+            filter: gray;
+        }
+
+        .ui-content {
+            -webkit-box-flex: 1;
+            -ms-flex: 1;
+            -moz-box-flex: 1;
+            overflow: hidden;
+            background: #f6f6f6;
+        }
+
+        .iscroller {
+            position: absolute;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            -webkit-transform: translateZ(0);
+            -moz-transform: translateZ(0);
+            -ms-transform: translateZ(0);
+            -o-transform: translateZ(0);
+            transform: translateZ(0);
+            -webkit-touch-callout: none;
+        }
+
+        .ui-list a {
+            padding-right: 8px;
+            border-color: #e6e6e6;
+        }
+        .ui-list a:hover {
+            border-color: #cd3379;
+            background: #fff;
+        }
+
+        /* activity list */
+        .actlist {
+            padding: 5px 10px;
+        }
+        .actlist .hd {
+            overflow: hidden;
+            height: 30px;
+        }
+        .actlist .tit {
+            overflow: hidden;
+            float: left;
+            width: 200px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        .actlist .date {
+            float: right;
+        }
+        .actlist .bd {
+            clear: both;
+            padding-top: 5px;
+        }
+        .actlist .img {
+            width: 100%;
+            max-width: 480px;
+        }
+        .actlist .ft {
+            overflow: hidden;
+            height: 55px;
+        }
+        .actlist .desc {
+            overflow: hidden;
+            display: inline-block;
+            width: 190px;
+            height: 50px;
+            text-overflow: ellipsis;
+        }
+        .actlist .state {
+            float: right;
+            padding: 8px 10px;
+        }
+        .actlist .icon-state {
+            display: block;
+            width: 19px;
+            height: 19px;
+            margin: 0 auto;
+        }
+        .actlist .icon-before {            
+            background: url(http://m.yidejia.com/resources/images/ydj/activity/before-btn.png) no-repeat;
+        }
+        .actlist .icon-start {            
+            background: url(http://m.yidejia.com/resources/images/ydj/activity/start-btn.png) no-repeat;
+        }
+        .actlist .icon-end {
+            background: url(http://m.yidejia.com/resources/images/ydj/activity/end-btn.png) no-repeat;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<section class="ui-content" data-role="content">
+    <div class="iscroller">
+        <ul class="actlist ui-list" data-role="list">
+            <li class="ui-list-item">
+                <a class="ui-list-link" href="uran-carditem.html">
+                    <div class="hd">
+                        <p class="tit">双十一逆袭钜惠 一天震撼疯狂抢一天震撼疯狂抢一天震撼疯狂抢</p>
+                        <p class="date">2013-11-20</p>
+                    </div>
+                    <div class="bd">
+                        <img class="img" src="http://m.yidejia.com/resources/images/ydj/activity/demo-ad.png">
+                    </div>
+                    <div class="ft">
+                        <p class="desc">一天震撼疯狂抢，仅此一天，玩转双十一就在伊的家玩转双十一就在伊的家</p>
+                        <p class="state"><i class="icon-state icon-start"></i>正在进行</p>
+                    </div>
+                </a>
+            </li>
+            <li class="ui-list-item">
+                <a class="ui-list-link" href="uran-carditem.html">
+                    <div class="hd">
+                        <p class="tit">双十一逆袭钜惠 一天震撼疯狂抢一天震撼疯狂抢一天震撼疯狂抢</p>
+                        <p class="date">2013-11-20</p>
+                    </div>
+                    <div class="bd">
+                        <img class="img" src="http://m.yidejia.com/resources/images/ydj/activity/demo-ad.png">
+                    </div>
+                    <div class="ft">
+                        <p class="desc">一天震撼疯狂抢，仅此一天，玩转双十一就在伊的家玩转双十一就在伊的家</p>
+                        <p class="state"><i class="icon-state icon-end"></i>活动结束</p>
+                    </div>
+                </a>
+            </li>
+            <li class="ui-list-item">
+                <a class="ui-list-link" href="uran-carditem.html">
+                    <div class="hd">
+                        <p class="tit">双十一逆袭钜惠 一天震撼疯狂抢一天震撼疯狂抢一天震撼疯狂抢</p>
+                        <p class="date">2013-11-20</p>
+                    </div>
+                    <div class="bd">
+                        <img class="img" src="http://m.yidejia.com/resources/images/ydj/activity/demo-ad.png">
+                    </div>
+                    <div class="ft">
+                        <p class="desc">一天震撼疯狂抢，仅此一天，玩转双十一就在伊的家玩转双十一就在伊的家</p>
+                        <p class="state"><i class="icon-state icon-start"></i>正在进行</p>
+                    </div>
+                </a>
+            </li>
+            <li class="ui-list-item">
+                <a class="ui-list-link" href="uran-carditem.html">
+                    <div class="hd">
+                        <p class="tit">双十一逆袭钜惠 一天震撼疯狂抢一天震撼疯狂抢一天震撼疯狂抢</p>
+                        <p class="date">2013-11-20</p>
+                    </div>
+                    <div class="bd">
+                        <img class="img" src="http://m.yidejia.com/resources/images/ydj/activity/demo-ad.png">
+                    </div>
+                    <div class="ft">
+                        <p class="desc">一天震撼疯狂抢，仅此一天，玩转双十一就在伊的家玩转双十一就在伊的家</p>
+                        <p class="state"><i class="icon-state icon-start"></i>正在进行</p>
+                    </div>
+                </a>
+            </li>
+            <li class="ui-list-item">
+                <a class="ui-list-link" href="uran-carditem.html">
+                    <div class="hd">
+                        <p class="tit">双十一逆袭钜惠 一天震撼疯狂抢一天震撼疯狂抢一天震撼疯狂抢</p>
+                        <p class="date">2013-11-20</p>
+                    </div>
+                    <div class="bd">
+                        <img class="img" src="http://m.yidejia.com/resources/images/ydj/activity/demo-ad.png">
+                    </div>
+                    <div class="ft">
+                        <p class="desc">一天震撼疯狂抢，仅此一天，玩转双十一就在伊的家玩转双十一就在伊的家</p>
+                        <p class="state"><i class="icon-state icon-start"></i>正在进行</p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<script id="seajsnode" src="http://s.n6n6.cn/Js/??seajs/2.1.1/sea.js"></script>
+<script>
+    seajs.config({
+        //base: 'http://www.astro.org/js/',
+        alias: {
+            '$': 'core/zepto/1.0.0/zepto',
+            'picomodal': 'gallery/picomodal/1.0.0/picomodal'
+        }
+    });
+    
+    seajs.use(['$', 'picomodal'], function ($, picoModal) {
+       picoModal('Test');
+    });
+
+</script>
+
+</body>
+</html>

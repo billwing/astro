@@ -1,0 +1,23 @@
+{
+  "family": "handy",
+  "name": "app",
+  "version": "1.1.0",
+  "description": "移动Web开发应用架构",
+  "author": "swain;alexyan",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/handyjs/app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/handyjs/app/issues"
+  },
+  "spm": {
+    "alias": {
+      "$": "$",
+      "base": "arale/base/1.1.1/base"
+    },
+    "output": [
+      "base.js"
+    ]
+  }
+}
