@@ -13,11 +13,11 @@ Astro(A front-end framework solution for the JZ Web) 是凝结业界优秀开源
   |---- component-docs/      组件文档(包括CSS,JS等)
   |---- tpl/                 模板文件(页面结构模板)
   |---- css/                 样式文件(支持Less,CSS)
-  |---- js/              	   脚本文件
+  |---- js/                  脚本文件
   |---- images/              图片文件
   |---- flash/               动画文件
   |---- examples/            框架模板
-  |---- index.html			     首页模板
+  |---- index.html           首页模板
   |---- respond-proxy.html   Respond JS Proxy
   |---- SPA.html             单页应用模板
   |---- SPA-sample.html      小项目页面模板

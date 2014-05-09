@@ -31,8 +31,6 @@ define("lib/dialog/1.2.1/dialog-debug", [ "$-debug", "lib/overlay/1.1.2/overlay-
             },
             // 是否有背景遮罩层
             hasMask: true,
-            // 点击遮罩层关闭对话框
-            hideOnClick: false,
             // 关闭按钮可以自定义
             closeTpl: "×",
             // 默认宽度
@@ -128,7 +126,6 @@ define("lib/dialog/1.2.1/dialog-debug", [ "$-debug", "lib/overlay/1.1.2/overlay-
             this._setupTrigger();
             this._setupMask();
             this._setupKeyEvents();
-            this._setupClkEvents();
             this._setupFocus();
             toTabed(this.element);
             toTabed(this.get("trigger"));
@@ -232,12 +229,6 @@ define("lib/dialog/1.2.1/dialog-debug", [ "$-debug", "lib/overlay/1.1.2/overlay-
                     this.get("visible") && this.hide();
                 }
             });
-        },
-        // 绑定点击遮罩层关闭窗口事件
-        _setupClkEvents: function() {
-            this.delegateEvents($(document), "click", function(e) {
-                this.get("hideOnClick") && this.hide();
-            }
         },
         _showIframe: function() {
             var that = this;
