@@ -1,3 +1,6 @@
+![Astro Logo](http://atom.qiniudn.com/astrologo.png =203x149 'Astro')
+<span style="font-size:14px;">纯真善良、勇往直前、百折不挠</span>
+
 ## 一、关于 Astro 的一些话：
 
 Astro(A front-end framework solution for the JZ Web) 是凝结业界优秀开源项目组成的前端框架解决方案小组的项目名称。他包括页面模板库的 `HTML解决方案` ,构建样式库的 `CSS解决方案` 和基础组件库的 `JS解决方案` 。目前 Astro 致力于为中小型团队内部的前端开发人员提供一整套简洁、快速、高效的开发解决方案。
