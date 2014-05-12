@@ -1,4 +1,4 @@
-![Astro Logo](http://atom.qiniudn.com/astrologo.png =203x149 'Astro')
+![Astro Logo](http://atom.qiniudn.com/astrologo.png?imageView/2/w/203/h/149 'Astro')
 <span style="font-size:14px;">纯真善良、勇往直前、百折不挠</span>
 
 ## 一、关于 Astro 的一些话：
