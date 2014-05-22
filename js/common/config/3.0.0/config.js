@@ -78,7 +78,7 @@ seajs.config({
         'findpwd': 'tpl/findpwd/1.0.0/findpwd',
 
         // debug
-        'seajs-debug': 'seajs/2.1.1/seajs-debug'
+        'seajs-debug': 'seajs/seajs-debug/1.1.1/seajs-debug'
 
     },
 

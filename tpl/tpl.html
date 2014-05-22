@@ -36,6 +36,22 @@
     &lt;li class="ui-list-item"&gt;&lt;a href="#"&gt;新闻第一条c&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;!-- 新闻列表 --&gt;
+&lt;ul class="ui-list"&gt;
+    &lt;li class="ui-list-item"&gt;
+        &lt;span class="ui-list-titl"&gt;&lt;a href="#" target="_blank"&gt;新闻第1条&lt;/a&gt;&lt;/span&gt;
+        &lt;span class="ui-list-date"&gt;2014-05-15&lt;/span&gt;
+    &lt;/li&gt;
+    &lt;li class="ui-list-item"&gt;
+        &lt;span class="ui-list-titl"&gt;&lt;a href="#" target="_blank"&gt;新闻第2条&lt;/a&gt;&lt;/span&gt;
+        &lt;span class="ui-list-date"&gt;2014-05-15&lt;/span&gt;
+    &lt;/li&gt;
+    &lt;li class="ui-list-item"&gt;
+        &lt;span class="ui-list-titl"&gt;&lt;a href="#" target="_blank"&gt;新闻第3条&lt;/a&gt;&lt;/span&gt;
+        &lt;span class="ui-list-date"&gt;2014-05-15&lt;/span&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;!-- 图文列表 --&gt;
 &lt;ul class="ui-dlist"&gt;
     &lt;li class="ui-list-item"&gt;
@@ -55,49 +71,69 @@
 
 <pre class="brush: xml">
 <h3>导航(.ui-nav)</h3>
-&lt;!-- 菜单导航 --&gt;
-&lt;ul class="ui-nav"&gt;
-    &lt;li class="ui-nav-item"&gt;
-        &lt;a href="#"&gt;导航&lt;/a&gt;
-        &lt;ul class="ui-nav-item-child"&gt;
-        	&lt;li&gt;item&lt;/li&gt;
-        	&lt;li&gt;item&lt;/li&gt;
-        	&lt;li&gt;item&lt;/li&gt;
-        &lt;/ul&gt;
-    &lt;/li&gt;
-    &lt;li class="ui-nav-item ui-nav-item-current"&gt;
-        &lt;a href="#"&gt;导航&lt;/a&gt;
-        &lt;ul class="ui-nav-item-child"&gt;
-        	&lt;li&gt;item&lt;/li&gt;
-        	&lt;li&gt;item&lt;/li&gt;
-        	&lt;li&gt;item&lt;/li&gt;
-        &lt;/ul&gt;
-    &lt;/li&gt;
-    &lt;li class="ui-nav-item"&gt;
-        &lt;a href="#"&gt;导航&lt;/a&gt;
-        &lt;ul class="ui-nav-item-child"&gt;
-        	&lt;li&gt;item&lt;/li&gt;
-        	&lt;li&gt;item&lt;/li&gt;
-        	&lt;li&gt;item&lt;/li&gt;
-        &lt;/ul&gt;
-    &lt;/li&gt;
-    &lt;li class="ui-nav-item"&gt;
-        &lt;a href="#"&gt;导航&lt;/a&gt;
-        &lt;ul class="ui-nav-item-child"&gt;
-        	&lt;li&gt;item&lt;/li&gt;
-        	&lt;li&gt;item&lt;/li&gt;
-        	&lt;li&gt;item&lt;/li&gt;
-        &lt;/ul&gt;
-    &lt;/li&gt;
-&lt;/ul&gt;
+&lt;!-- 一级导航 --&gt;
+&lt;div class="ui-nav ui-nav-nosub0"&gt;
+    &lt;ul class="ui-nav-main"&gt;
+        &lt;li class="ui-nav-item ui-nav-item-current"&gt;
+            &lt;a href="#"&gt;一级导航1&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class="ui-nav-item"&gt;
+            &lt;a href="#"&gt;一级导航2&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class="ui-nav-item"&gt;
+            &lt;a href="#"&gt;一级导航3&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class="ui-nav-item"&gt;
+            &lt;a href="#"&gt;一级导航4&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class="ui-nav-item"&gt;
+            &lt;a href="#"&gt;一级导航5&lt;/a&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;!-- 二级导航 --&gt;
+&lt;div class="ui-nav ui-nav-nosub0"&gt;
+    &lt;ul class="ui-nav-main"&gt;
+        &lt;li class="ui-nav-item ui-nav-item-current"&gt;
+            &lt;a href="#"&gt;一级导航1&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class="ui-nav-item"&gt;
+            &lt;a href="#"&gt;一级导航2&lt;/a&gt;
+            &lt;ul class="ui-nav-submain"&gt;
+                &lt;li class="ui-nav-subitem ui-nav-subitem-current"&gt;&lt;a href="#"&gt;二级导航1&lt;/a&gt;&lt;/li&gt;
+                &lt;li class="ui-nav-subitem"&gt;&lt;a href="#"&gt;二级导航2&lt;/a&gt;&lt;/li&gt;
+                &lt;li class="ui-nav-subitem"&gt;&lt;a href="#"&gt;二级导航3&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li class="ui-nav-item"&gt;
+            &lt;a href="#"&gt;一级导航3&lt;/a&gt;
+            &lt;ul class="ui-nav-submain"&gt;
+                &lt;li class="ui-nav-subitem"&gt;&lt;a href="#"&gt;二级导航1&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li class="ui-nav-item"&gt;
+            &lt;a href="#"&gt;一级导航4&lt;/a&gt;
+            &lt;ul class="ui-nav-submain"&gt;
+                &lt;li class="ui-nav-subitem"&gt;&lt;a href="#"&gt;二级导航1&lt;/a&gt;&lt;/li&gt;
+                &lt;li class="ui-nav-subitem"&gt;&lt;a href="#"&gt;二级导航2&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li class="ui-nav-item"&gt;
+            &lt;a href="#"&gt;一级导航5&lt;/a&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;div class="ui-nav-subcontainer"&gt;&lt;/div&gt;
+&lt;/div&gt;
 
 &lt;!-- 目录导航 --&gt;
 &lt;div class="dirnav"&gt;
     &lt;div class="wrapper"&gt;
+        &lt;span class="nav-tit"&gt;&lt;i class="icon-home icon-comm"&gt;&lt;/i&gt;当前位置：&lt;/span&gt;
         &lt;a class="nav-ind nav-item" href="/"&gt;网站首页&lt;/a&gt;&gt;
         &lt;a class="nav-lnk nav-item" href="/"&gt;一级目录&lt;/a&gt;&gt;
         &lt;a class="nav-lnk nav-item" href="/"&gt;二级目录&lt;/a&gt;&gt;
-        &lt;b class="nav-tit nav-item"&gt;内容标题&lt;/b&gt;
+        &lt;b class="nav-cur nav-item"&gt;内容标题&lt;/b&gt;
     &lt;/div&gt;
 &lt;/div&gt;
 </pre>
@@ -476,7 +512,7 @@
 <pre class="brush: xml">
 <h3>卡盘轮播(.ui-slide)</h3>
 &lt;div id="J-slide" class="ui-slide"&gt;
-    &lt;ul class="ui-switchable-content" data-role="content"&gt;
+    &lt;ul class="ui-switchable-content" data-switchable-role="content"&gt;
         &lt;li class="ui-switchable-panel"&gt;
             &lt;a class="ui-slide-img" href="#"&gt;&lt;img title="卡盘轮播图片" src="#" /&gt;&lt;/a&gt;
             &lt;p class="ui-slide-tit"&gt;&lt;a href="#"&gt;卡盘轮播标题&lt;/a&gt;&lt;/p&gt;
@@ -490,7 +526,7 @@
             &lt;p class="ui-slide-tit"&gt;&lt;a href="#"&gt;卡盘轮播标题&lt;/a&gt;&lt;/p&gt;
         &lt;/li&gt;
     &lt;/ul&gt;
-    &lt;ul class="ui-switchable-nav" data-role="nav"&gt;
+    &lt;ul class="ui-switchable-nav" data-switchable-role="nav"&gt;
         &lt;li class="ui-switchable-trigger ui-switchable-active"&gt;•&lt;/li&gt;
         &lt;li class="ui-switchable-trigger"&gt;•&lt;/li&gt;
         &lt;li class="ui-switchable-trigger"&gt;•&lt;/li&gt;
@@ -599,6 +635,20 @@
                         &lt;/div&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<pre class="brush: xml">
+<h3>加载等候(.ui-loading)</h3>
+&lt;div id="J-loading" class="J-loading"&gt;
+    &lt;div style="position:fixed;top:0;left:0;z-index:10000;width:100%;height:100%;opacity:0.2;background-color:rgb(0, 0, 0);"&gt;
+    &lt;/div&gt;
+    &lt;div style="position:absolute;top:50%;left:50%;z-index:10001;width:300px;"&gt;
+        &lt;div style="height:100%;zoom:1;"&gt;
+            &lt;div class="ui-loading" style="position:fixed;top:50%;left:50%;width:32px;height:32px;margin:-16px 0 0 -16px;outline:0;background-image:url(http://s.n8n8.cn/Images/common/ajax-loader3.gif)"&gt;
             &lt;/div&gt;
         &lt;/div&gt;
     &lt;/div&gt;

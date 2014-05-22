@@ -1,4 +1,4 @@
-define(function(require, exports, module) {
+define("common/baiduad/1.0.0/baiduad", ["$", "widget"], function(require, exports, module) {
 
     // BaiduAd
     // -----------

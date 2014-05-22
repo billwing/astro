@@ -3,7 +3,7 @@
  *@Autor:Billwing
  *@Version:3.0.0
  *@Date:2012-06-01
- *@Modify:2014-04-12
+ *@Modify:2014-05-21
  */
 
 var JZIM = window.JZIM || {};
@@ -2159,7 +2159,7 @@ if (!Array.prototype.indexOf) {
 		this.errors = 0;
 		this.paused = false;
 		this.hold = 1;
-		this.wait = 60;
+		this.wait = 1800;
 		this.window = 5;
 		this._data = [];
 		this._requests = [];

@@ -177,13 +177,22 @@ define("astro/call", ["$", "confirmbox", "dialog", "handlebars", "autocomplete",
     var Slide = require('slide');
     var itemSlide = new Slide({
         element: '#J-itemSlide',
-        triggers: '#J-itemSlide .ui-switchable-nav li',
-        panels: '#J-itemSlide .ui-switchable-content li',
+        //triggers: '#J-itemSlide .ui-switchable-nav li',
+        //panels: '#J-itemSlide .ui-switchable-content li',
         effect: 'scrollx',
-        easing: 'easeOutStrong',
-        interval: 5000
+        //easing: 'easeOutStrong',
+        //interval: 5000,
+        hasTriggers: true
     }).render();
     itemSlide.on('switched', function(toIndex, fromIndex) {});
+    $('#J-slidePrev').click(function(e) {
+        e.preventDefault();
+        itemSlide.prev();
+    });
+    $('#J-slideNext').click(function(e) {
+        e.preventDefault();
+        itemSlide.next();
+    });
 
     // carousel
     var Carousel = require('carousel');

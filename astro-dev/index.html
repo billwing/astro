@@ -85,17 +85,21 @@
 
 <script id="seajsnode" src="http://s.n8n8.cn/Js/??seajs/2.1.1/sea.js,seajs/2.1.1/seajs-text.js,seajs/2.1.1/seajs-style.js,seajs/2.1.1/seajs-combo.js"></script>
 <!-- <script src="http://s.n8n8.cn/Js/??seajs/2.1.1/seajs-flush.js"></script> -->
-<script src="js/astro/config.js"></script>
+<script src="http://s.n8n8.cn/Js/common/config/3.0.0/config.js"></script>
 <script>
-    /*seajs.config({
-        base: 'http://s.n8n8.cn/Js/',
+    seajs.config({
         alias: {
-            '$': 'core/jquery/1.8.3/jquery'
         },
-        preload: [
-            //'js/core/jquery/1.8.3/jquery.js'
-        ]
-    });*/
+        paths: {
+            // 项目JS路径配置
+            'js': '/js'
+        },
+        map: [
+            // 单个JS缓存刷新
+            //['common.js', 'common.js?v=20140519']
+        ],
+        base: 'http://s.n8n8.cn/Js/'
+    });
     /*seajs.use(['$', 'confirmbox'], function($, ConfirmBox){
         ConfirmBox.alert('提示内容~', function() {}, {
             afterHide: function() {
@@ -106,7 +110,7 @@
             hideOnClick: true
         });
     });*/
-    seajs.use('/js/astro/common');
+    seajs.use('js/astro/common');
     // The combined request
     //seajs.flush();
 </script>
