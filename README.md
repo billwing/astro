@@ -3,7 +3,7 @@
 
 ## 一、关于 Astro 的一些话：
 
-Astro(A front-end framework solution for the JZ Web) 是凝结业界优秀开源项目组成的前端框架解决方案小组的项目名称。他包括页面模板库的 `HTML解决方案` ,构建样式库的 `CSS解决方案` 和基础组件库的 `JS解决方案` 。目前 Astro 致力于为中小型团队内部的前端开发人员提供一整套简洁、快速、高效的开发解决方案。
+Astro(A Front-end Integrated Solution for the JZ Web) 是凝结业界优秀开源项目组成的前端框架解决方案小组的项目名称。他包括页面模板库的 `HTML解决方案` ,构建样式库的 `CSS解决方案` 和基础组件库的 `JS解决方案` 。目前 Astro 致力于为中小型团队内部的前端开发人员提供一整套简洁、快速、高效的开发解决方案。
 
 基于 `开源·分享·贡献` 的理念建立 [Astro](https://github.com/billwing/astro 'Astro') 这个项目，对优秀开源项目取其精华，发扬光大。发布的所有开源源代码，均采用 [MIT License]((https://github.com/billwing/astro/LICENSE.md) 许可。欢迎参与 Astro 的开发，或[提出你宝贵的意见](mailto:tbrweb@gmail.com 'tbrweb@gmail.com')。
 
