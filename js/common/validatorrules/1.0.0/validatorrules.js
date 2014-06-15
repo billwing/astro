@@ -31,8 +31,8 @@ define("common/validatorrules/1.0.0/validatorrules", ["$", "urlconfig", "validat
     ValidatorRules.addRule('nickName', /[^%&,;=?$\x22]{4,20}/, '请输入正确的{{display}}');
 
     // 检查昵称唯一性
-    ValidatorRules.addRule('checkNickNmae', function(options, commit) {
-        $.post(UrlConfig.checkNickNmae_url, {account: options.element.val()}, function(data) {
+    ValidatorRules.addRule('checkNickName', function(options, commit) {
+        $.post(UrlConfig.checkNickName_url, {account: options.element.val()}, function(data) {
             commit(data.code == '-1' ? null : data.code, data.response);
         }, 'json');
     });

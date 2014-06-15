@@ -268,7 +268,7 @@ define("astro/call", ["$", "confirmbox", "dialog", "handlebars", "autocomplete",
         autoSubmit: false
     });
     itemValidator.addItem({
-        element: '[name=mobiCode]',
+        element: '#itemForm [name=mobiCode]',
         required: true,
         rule: 'number minlength{min:6} maxlength{max:6}',
         errormessageRequired: '请正确输入6位手机验证码'
