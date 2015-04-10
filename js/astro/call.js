@@ -254,6 +254,23 @@ define("astro/call", ["$", "confirmbox", "dialog", "handlebars", "autocomplete",
             hasMask:false
         });
     });
+        // Class name
+        var client = new ZeroClipboard($('.J-copyUrl'));
+        client.on('ready', function (event) {
+            client.on('copy', function (event) {
+                var target = event.target;
+                var lnkObj = target.previousSibling;
+                var lnkUrl = lnkObj && lnkObj.href;
+                event.clipboardData.setData('text/plain', lnkUrl);
+            });
+            client.on('aftercopy', function (event) {
+                console.log('复制成功: ' + event.data['text/plain']);
+            });
+        });
+        client.on('error', function(event) {
+            console.log('复制出错 "' + event.name + '": ' + event.message);
+            ZeroClipboard.destroy();
+        });
 
     // validator
     var Validator = require('validator');

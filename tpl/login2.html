@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>用户登录 —— 伊的家办公系统</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="http://www.yidejia.com/favicon.ico" type="image/x-icon">
+    <style>
+        /* reset */
+        .fn-clear:after{visibility:hidden;display:block;clear:both;content:" ";height:0;font-size:0}.fn-clear{zoom:1}.fn-hide{display:none}.fn-show{display:block}.fn-left,.fn-right{display:inline}.fn-left{float:left}.fn-right{float:right}
+
+        /* style */
+        .wrapper{width:960px;margin-right:auto;margin-left:auto;*zoom:1}.wrapper:before,.wrapper:after{display:table;content:"";line-height:0}.wrapper:after{clear:both}
+        .footer{overflow:hidden;padding-top:10px;font-size:13px}.footer .ui-nav{height:25px;line-height:25px;text-align:center;background-color:#efefef}.footer .ui-nav-item{display:inline;float:none;padding:0 15px}.footer .ui-nav-item a{height:inherit;padding:0;font-weight:500;line-height:inherit}.footer .copyright{padding:25px 0 10px 0;text-align:center;color:#666}
+        .ajax-loader{position:fixed;top:50%;left:50%;width:32px;height:32px;outline:0;background-image:url(resources/images/loading-ajax.gif)}
+        .ui-form-item:after{clear:both;content:'.';display:block;height:0;visibility:hidden}.ui-form-item{padding:0 5px 20px 170px;zoom:1}.ui-form-item select{vertical-align:middle;margin:4px 0 0}.ui-form-item input{vertical-align:middle}.ui-form-item .ui-input{font-size:12px;color:#595959;vertical-align:middle;*vertical-align:-5px}
+        .ui-label{float:left;width:170px;margin-left:-180px;padding-top:10px;text-align:right;font-size:14px}
+        .ui-input{width:170px;padding:7px 9px;line-height:18px;border:1px solid #ccc;border-top-color:#a6a6a6;color:#595959;font-size:12px;vertical-align:middle;*vertical-align:-5px}
+        .ui-button{display:inline-block;*display:inline;text-align:center;text-decoration:none;vertical-align:middle;cursor:pointer;font-size:12px;border-radius:2px;*zoom:1;*overflow:visible;background-image:none}
+        .ui-button-sorange{color:#04408c;border:1px solid #99bce8;background-color:#f57403;background-image:-webkit-linear-gradient(top, #dae7f6, #cddef3 45%, #abc7ec 46%, #abc7ec 50%, #b8cfee 51%, #cbddf3);}
+        .tpl-login{font-size:12px}.tpl-login .log-ban{padding:20px 30px 20px 20px;border-right:1px dashed #dadada}.tpl-login .log-ban-img{width:450px;height:360px}.tpl-login .log-box{padding:75px 0 0 0}.tpl-login .ui-form-item{padding:0 0 3px 90px;border:none}.tpl-login .ui-form-explain{display:block;height:20px;padding:2px 0 0 0}.tpl-login .imgcode-img{margin:0 5px;vertical-align:middle}.tpl-login .ui-button{height:30px;margin:0 0 0 20px;padding:0 15px;font-size:14px;line-height:28px}.tpl-login .aut-inp{margin-right:3px}.tpl-login .for-lnk{margin-left:40px;text-decoration:underline;color:#049cdb}.tpl-login .reg-lnk{height:28px}
+    </style>
+</head>
+
+<body>
+
+<div class="header">
+    <div class="wrapper">
+        <h1 class="logo fn-left">
+            <a class="logo-lnk" href="#"><img src="http://static.yidejia.com/panel/newIndex/newHead/logo.png" alt="伊的家办公系统"></a>
+        </h1>
+    </div>
+</div>
+
+<div class="main wrapper">
+    <div class="tpl-login ui-box">
+        <div class="ui-box-head fn-hide">
+            <div class="ui-box-head-border">
+                <h3 class="ui-box-head-title"><i class="icon-comm icon-head"></i>用户登录</h3>
+            </div>
+        </div>
+
+        <div class="ui-box-container">
+            <div class="ui-box-content fn-clear">
+                <div class="log-ban fn-left">
+                    <a href="#" target="_blank"><img class="log-ban-img" src="http://placehold.it/450x360"></a>
+                </div>
+                <div class="log-box fn-left">
+                    <form id="J-loginForm" class="ui-form" action="#" method="post" name="loginForm">
+                        <div class="ui-form-item">
+                            <label for="J-loginAcc" class="ui-label">账号：</label>
+                            <input id="J-loginAcc" class="ui-input" placeholder="请输入账号" type="text" name="account" />
+                            <div class="ui-form-explain"></div>
+                        </div>
+
+                        <div class="ui-form-item">
+                            <label for="J-loginPwd" class="ui-label">密码：</label>
+                            <input id="J-loginPwd" class="ui-input" placeholder="请输入密码" type="password" name="pwd" />
+                            <div class="ui-form-explain"></div>
+                        </div>
+
+                        <div class="ui-form-item">
+                            <label for="J-logImgCode" class="ui-label">验证码：</label>
+                            <input id="J-logImgCode" class="imgcode-inp ui-input" type="text" autocomplete="off" maxlength="4" name="img_code" placeholder="请输入验证码" title="请输入图片验证码" />
+                            <a class="imgcode-btn" href="javascript:;" title="点击换一张" onclick="this.firstChild.src='http://u.n8n8.cn/User/index.php?m=Mobi&a=getVerCode&t=' + Math.random();return false;"><img class="imgcode-img" src="http://u.n8n8.cn/User/index.php?m=Mobi&a=getVerCode">看不清？换一张</a>
+                            <div class="ui-form-explain"></div>
+                        </div>
+
+                        <div class="ui-form-item">
+                            <label for="J-loginAuto" class="aut-lab"><input id="J-loginAuto" class="aut-inp" type="checkbox" checked="checked" name="logauto" />下次自动登录</label>
+                            <div class="ui-form-explain"></div>
+                        </div>
+
+                        <div class="ui-form-item">
+                            <input id="J-loginSub" class="log-sub ui-button-sorange ui-button" type="submit" value="登&nbsp;录">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer wrapper">
+    <div class="copyright">
+        <p>Copyright &copy; 广州伊的家网络科技有限公司 All Rights Reserved 版权所有 复制必究</p>
+        <p>Powered by <a href="http://www.yidejia.com" target="_blank" title="广州伊的家网络科技有限公司">www.yidejia.com</a> &copy; 2008-2014  <a href="http://www.miibeian.gov.cn" rel="nofollow" target="_blank">粤ICP备13070863号</a></p>
+    </div>
+</div>
+
+</body>
+</html>

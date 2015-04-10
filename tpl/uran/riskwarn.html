@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html id="eleHtml">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>使用说明</title>
+	<style>
+		* {
+		    margin: 0;
+		    padding: 0;
+		}
+		html, body {
+		    overflow: hidden;
+		}
+		body {
+		    font-size: 14px;
+		    line-height: 1.5;
+		    font-family: "\5B8B\4F53",tahoma,arial,sans-serif;
+		    word-wrap: break-word;
+		    background: #181818;
+		     /* scrollbar style for IE */
+		    /* 滑块箭头 */
+		    scrollbar-arrow-color: #181818;
+
+		    /* 滑块背景 */
+		    scrollbar-face-color: #4B4B4B;
+
+		    /* 滑块右下外边框 */
+		    scrollbar-darkshadow-color: #5D5D5D;
+
+		    /* 滑块上左内边框 */
+		    scrollbar-highlight-color: #4B4B4B;
+
+		    /* 滑块上左外边框 */
+		    scrollbar-3dlight-color: #4B4B4B;
+
+		    /* 滑块右下内边框 */
+		    scrollbar-shadow-color: #4B4B4B;
+
+		    /* 滚动条背景 */
+		    scrollbar-track-color: #24262B;
+		}
+		a {
+			text-decoration: none;
+			color: #fff;
+		}
+		a:hover {
+			color: #fbd95e;
+		}
+		li {
+		    list-style: none;
+		}
+		img {
+		    border: none;
+		}
+		h1 {
+		    font-size: 18px;
+		    text-align: center;
+		}
+		h2 {
+		    font-size: 16px;
+		}
+		h3 {
+		    font-size: 14px;
+		}
+		.art {
+		    padding: 15px;
+		    padding-top: 0;
+		}
+		.art_hd {
+			margin-bottom: 10px;
+			padding-bottom: 10px;
+			border-bottom: 1px solid #5a5a5a;
+		}
+		.art_hd .titl {
+		    color: #fbd95e;
+		}
+		.art_hd .info {
+			padding-bottom: 3px;
+			font-size: 13px;
+		    text-align: center;
+		    color: #fff;
+		}
+		.art_hd .font-cur {
+			color: #fbd95e;
+		}
+		.art_hd .info-item {
+			padding: 0 5px;
+		}
+		.art_bd {
+		    padding: 10px 0;
+		    font-size: 14px;
+		    line-height: 1.8em;
+		    color: #f0f0f0;
+		    background: #181818;
+		}
+		.art_bd p {
+		    margin: .5em;
+		}
+		.art_bd img {
+		    display: block;
+		    max-width: 100%;
+		    margin: 0 auto;
+		}
+		#J-content {
+		    overflow: auto;
+		}
+	</style>
+
+	<style>
+        .mobi, .mobi .art, .mobi .art_bd { background: #e1e1e1; }
+        .mobi { overflow: auto; }
+        .mobi body { font-family: "Microsoft Yahei", tahoma, arial, "Hiragino Sans GB", \5b8b\4f53; }
+        .mobi .art { padding: 0 25px; }
+        .mobi .art_hd { display: none; margin-bottom: 0; padding-bottom: 0; border: 0; }
+        .mobi .art_hd .titl { font-weight: 700; font-size: 1.375rem; text-align: left; color: #fff; }
+        .mobi .art_hd .info { margin: 5px 0 15px 0; padding-bottom: 5px; font-size: .875rem; text-align: left; color: #c8c8c8; border-bottom: 1px solid #2f2f2f; }
+        .mobi .art_hd .info-size { display: none; }
+        .mobi .art_hd a { text-decoration: none; color: #c8c8c8; }
+        .mobi .art_hd span { margin-right: 10px; padding: 0; }
+        .mobi .art_hd .name { display: none; }
+        .mobi .art_bd { overflow: hidden; height: auto; padding-top: 0; font-size: 1.063rem; color: #4d4d4d; }
+        .mobi .art_bd p { margin: 0 0 15px 0; text-align: justify; }
+        .mobi .art_bd .txt_ind { text-indent: 2em; }
+    </style>
+    <script>
+        var artUA = (window.navigator.userAgent || '').toLowerCase();
+        var artIsIE = /\msie (10|([6789]))\.0\b/.test(artUA) || /\btrident\/[0-9].*rv[ :]11\.0/.test(artUA);
+        var artIsWin = artUA.indexOf('windows') > -1;
+        var eleHtml = document.getElementById('eleHtml');
+        if(eleHtml && !artIsWin) {
+            eleHtml.className = 'mobi';
+        }
+    </script>
+</head>
+
+<body>
+	<div class="art">　
+	    <div id="J-title" class="art_hd">
+	        <h1 class="titl">风险提示</h1>
+	        <p class="info"></p>
+	    </div>
+	    <div id="J-content" class="art_bd">
+			<p class="txt_ind">经传软件提醒您全面了解使用移动互联网设备炒股的风险。如果您继续使用该业务，表明您已经完全了解并同意承担可能存在的全部风险。</p>
+			<p>风险提醒：</p>
+			<p>1、由于可能受到通信状况、服务系统繁忙或故障、用户使用移动互联网设备的性能及故障、黑客攻击、网络漏洞、病毒、信息源异常、技术发展限制、不可抗力以及其他不可预测因素的影响，有可能造成行情、资讯等信息的延迟、中断、错误、遗漏、不能登录、或其他异常情形，因此引致的盈利或亏损以及其他后果均由您自行负责。在此情况下，建议您通过其他方式获取行情信息。 </p>
+			<p>2、在使用经传软件手机版时，应注意密码的安全，避免在公用或非安全环境进行网上证券业务，妥善保管好自己所使用的移动互联网设备、个人信息以及密码，以防被他人盗用。 </p>
+			<p>3、 经传软件提供的所有信息包括文字、 图表、 数据、 参数等，仅作为您的参考之用，不构成任何投资建议，不作为您的投资依据，您据此操作造成的任何风险和后果，均由您自行负责。 </p>
+	    	<p>4、使用经传软件，会产生上网流量费用，该费用为电信运营商收取，与经传软件公司无关。 </p>
+	    	<p>5、使用经传软件，即表明您认可经传软件通过各种通讯方式向您发送关于公司及产品的各类信息。</p>
+	    	<p>6、本文未能详细列举产品的各种风险事顶，对于未列明的风险事项，您应该做好充分的承担风险的心理准备。 </p>
+	    	<p>针对以上各种风险，请用户注意自我保护，掌握移动互联网设备操作经验及安全防范知识，经传软件对用户使用移动互联网设备炒股存在的风险及由此造成的损失不承担任何法律责任。 </p>
+	    	<p>若您在使用软件过程中遇到任何的问题，敬请拨打经传软件客服热线：4007003809 </p>
+	    </div>
+	</div>
+</html>
